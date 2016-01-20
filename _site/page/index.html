@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>About</title>
+    <title>page</title>
     <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
 ">
 
     <link rel="stylesheet" href="/knitr-jekyll/css/main.css">
-    <link rel="canonical" href="http://yourdomain.com/knitr-jekyll/about/">
+    <link rel="canonical" href="http://yourdomain.com/knitr-jekyll/page/">
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </head>
 
@@ -44,15 +44,37 @@
         <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">About</h1>
+    <h1 class="post-title">page</h1>
+    <p class="post-meta"></p>
   </header>
 
   <article class="post-content">
-    <p>This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at <a href="http://jekyllrb.com/">jekyllrb.com</a></p>
+    <p><span class="newthought">In this first iteration</span> of the <em>Tufte-Jekyll</em> theme, a post and a page have exactly the same layout. That means that all the typographic and structural details are identical between the two.</p>
 
-<p>You can find the source code for the Jekyll new theme at: <a href="https://github.com/jglovier/jekyll-new">github.com/jglovier/jekyll-new</a></p>
+<h2 id="pages-and-posts">Pages and Posts</h2>
 
-<p>You can find the source code for Jekyll at <a href="https://github.com/jekyll/jekyll">github.com/jekyll/jekyll</a></p>
+<p>Jekyll provides for both pages and posts in its default configuration. I have left this as-is.</p>
+
+<h3 id="posts">Posts</h3>
+
+<p>Conceptually, posts are for recurring pieces of similar content such as might be found in a typical blog entry. Post content all sits in a folder named <code>_posts</code> and files are created in this folder that are names with a date pre-pended to the title of the post. For instance <code>2105-02-20-this-is-a-post.md</code> is a perfectly valid post filename.</p>
+
+<p>Posts will always have a section above the content itself consisting of YAML front matter, which is meta-data information about the post. Minimally, a post title must always be present for it to be processed properly.</p>
+
+<h2 id="section">```</h2>
+<p>Title: Some Title
+—
+## Content</p>
+
+<p>Markdown formatted content <em>here</em>.
+```</p>
+
+<h3 id="pages">Pages</h3>
+
+<p>Pages are any HTML documents <em>or</em> Markdown documents with YAML front matter that are then converted to content. Page material is more suited to static, non-recurring types of content. Like this</p>
+
+<p>I am not going to re-write the Jekyll documentation. Read it and you will figure out how the site is structured.</p>
+
 
   </article>
 

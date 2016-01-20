@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>A Tufte-style Jekyll blog powered by servr and knitr</title>
+    <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+">
+
+    <link rel="stylesheet" href="/knitr-jekyll/css/main.css">
+    <link rel="canonical" href="http://yourdomain.com/knitr-jekyll/2015/04/jekyll-tufte-servr.html">
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+
+
+  <body>
+
+    <!--- Header and nav template site-wide -->
+<header>
+  <nav class="group">
+    <a href="/knitr-jekyll\"><img class="badge" src="/knitr-jekyll/badge.png" alt="CH"></a>
+    
+      
+        <a class="page-link" href="/knitr-jekyll/about/">About</a>
+      
+    
+      
+    
+      
+    
+      
+        <a class="page-link" href="/knitr-jekyll/page/">page</a>
+      
+    
+  </nav>
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">A Tufte-style Jekyll blog powered by servr and knitr</h1>
+    <p class="post-meta">Apr 20, 2015</p>
+  </header>
+
+  <article class="post-content">
+    <p><span class="newthought">This post</span> demonstrates <a href="http://github.com/cpsievert/knitr-jekyll">my fork</a> of Yihui’s <a href="https://github.com/yihui/knitr-jekyll">knitr-jekyll</a> which tweaks the default layout to resemble <a href="https://github.com/clayh53/tufte-jekyll">tufte-jekyll</a>. As Yihui mentions in his <a href="http://yihui.name/knitr-jekyll/2014/09/jekyll-with-knitr.html">knitr-jekyll blog post</a> (which I <em>highly</em> recommend reading), GitHub Pages does not support arbitrary Jekyll plugins, but I’ve managed to remove tufte-jekyll’s dependency on custom plugins via custom <a href="http://yihui.name/knitr/hooks/">knitr output hooks</a>. Not only does this allow GitHub Pages to build and host this template automagically, but it also fixes <a href="https://github.com/clayh53/tufte-jekyll#which-brings-me-to-sorrow-and-shame">tufte-jekyll’s problem with figure paths</a>.</p>
+
+<p>The rest of this post shows you how to use these custom hooks and some other useful things specific to this template (at some point, you might also want the <a href="https://raw.githubusercontent.com/cpsievert/knitr-jekyll/gh-pages/_source/2015-04-20-jekyll-tufte-servr.Rmd">source for this post</a>)</p>
+
+<h3 id="figures">Figures</h3>
+
+<p>By default, the <code>fig.width</code> <a href="http://yihui.name/knitr/options/">chunk option</a> is equal to 7 inches. Assuming the zoom of your browser window is at 100%, that translates to about 3/4 of the textwidth.</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>ggplot2<span class="p">)</span>
+p <span class="o">&lt;-</span> ggplot<span class="p">(</span>diamonds<span class="p">,</span> aes<span class="p">(</span>carat<span class="p">))</span> 
+p <span class="o">+</span> geom_histogram<span class="p">()</span></code></pre></div>
+
+<p><span class="marginnote">Figure 1: A nice plot that is not quite wide enough. Note that this figure caption was created using the <code>fig.cap</code> chunk option</span><img class="fullwidth" src="/knitr-jekyll/figure/2015-04-20-jekyll-tufte-servr/skinny-1.png" /></p>
+
+<p>If we increase <code>fig.width</code> to a ridiculous number, say 20 inches, it will still be constrained to the text width, even by changing <code>fig.width</code> to 20 inches.</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r">p <span class="o">+</span> geom_histogram<span class="p">(</span>aes<span class="p">(</span>y <span class="o">=</span> <span class="m">..</span>density..<span class="p">))</span></code></pre></div>
+
+<p><span class="marginnote">Figure 2: The <code>fig.height</code> for this chunk is same as Figure 1, but the <code>fig.width</code> is now 20. Since the width is constrained by the text width, the figure is shrunken quite a bit.</span><img class="fullwidth" src="/knitr-jekyll/figure/2015-04-20-jekyll-tufte-servr/wide-1.png" /></p>
+
+<p>By constraining the figure width, it will ensure that figure captions (set via <code>fig.cap</code>) appear correctly in the side margin. If you don’t want to restrict the final figure width, set the <code>fig.fullwidth</code> chunk option equal to <code>TRUE</code>. In this case, the figure caption is placed in the side margin below the figure.</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r">p <span class="o">+</span> geom_point<span class="p">(</span>aes<span class="p">(</span>y <span class="o">=</span> price<span class="p">),</span> alpha <span class="o">=</span> <span class="m">0.2</span><span class="p">)</span> <span class="o">+</span> 
+  facet_wrap<span class="p">(</span><span class="o">~</span><span class="kp">cut</span><span class="p">,</span> nrow <span class="o">=</span> <span class="m">1</span><span class="p">,</span> scales <span class="o">=</span> <span class="s">&quot;free_x&quot;</span><span class="p">)</span> <span class="o">+</span>
+  geom_smooth<span class="p">(</span>aes<span class="p">(</span>y <span class="o">=</span> price<span class="p">,</span> fill <span class="o">=</span> <span class="kp">cut</span><span class="p">))</span></code></pre></div>
+
+<div><img class="fullwidth" src="/knitr-jekyll/figure/2015-04-20-jekyll-tufte-servr/full-1.png" /></div>
+<p><span class="marginnote">Figure 3: Full width plot</span></p>
+
+<p>To place figures in the margin, set the <code>fig.margin</code> chunk option equal to <code>TRUE</code>.</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r">tmp <span class="o">&lt;-</span> <span class="kp">tempfile</span><span class="p">()</span>
+user <span class="o">&lt;-</span> <span class="s">&quot;http://user2014.stat.ucla.edu/images/useR-large.png&quot;</span>
+download.file<span class="p">(</span>user<span class="p">,</span> tmp<span class="p">)</span>
+img <span class="o">&lt;-</span> png<span class="o">::</span>readPNG<span class="p">(</span>tmp<span class="p">)</span>
+plot<span class="p">(</span><span class="m">0</span><span class="o">:</span><span class="m">1</span><span class="p">,</span> type <span class="o">=</span> <span class="s">&#39;n&#39;</span><span class="p">,</span> xlab <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">,</span> ylab <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
+lim <span class="o">&lt;-</span> par<span class="p">()</span>
+rasterImage<span class="p">(</span>img<span class="p">,</span> lim<span class="o">$</span>usr<span class="p">[</span><span class="m">1</span><span class="p">],</span> lim<span class="o">$</span>usr<span class="p">[</span><span class="m">3</span><span class="p">],</span> lim<span class="o">$</span>usr<span class="p">[</span><span class="m">2</span><span class="p">],</span> lim<span class="o">$</span>usr<span class="p">[</span><span class="m">4</span><span class="p">])</span></code></pre></div>
+
+<p><span class="marginnote"><img class="fullwidth" src="/knitr-jekyll/figure/2015-04-20-jekyll-tufte-servr/margin-1.png" />Figure 4: useR logo</span></p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kp">unlink</span><span class="p">(</span>tmp<span class="p">)</span></code></pre></div>
+
+<h2 id="sizing-terminal-output">Sizing terminal output</h2>
+
+<p>The default <code>R</code> terminal output width is 80, which is a bit too big for the styling of this blog, but a width of 55 works pretty well:</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kp">options</span><span class="p">(</span>width <span class="o">=</span> <span class="m">55</span><span class="p">,</span> digits <span class="o">=</span> <span class="m">3</span><span class="p">)</span>
+<span class="p">(</span>x <span class="o">&lt;-</span> rnorm<span class="p">(</span><span class="m">40</span><span class="p">))</span></code></pre></div>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">##  [1] -0.8360 -0.9145 -1.3082  2.5438 -1.0267 -1.5341
+##  [7] -1.6665 -2.1164 -0.7213  1.8363 -0.4469 -1.2415
+## [13] -0.0784 -1.1047 -0.2121  0.1171 -0.7758 -0.6058
+## [19]  1.2367  0.3841 -0.0552 -0.1453  2.3552 -1.5046
+## [25]  1.4422  0.7569  0.1339 -1.2041 -0.5141  0.1922
+## [31] -0.3786 -1.0385 -1.2517 -1.9286  0.1243 -0.3027
+## [37]  0.1328 -2.0541 -1.0230  0.2724</code></pre></div>
+
+<h2 id="mathjax">Mathjax</h2>
+
+<p>If you want inline math rendering, put <code>$$ math $$</code> inline. For example, <script type="math/tex">\Gamma(\alpha) = (\alpha - 1)!</script>. If you want it on it’s own line, do something like:</p>
+
+<div class="highlight"><pre><code class="language-latex" data-lang="latex"><span class="sb">$$</span><span class="nb"></span>
+<span class="nb">x </span><span class="o">=</span><span class="nb"> {</span><span class="o">-</span><span class="nb">b </span><span class="nv">\pm</span><span class="nb"> </span><span class="nv">\sqrt</span><span class="nb">{b^</span><span class="m">2</span><span class="o">-</span><span class="m">4</span><span class="nb">ac} </span><span class="nv">\over</span><span class="nb"> </span><span class="m">2</span><span class="nb">a}.</span>
+<span class="s">$$</span></code></pre></div>
+
+<p>which results in</p>
+
+<script type="math/tex; mode=display">x = {-b \pm \sqrt{b^2-4ac} \over 2a}.</script>
+
+<h2 id="margin-notes">Margin notes</h2>
+
+<p><span class="marginnote"> 
+<img class="fullwidth" src="http://i.imgur.com/NCMxz5G.gif" />
+Much margin. So excite.
+</span></p>
+
+<p>Put stuff in the side margin using the <code>&lt;span&gt;</code> HTML tag with a class of ‘marginnote’:</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&#39;marginnote&#39;</span><span class="nt">&gt;</span> 
+  Anything here will appear in side margin 
+<span class="nt">&lt;/span&gt;</span></code></pre></div>
+
+<p>Another (less cute) example of margin notes is to add a table caption. In fact, the figure captions above are just margin notes.</p>
+
+<p><span class="marginnote"> 
+Table 1: Output from a simple linear regression in tabular form.
+</span></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">term</th>
+      <th style="text-align: right">estimate</th>
+      <th style="text-align: right">std.error</th>
+      <th style="text-align: right">statistic</th>
+      <th style="text-align: right">p.value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">(Intercept)</td>
+      <td style="text-align: right">1.357</td>
+      <td style="text-align: right">0.263</td>
+      <td style="text-align: right">5.17</td>
+      <td style="text-align: right">0.000</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">wt</td>
+      <td style="text-align: right">-0.286</td>
+      <td style="text-align: right">0.078</td>
+      <td style="text-align: right">-3.65</td>
+      <td style="text-align: right">0.001</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="sidenotes">Sidenotes</h2>
+
+<p>Similar to a ‘marginnote’ is a ‘sidenote’<sup class="sidenote-number"> 1 </sup> which works like this</p>
+
+<p><span class="sidenote">
+  <sup class="sidenote-number"> 1 </sup> 
+  Sidenotes are kind of like footnotes that appear in the side margin.
+</span></p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;sup</span> <span class="na">class=</span><span class="s">&#39;sidenote-number&#39;</span><span class="nt">&gt;</span> 1 <span class="nt">&lt;/sup&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&#39;sidenote&#39;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;sup</span> <span class="na">class=</span><span class="s">&#39;sidenote-number&#39;</span><span class="nt">&gt;</span> 1 <span class="nt">&lt;/sup&gt;</span> 
+  Sidenotes are kind of like footnotes that appear in the side margin.
+<span class="nt">&lt;/span&gt;</span></code></pre></div>
+
+<p>Unfortunately, this is a lot of HTML markup, but of course<sup id="fnref:2"><a href="#fn:2" class="footnote">1</a></sup>, you can also do footnotes, so that might be a better option.</p>
+
+<h2 id="contact-me">Contact me</h2>
+
+<p>If you find any issues or want to help improve the implementation, <a href="https://github.com/cpsievert/knitr-jekyll/issues/new">please let me know</a>!</p>
+
+<h2 id="session-information">Session Information</h2>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">## R version 3.1.3 (2015-03-09)
+## Platform: x86_64-apple-darwin13.4.0 (64-bit)
+## Running under: OS X 10.10.3 (Yosemite)
+## 
+## locale:
+## [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+## 
+## attached base packages:
+## [1] methods   stats     graphics  grDevices utils    
+## [6] datasets  base     
+## 
+## other attached packages:
+## [1] mgcv_1.8-4       nlme_3.1-120     ggplot2_1.0.0.99
+## 
+## loaded via a namespace (and not attached):
+##  [1] assertthat_0.1   broom_0.3.6      codetools_0.2-10
+##  [4] colorspace_1.2-4 DBI_0.3.1        digest_0.6.8    
+##  [7] dplyr_0.4.1      evaluate_0.5.5   formatR_1.0     
+## [10] grid_3.1.3       gtable_0.1.2     httpuv_1.3.2    
+## [13] knitr_1.9.3      labeling_0.3     lattice_0.20-30 
+## [16] magrittr_1.5     MASS_7.3-39      Matrix_1.1-5    
+## [19] mnormt_1.5-1     munsell_0.4.2    parallel_3.1.3  
+## [22] plyr_1.8.1       png_0.1-7        proto_0.3-10    
+## [25] psych_1.5.1      Rcpp_0.11.5      reshape2_1.4.1  
+## [28] scales_0.2.4     servr_0.1.18     stringr_0.6.2   
+## [31] tidyr_0.2.0      tools_3.1.3</code></pre></div>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:2">
+      <p>I hate it when people say “of course” as though this is obvious everyone. <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+  </article>
+
+</div>
+
+      </div>
+    </div>
+
+    <footer>
+  <ul class="footer-links group">
+    <li><a href="mailto:hate@spam.net"><span class="icon-mail"></span></a></li>
+    
+      <li>
+        <a href="//www.twitter.com/jekyllrb"><span class="icon-twitter"></span></a>
+      </li>
+    
+      <li>
+        <a href="//plus.google.com/explore/jekyllrb"><span class="icon-googleplus"></span></a>
+      </li>
+    
+      <li>
+        <a href="//github.com/jekyll"><span class="icon-github"></span></a>
+      </li>
+    
+      <li>
+        <a href="//www.flickr.com/explore"><span class="icon-flickr"></span></a>
+      </li>
+    
+      <li>
+        <a href="/feed.xml"><span class="icon-feed"></span></a>
+      </li>
+    
+  </ul>
+<div class="credits">
+<span>&copy; YOUR NAME HERE &nbsp; 2016</span>
+<br>
+<span>This site was created with <a href="//github.com/cpsievert/knitr-jekyll">cpsievert/knitr-jekyll</a> -- a marriage of <a href="//github.com/yihui/knitr-jekyll">yihui/knitr-jekyll</a> and the <a href="//github.com/clayh53/tufte-jekyll">Tufte theme</a> for <a href="//jekyllrb.com">Jekyll</a>.</span>
+</div>
+</footer>
+
+
+  </body>
+
+</html>
