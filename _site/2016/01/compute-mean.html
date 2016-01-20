@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Compute means</title>
+    <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+">
+
+    <link rel="stylesheet" href="/knitr-jekyll/css/main.css">
+    <link rel="canonical" href="http://yourdomain.com/knitr-jekyll/2016/01/compute-mean.html">
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+
+
+  <body>
+
+    <!--- Header and nav template site-wide -->
+<header>
+  <nav class="group">
+    <a href="/knitr-jekyll\"><img class="badge" src="/knitr-jekyll/badge.png" alt="CH"></a>
+    
+      
+        <a class="page-link" href="/knitr-jekyll/about/">About</a>
+      
+    
+      
+    
+      
+        <a class="page-link" href="/knitr-jekyll/Tags/index.html">Tags</a>
+      
+    
+      
+        <a class="page-link" href="/knitr-jekyll/TimeUse/index.html">time use</a>
+      
+    
+      
+    
+      
+        <a class="page-link" href="/knitr-jekyll/page/">page</a>
+      
+    
+  </nav>
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Compute means</h1>
+    <p class="post-meta">Jan 20, 2016</p>
+  </header>
+
+  <article class="post-content">
+    <p>hey</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>plyr<span class="p">)</span>  
+<span class="kn">library</span><span class="p">(</span>dplyr<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>tidyr<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>mtusRlocal<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>knitr<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>reshape2<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>xtable<span class="p">)</span>
+
+<span class="kp">load</span><span class="p">(</span><span class="s">&#39;/Users/giacomovagni/site/motsetchoses/_data/dtaEpisode.RData&#39;</span><span class="p">)</span>
+dtaEpisode<span class="o">$</span>weekend <span class="o">=</span> <span class="kp">ifelse</span><span class="p">(</span>dtaEpisode<span class="o">$</span>day <span class="o">==</span> <span class="m">1</span> <span class="o">|</span> dtaEpisode<span class="o">$</span>day <span class="o">==</span> <span class="m">7</span><span class="p">,</span> <span class="s">&#39;weekend&#39;</span><span class="p">,</span> <span class="s">&#39;weekdays&#39;</span><span class="p">)</span></code></pre></div>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r">kable<span class="p">(</span>dtaEpisode <span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">,</span> <span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">])</span></code></pre></div>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left"> </th>
+      <th style="text-align: right">countrya</th>
+      <th style="text-align: right">survey</th>
+      <th style="text-align: right">swave</th>
+      <th style="text-align: right">msamp</th>
+      <th style="text-align: right">hldid</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">7810405</td>
+      <td style="text-align: right">37</td>
+      <td style="text-align: right">2000</td>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">3809</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">7810406</td>
+      <td style="text-align: right">37</td>
+      <td style="text-align: right">2000</td>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">3809</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r">dtaEpisodeSumTime <span class="o">=</span> dtaEpisode <span class="o">%&gt;%</span> group_by<span class="p">(</span>idno<span class="p">,</span> weekend<span class="p">,</span> day<span class="p">,</span> av<span class="p">)</span> <span class="o">%&gt;%</span> summarise<span class="p">(</span>sumtime <span class="o">=</span> <span class="kp">sum</span><span class="p">(</span>time<span class="p">))</span> <span class="o">%&gt;%</span> group_by<span class="p">(</span>idno<span class="p">)</span> <span class="o">%&gt;%</span> mutate<span class="p">(</span>nday <span class="o">=</span> n_distinct<span class="p">(</span>day<span class="p">))</span> 
+
+<span class="c1"># by ind </span>
+dtaEpisodeSumTime <span class="o">%&gt;%</span> group_by<span class="p">(</span>av<span class="p">,</span> weekend<span class="p">)</span> <span class="o">%&gt;%</span> summarise<span class="p">(</span><span class="kp">mean</span><span class="p">(</span>sumtime<span class="p">))</span></code></pre></div>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">## Source: local data frame [75 x 3]
+## Groups: av
+## 
+##    av  weekend mean(sumtime)
+## 1   1 weekdays     475.96491
+## 2   1  weekend     407.81250
+## 3   2 weekdays     171.53846
+## 4   2  weekend     110.00000
+## 5   3 weekdays      30.00000
+## 6   4 weekdays     310.00000
+## 7   5 weekdays      58.34646
+## 8   5  weekend      56.66667
+## 9   6 weekdays      51.01695
+## 10  6  weekend      60.25862
+## .. ..      ...           ...</code></pre></div>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># check </span>
+dtaEpisode <span class="o">%&gt;%</span> group_by<span class="p">(</span>idno<span class="p">,</span> day<span class="p">,</span> av<span class="p">)</span> <span class="o">%&gt;%</span> summarise<span class="p">(</span>sumtime <span class="o">=</span> <span class="kp">sum</span><span class="p">(</span>time<span class="p">))</span> <span class="o">%&gt;%</span> mutate<span class="p">(</span><span class="kp">sum</span><span class="p">(</span>sumtime<span class="p">))</span></code></pre></div>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">## Source: local data frame [3,512 x 5]
+## Groups: idno, day
+## 
+##        idno day av sumtime sum(sumtime)
+## 1  103799_1   1  1     400         1440
+## 2  103799_1   1  5     130         1440
+## 3  103799_1   1  6      70         1440
+## 4  103799_1   1  7      60         1440
+## 5  103799_1   1  8      10         1440
+## 6  103799_1   1 11     140         1440
+## 7  103799_1   1 13      50         1440
+## 8  103799_1   1 15      60         1440
+## 9  103799_1   1 16     460         1440
+## 10 103799_1   1 31      20         1440
+## ..      ... ... ..     ...          ...</code></pre></div>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># spread </span>
+dtaEpisodeSumTimeSpread <span class="o">=</span> dtaEpisodeSumTime <span class="o">%&gt;%</span> spread<span class="p">(</span>av<span class="p">,</span> sumtime<span class="p">,</span> fill <span class="o">=</span> <span class="m">0</span><span class="p">)</span>
+
+<span class="c1"># does everybody has filled 2 days? </span>
+<span class="kp">table</span><span class="p">(</span>dtaEpisodeSumTimeSpread<span class="o">$</span>nday<span class="p">)</span></code></pre></div>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">## 
+##   2 
+## 308</code></pre></div>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r">kable<span class="p">(</span>dtaEpisodeSumTimeSpread<span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">,</span><span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">])</span></code></pre></div>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">idno</th>
+      <th style="text-align: left">weekend</th>
+      <th style="text-align: right">day</th>
+      <th style="text-align: right">nday</th>
+      <th style="text-align: right">1</th>
+      <th style="text-align: right">2</th>
+      <th style="text-align: right">3</th>
+      <th style="text-align: right">4</th>
+      <th style="text-align: right">5</th>
+      <th style="text-align: right">6</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">103799_1</td>
+      <td style="text-align: left">weekdays</td>
+      <td style="text-align: right">4</td>
+      <td style="text-align: right">2</td>
+      <td style="text-align: right">410</td>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">50</td>
+      <td style="text-align: right">0</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">103799_1</td>
+      <td style="text-align: left">weekend</td>
+      <td style="text-align: right">1</td>
+      <td style="text-align: right">2</td>
+      <td style="text-align: right">400</td>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">130</td>
+      <td style="text-align: right">70</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">103799_2</td>
+      <td style="text-align: left">weekdays</td>
+      <td style="text-align: right">4</td>
+      <td style="text-align: right">2</td>
+      <td style="text-align: right">470</td>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">90</td>
+      <td style="text-align: right">20</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">103799_2</td>
+      <td style="text-align: left">weekend</td>
+      <td style="text-align: right">1</td>
+      <td style="text-align: right">2</td>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">80</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">110594_1</td>
+      <td style="text-align: left">weekdays</td>
+      <td style="text-align: right">3</td>
+      <td style="text-align: right">2</td>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">50</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">110594_1</td>
+      <td style="text-align: left">weekend</td>
+      <td style="text-align: right">1</td>
+      <td style="text-align: right">2</td>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">120</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">110594_2</td>
+      <td style="text-align: left">weekdays</td>
+      <td style="text-align: right">3</td>
+      <td style="text-align: right">2</td>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">10</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">110594_2</td>
+      <td style="text-align: left">weekend</td>
+      <td style="text-align: right">1</td>
+      <td style="text-align: right">2</td>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">10</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">129380_1</td>
+      <td style="text-align: left">weekdays</td>
+      <td style="text-align: right">6</td>
+      <td style="text-align: right">2</td>
+      <td style="text-align: right">270</td>
+      <td style="text-align: right">90</td>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">30</td>
+      <td style="text-align: right">30</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">129380_1</td>
+      <td style="text-align: left">weekend</td>
+      <td style="text-align: right">7</td>
+      <td style="text-align: right">2</td>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">90</td>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">10</td>
+      <td style="text-align: right">0</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r">aggregate<span class="p">(</span>dtaEpisodeSumTimeSpread<span class="o">$</span><span class="sb">`1`</span> <span class="o">~</span> dtaEpisodeSumTimeSpread<span class="o">$</span>weekend<span class="p">,</span> FUN <span class="o">=</span> <span class="kp">mean</span><span class="p">)</span></code></pre></div>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">##   dtaEpisodeSumTimeSpread$weekend dtaEpisodeSumTimeSpread$`1`
+## 1                        weekdays                   352.33766
+## 2                         weekend                    84.74026</code></pre></div>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r">dtaEpisodeSumTimeSpread <span class="o">%&gt;%</span> select<span class="p">(</span><span class="o">-</span>idno<span class="p">,</span> <span class="o">-</span>nday<span class="p">)</span> <span class="o">%&gt;%</span> group_by<span class="p">(</span>weekend<span class="p">)</span> <span class="o">%&gt;%</span> summarise_each<span class="p">(</span>funs<span class="p">(</span><span class="kp">mean</span><span class="p">))</span></code></pre></div>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">## Source: local data frame [2 x 41]
+## 
+##    weekend      day         1        2         3        4        5
+## 1 weekdays 4.324675 352.33766 14.48052 0.1948052 2.012987 48.11688
+## 2  weekend 4.038961  84.74026  5.00000 0.0000000 0.000000 13.24675
+## Variables not shown: 6 (dbl), 7 (dbl), 8 (dbl), 9 (dbl), 10 (dbl), 11
+##   (dbl), 12 (dbl), 13 (dbl), 14 (dbl), 15 (dbl), 16 (dbl), 17 (dbl),
+##   18 (dbl), 19 (dbl), 20 (dbl), 21 (dbl), 22 (dbl), 23 (dbl), 24
+##   (dbl), 25 (dbl), 28 (dbl), 29 (dbl), 30 (dbl), 31 (dbl), 32 (dbl),
+##   33 (dbl), 34 (dbl), 35 (dbl), 36 (dbl), 37 (dbl), 38 (dbl), 39
+##   (dbl), 40 (dbl), 41 (dbl)</code></pre></div>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r">dtMelt <span class="o">=</span> dtaEpisodeSumTimeSpread <span class="o">%&gt;%</span> melt<span class="p">(</span>id.vars <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="s">&#39;idno&#39;</span><span class="p">,</span> <span class="s">&#39;weekend&#39;</span><span class="p">))</span>
+dtMelt <span class="o">%&gt;%</span> group_by<span class="p">(</span>weekend<span class="p">,</span> variable<span class="p">)</span> <span class="o">%&gt;%</span> summarise<span class="p">(</span>mv <span class="o">=</span> <span class="kp">mean</span><span class="p">(</span>value<span class="p">))</span> <span class="o">%&gt;%</span> spread<span class="p">(</span>variable<span class="p">,</span> mv<span class="p">)</span></code></pre></div>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">## Source: local data frame [2 x 42]
+## 
+##    weekend      day nday         1        2         3        4
+## 1 weekdays 4.324675    2 352.33766 14.48052 0.1948052 2.012987
+## 2  weekend 4.038961    2  84.74026  5.00000 0.0000000 0.000000
+## Variables not shown: 5 (dbl), 6 (dbl), 7 (dbl), 8 (dbl), 9 (dbl), 10
+##   (dbl), 11 (dbl), 12 (dbl), 13 (dbl), 14 (dbl), 15 (dbl), 16 (dbl),
+##   17 (dbl), 18 (dbl), 19 (dbl), 20 (dbl), 21 (dbl), 22 (dbl), 23
+##   (dbl), 24 (dbl), 25 (dbl), 28 (dbl), 29 (dbl), 30 (dbl), 31 (dbl),
+##   32 (dbl), 33 (dbl), 34 (dbl), 35 (dbl), 36 (dbl), 37 (dbl), 38
+##   (dbl), 39 (dbl), 40 (dbl), 41 (dbl)</code></pre></div>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># dtaEpisodeSumTime  %&gt;% group_by() %&gt;% group_by(av, weekend) %&gt;% summarise(mv = mean(sumtime))</span></code></pre></div>
+
+<p>Function</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r">TimeLongToWide <span class="o">=</span> <span class="kr">function</span><span class="p">(</span>dta <span class="o">=</span> weekend<span class="p">){</span>
+  
+  <span class="c1"># Sequence </span>
+  seqDay <span class="o">=</span> dta<span class="p">[</span><span class="kp">rep</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="kp">nrow</span><span class="p">(</span>dta<span class="p">),</span> dta<span class="p">[,</span><span class="s">&#39;time&#39;</span><span class="p">]</span> <span class="p">),</span> <span class="m">-3</span><span class="p">]</span> <span class="o">%&gt;%</span>
+    group_by<span class="p">(</span>id<span class="p">)</span> <span class="o">%&gt;%</span> 
+    mutate<span class="p">(</span> Time <span class="o">=</span> <span class="m">1</span><span class="o">:</span>n<span class="p">()</span> <span class="p">)</span> <span class="o">%&gt;%</span>
+    spread<span class="p">(</span>Time<span class="p">,</span> av<span class="p">)</span>
+  
+  seqDay <span class="o">=</span> <span class="kp">as.data.frame</span><span class="p">(</span>seqDay<span class="p">)</span>
+  
+  <span class="kp">row.names</span><span class="p">(</span>seqDay<span class="p">)</span> <span class="o">&lt;-</span> seqDay<span class="p">[,</span><span class="s">&#39;id&#39;</span><span class="p">]</span>
+  seqDay <span class="o">=</span> seqDay <span class="p">[,</span><span class="m">-1</span><span class="p">]</span>
+  
+  <span class="kr">return</span><span class="p">(</span>seqDay<span class="p">)</span>
+<span class="p">}</span>
+
+dtaWeekend <span class="o">=</span> dtaEpisode <span class="o">%&gt;%</span> filter<span class="p">(</span>weekend <span class="o">==</span> <span class="s">&#39;weekend&#39;</span><span class="p">)</span> <span class="o">%&gt;%</span> select<span class="p">(</span>id <span class="o">=</span> idno<span class="p">,</span> av<span class="p">,</span> time<span class="p">)</span>
+
+<span class="c1"># use it </span>
+dtaWideWeekend <span class="o">=</span> TimeLongToWide<span class="p">(</span>dtaWeekend<span class="p">)</span></code></pre></div>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r">kable<span class="p">(</span>dtaWideWeekend <span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">,</span> <span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">])</span></code></pre></div>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left"> </th>
+      <th style="text-align: right">1</th>
+      <th style="text-align: right">2</th>
+      <th style="text-align: right">3</th>
+      <th style="text-align: right">4</th>
+      <th style="text-align: right">5</th>
+      <th style="text-align: right">6</th>
+      <th style="text-align: right">7</th>
+      <th style="text-align: right">8</th>
+      <th style="text-align: right">9</th>
+      <th style="text-align: right">10</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">103799_1</td>
+      <td style="text-align: right">16</td>
+      <td style="text-align: right">16</td>
+      <td style="text-align: right">16</td>
+      <td style="text-align: right">16</td>
+      <td style="text-align: right">16</td>
+      <td style="text-align: right">16</td>
+      <td style="text-align: right">16</td>
+      <td style="text-align: right">16</td>
+      <td style="text-align: right">16</td>
+      <td style="text-align: right">16</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">103799_2</td>
+      <td style="text-align: right">16</td>
+      <td style="text-align: right">16</td>
+      <td style="text-align: right">16</td>
+      <td style="text-align: right">16</td>
+      <td style="text-align: right">16</td>
+      <td style="text-align: right">16</td>
+      <td style="text-align: right">16</td>
+      <td style="text-align: right">16</td>
+      <td style="text-align: right">16</td>
+      <td style="text-align: right">16</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">110594_1</td>
+      <td style="text-align: right">16</td>
+      <td style="text-align: right">16</td>
+      <td style="text-align: right">16</td>
+      <td style="text-align: right">16</td>
+      <td style="text-align: right">16</td>
+      <td style="text-align: right">16</td>
+      <td style="text-align: right">16</td>
+      <td style="text-align: right">16</td>
+      <td style="text-align: right">16</td>
+      <td style="text-align: right">16</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">110594_2</td>
+      <td style="text-align: right">16</td>
+      <td style="text-align: right">16</td>
+      <td style="text-align: right">16</td>
+      <td style="text-align: right">16</td>
+      <td style="text-align: right">16</td>
+      <td style="text-align: right">16</td>
+      <td style="text-align: right">16</td>
+      <td style="text-align: right">16</td>
+      <td style="text-align: right">16</td>
+      <td style="text-align: right">16</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># id</span>
+dtaWideWeekend<span class="o">$</span>idno <span class="o">=</span> <span class="kp">row.names</span><span class="p">(</span>dtaWideWeekend<span class="p">)</span>
+<span class="c1"># melt </span>
+dtaMelt <span class="o">=</span> dtaWideWeekend <span class="o">%&gt;%</span> melt<span class="p">(</span>id.vars <span class="o">=</span> <span class="s">&quot;idno&quot;</span><span class="p">)</span></code></pre></div>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r">kable<span class="p">(</span>dtaMelt <span class="o">%&gt;%</span> <span class="kp">head</span><span class="p">())</span></code></pre></div>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">idno</th>
+      <th style="text-align: left">variable</th>
+      <th style="text-align: right">value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">103799_1</td>
+      <td style="text-align: left">1</td>
+      <td style="text-align: right">16</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">103799_2</td>
+      <td style="text-align: left">1</td>
+      <td style="text-align: right">16</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">110594_1</td>
+      <td style="text-align: left">1</td>
+      <td style="text-align: right">16</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">110594_2</td>
+      <td style="text-align: left">1</td>
+      <td style="text-align: right">16</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">129380_1</td>
+      <td style="text-align: left">1</td>
+      <td style="text-align: right">2</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">129380_2</td>
+      <td style="text-align: left">1</td>
+      <td style="text-align: right">16</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r">intervals <span class="o">=</span> <span class="m">1</span>
+dtaMelt <span class="o">%&gt;%</span> group_by<span class="p">(</span>idno<span class="p">,</span> value<span class="p">)</span> <span class="o">%&gt;%</span> summarise<span class="p">(</span>nsum <span class="o">=</span> n<span class="p">()</span> <span class="o">*</span> intervals<span class="p">)</span> <span class="o">%&gt;%</span> group_by<span class="p">(</span>idno<span class="p">)</span> <span class="o">%&gt;%</span> mutate<span class="p">(</span><span class="kp">sum</span><span class="p">(</span>nsum<span class="p">))</span></code></pre></div>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">## Source: local data frame [1,745 x 4]
+## Groups: idno
+## 
+##        idno value nsum sum(nsum)
+## 1  103799_1     1  400      1440
+## 2  103799_1     5  130      1440
+## 3  103799_1     6   70      1440
+## 4  103799_1     7   60      1440
+## 5  103799_1     8   10      1440
+## 6  103799_1    11  140      1440
+## 7  103799_1    13   50      1440
+## 8  103799_1    15   60      1440
+## 9  103799_1    16  460      1440
+## 10 103799_1    31   20      1440
+## ..      ...   ...  ...       ...</code></pre></div>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r">dtaMelt <span class="o">%&gt;%</span> group_by<span class="p">(</span>idno<span class="p">,</span> value<span class="p">)</span> <span class="o">%&gt;%</span> summarise<span class="p">(</span>nsum <span class="o">=</span> n<span class="p">()</span> <span class="o">*</span> intervals<span class="p">)</span> <span class="o">%&gt;%</span> group_by<span class="p">(</span>value<span class="p">)</span> <span class="o">%&gt;%</span> summarise<span class="p">(</span><span class="kp">sum</span><span class="p">(</span>nsum<span class="p">)</span> <span class="o">/</span> n_distinct<span class="p">(</span>idno<span class="p">))</span></code></pre></div>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">## Source: local data frame [37 x 2]
+## 
+##    value sum(nsum)/n_distinct(idno)
+## 1      1                  407.81250
+## 2      2                  110.00000
+## 3      5                   56.66667
+## 4      6                   60.25862
+## 5      7                   88.30189
+## 6      8                   82.77778
+## 7      9                  161.81818
+## 8     10                   87.06667
+## 9     11                   98.27586
+## 10    12                   55.11111
+## ..   ...                        ...</code></pre></div>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r">dtaMelt <span class="o">%&gt;%</span> group_by<span class="p">(</span>idno<span class="p">,</span> value<span class="p">)</span> <span class="o">%&gt;%</span> summarise<span class="p">(</span>nsum <span class="o">=</span> n<span class="p">()</span> <span class="o">*</span> intervals<span class="p">)</span> <span class="o">%&gt;%</span> group_by<span class="p">(</span>value<span class="p">)</span> <span class="o">%&gt;%</span> summarise<span class="p">(</span><span class="kp">mean</span><span class="p">(</span>nsum<span class="p">))</span></code></pre></div>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">## Source: local data frame [37 x 2]
+## 
+##    value mean(nsum)
+## 1      1  407.81250
+## 2      2  110.00000
+## 3      5   56.66667
+## 4      6   60.25862
+## 5      7   88.30189
+## 6      8   82.77778
+## 7      9  161.81818
+## 8     10   87.06667
+## 9     11   98.27586
+## 10    12   55.11111
+## ..   ...        ...</code></pre></div>
+
+
+  </article>
+
+</div>
+
+      </div>
+    </div>
+
+    <footer>
+  <ul class="footer-links group">
+    <li><a href="mailto:hate@spam.net"><span class="icon-mail"></span></a></li>
+    
+      <li>
+        <a href="//www.twitter.com/jekyllrb"><span class="icon-twitter"></span></a>
+      </li>
+    
+      <li>
+        <a href="//plus.google.com/explore/jekyllrb"><span class="icon-googleplus"></span></a>
+      </li>
+    
+      <li>
+        <a href="//github.com/jekyll"><span class="icon-github"></span></a>
+      </li>
+    
+      <li>
+        <a href="//www.flickr.com/explore"><span class="icon-flickr"></span></a>
+      </li>
+    
+      <li>
+        <a href="/feed.xml"><span class="icon-feed"></span></a>
+      </li>
+    
+  </ul>
+<div class="credits">
+<span>&copy; YOUR NAME HERE &nbsp; 2016</span>
+<br>
+<span>This site was created with <a href="//github.com/cpsievert/knitr-jekyll">cpsievert/knitr-jekyll</a> -- a marriage of <a href="//github.com/yihui/knitr-jekyll">yihui/knitr-jekyll</a> and the <a href="//github.com/clayh53/tufte-jekyll">Tufte theme</a> for <a href="//jekyllrb.com">Jekyll</a>.</span>
+</div>
+</footer>
+
+
+  </body>
+
+</html>

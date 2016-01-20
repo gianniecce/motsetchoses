@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Retrieve Days and Dates in R</title>
+    <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+">
+
+    <link rel="stylesheet" href="/knitr-jekyll/css/main.css">
+    <link rel="canonical" href="http://yourdomain.com/knitr-jekyll/2016/01/days-conversion-with-R.html">
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+
+
+  <body>
+
+    <!--- Header and nav template site-wide -->
+<header>
+  <nav class="group">
+    <a href="/knitr-jekyll\"><img class="badge" src="/knitr-jekyll/badge.png" alt="CH"></a>
+    
+      
+        <a class="page-link" href="/knitr-jekyll/about/">About</a>
+      
+    
+      
+    
+      
+        <a class="page-link" href="/knitr-jekyll/Tags/index.html">Tags</a>
+      
+    
+      
+        <a class="page-link" href="/knitr-jekyll/TimeUse/index.html">time use</a>
+      
+    
+      
+    
+      
+        <a class="page-link" href="/knitr-jekyll/page/">page</a>
+      
+    
+  </nav>
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Retrieve Days and Dates in R</h1>
+    <p class="post-meta">Jan 20, 2016</p>
+  </header>
+
+  <article class="post-content">
+    <p>In this post, we will see how to handle dates in <code>R</code>.</p>
+
+<p>Copy-paste the following lines of codes with the dataset.</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># the data </span>
+dta <span class="o">=</span> <span class="kp">structure</span><span class="p">(</span><span class="kt">list</span><span class="p">(</span>id <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;1001893912015&quot;</span><span class="p">,</span> <span class="s">&quot;1001893912015&quot;</span><span class="p">,</span> <span class="s">&quot;10067992412015&quot;</span><span class="p">,</span> 
+<span class="s">&quot;10067992412015&quot;</span><span class="p">,</span> <span class="s">&quot;10079545612015&quot;</span><span class="p">,</span> <span class="s">&quot;10079545612015&quot;</span><span class="p">,</span> <span class="s">&quot;10079545622015&quot;</span><span class="p">,</span> 
+<span class="s">&quot;10079545622015&quot;</span><span class="p">,</span> <span class="s">&quot;1012460812015&quot;</span><span class="p">,</span> <span class="s">&quot;1012460812015&quot;</span><span class="p">),</span> age <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="m">36</span><span class="p">,</span> 
+<span class="m">36</span><span class="p">,</span> <span class="m">54</span><span class="p">,</span> <span class="m">54</span><span class="p">,</span> <span class="m">60</span><span class="p">,</span> <span class="m">60</span><span class="p">,</span> <span class="m">22</span><span class="p">,</span> <span class="m">22</span><span class="p">,</span> <span class="m">30</span><span class="p">,</span> <span class="m">30</span><span class="p">),</span> DiaryDay <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="m">13615862400</span><span class="p">,</span> 
+<span class="m">13616035200</span><span class="p">,</span> <span class="m">13617504000</span><span class="p">,</span> <span class="m">13617849600</span><span class="p">,</span> <span class="m">13619664000</span><span class="p">,</span> <span class="m">13619923200</span><span class="p">,</span> 
+<span class="m">13619664000</span><span class="p">,</span> <span class="m">13619923200</span><span class="p">,</span> <span class="m">13633574400</span><span class="p">,</span> <span class="m">13633833600</span><span class="p">)),</span> <span class="m">.</span>Names <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;id&quot;</span><span class="p">,</span> 
+<span class="s">&quot;age&quot;</span><span class="p">,</span> <span class="s">&quot;DiaryDay&quot;</span><span class="p">),</span> row.names <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="kc">NA</span><span class="p">,</span> <span class="m">10L</span><span class="p">),</span> class <span class="o">=</span> <span class="s">&quot;data.frame&quot;</span><span class="p">)</span></code></pre></div>
+
+<p>Let’s have a look at it</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kp">head</span><span class="p">(</span>dta<span class="p">)</span></code></pre></div>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">##               id age    DiaryDay
+## 1  1001893912015  36 13615862400
+## 2  1001893912015  36 13616035200
+## 3 10067992412015  54 13617504000
+## 4 10067992412015  54 13617849600
+## 5 10079545612015  60 13619664000
+## 6 10079545612015  60 13619923200</code></pre></div>
+
+<p>We can see that there is 3 variables in this dataset - a personal identifier <code>id</code>, the age and the <code>DiaryDay</code>. Diary day is the vector of interest where the date as been stored.</p>
+
+<p>There exist an international standard for dates. As explained</p>
+
+<blockquote>
+  <p>“The purpose of this standard is to provide an unambiguous and well-defined method of representing dates and times.”</p>
+</blockquote>
+
+<p>[][https://en.wikipedia.org/wiki/ISO_8601]</p>
+
+<p>This dataset as been imported from <code>SPSS</code> and as a special <code>origin</code>. In order to get the dates right, we have to indicate what is the origin that the software as taken.</p>
+
+<p>In order to retreive dates in R, we use the function <code>as.Dates</code>. 
+Looking at the documentation, we find that 
+&gt; Matlab’s origin is 719529 days before ours</p>
+
+<p>However, nothing is specified for <code>SPSS</code>. After a bit of research, we found that SPSS takes as origin <code>1582-10-14</code> [here][http://www.uic.edu/depts/accc/software/isodates/datepgm.html].</p>
+
+<p>The Uni of York propose then a simply command</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r">spss2date <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(</span>x<span class="p">)</span> <span class="kp">as.Date</span><span class="p">(</span>x<span class="o">/</span><span class="m">86400</span><span class="p">,</span> origin <span class="o">=</span> <span class="s">&quot;1582-10-14&quot;</span><span class="p">)</span></code></pre></div>
+
+<p>They divided by <code>86400</code> because they transform “turn seconds into days” [MathYork][http://scs.math.yorku.ca/index.php/R:_Importing_dates_from_SPSS].</p>
+
+<p>Let us try</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r">dta<span class="o">$</span>DiaryDayConverted <span class="o">=</span> spss2date<span class="p">(</span>dta<span class="o">$</span>DiaryDay<span class="p">)</span></code></pre></div>
+
+<p>We get</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r">dta</code></pre></div>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">##                id age    DiaryDay DiaryDayConverted
+## 1   1001893912015  36 13615862400        2014-04-03
+## 2   1001893912015  36 13616035200        2014-04-05
+## 3  10067992412015  54 13617504000        2014-04-22
+## 4  10067992412015  54 13617849600        2014-04-26
+## 5  10079545612015  60 13619664000        2014-05-17
+## 6  10079545612015  60 13619923200        2014-05-20
+## 7  10079545622015  22 13619664000        2014-05-17
+## 8  10079545622015  22 13619923200        2014-05-20
+## 9   1012460812015  30 13633574400        2014-10-25
+## 10  1012460812015  30 13633833600        2014-10-28</code></pre></div>
+
+<p>Now we want to retreive the days of the week.</p>
+
+<p>In order to do so, we need to use the library <code>lubridate</code>. In this library, you will find the function <code>wday</code>.</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>lubridate<span class="p">)</span></code></pre></div>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">## Warning: package &#39;lubridate&#39; was built under R version 3.2.3</code></pre></div>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">## Loading required package: methods</code></pre></div>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r">dta<span class="o">$</span>weekdayvar <span class="o">=</span> wday<span class="p">(</span>dta<span class="o">$</span>DiaryDayConverted<span class="p">,</span> label <span class="o">=</span> <span class="bp">T</span><span class="p">)</span> 
+dta</code></pre></div>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">##                id age    DiaryDay DiaryDayConverted weekdayvar
+## 1   1001893912015  36 13615862400        2014-04-03      Thurs
+## 2   1001893912015  36 13616035200        2014-04-05        Sat
+## 3  10067992412015  54 13617504000        2014-04-22       Tues
+## 4  10067992412015  54 13617849600        2014-04-26        Sat
+## 5  10079545612015  60 13619664000        2014-05-17        Sat
+## 6  10079545612015  60 13619923200        2014-05-20       Tues
+## 7  10079545622015  22 13619664000        2014-05-17        Sat
+## 8  10079545622015  22 13619923200        2014-05-20       Tues
+## 9   1012460812015  30 13633574400        2014-10-25        Sat
+## 10  1012460812015  30 13633833600        2014-10-28       Tues</code></pre></div>
+
+
+  </article>
+
+</div>
+
+      </div>
+    </div>
+
+    <footer>
+  <ul class="footer-links group">
+    <li><a href="mailto:hate@spam.net"><span class="icon-mail"></span></a></li>
+    
+      <li>
+        <a href="//www.twitter.com/jekyllrb"><span class="icon-twitter"></span></a>
+      </li>
+    
+      <li>
+        <a href="//plus.google.com/explore/jekyllrb"><span class="icon-googleplus"></span></a>
+      </li>
+    
+      <li>
+        <a href="//github.com/jekyll"><span class="icon-github"></span></a>
+      </li>
+    
+      <li>
+        <a href="//www.flickr.com/explore"><span class="icon-flickr"></span></a>
+      </li>
+    
+      <li>
+        <a href="/feed.xml"><span class="icon-feed"></span></a>
+      </li>
+    
+  </ul>
+<div class="credits">
+<span>&copy; YOUR NAME HERE &nbsp; 2016</span>
+<br>
+<span>This site was created with <a href="//github.com/cpsievert/knitr-jekyll">cpsievert/knitr-jekyll</a> -- a marriage of <a href="//github.com/yihui/knitr-jekyll">yihui/knitr-jekyll</a> and the <a href="//github.com/clayh53/tufte-jekyll">Tufte theme</a> for <a href="//jekyllrb.com">Jekyll</a>.</span>
+</div>
+</footer>
+
+
+  </body>
+
+</html>

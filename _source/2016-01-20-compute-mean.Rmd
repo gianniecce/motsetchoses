@@ -1,0 +1,110 @@
+---
+layout: post
+title:  "Compute means"
+categories: [jekyll, rstats]
+tags: [knitr, servr, httpuv, websocket]
+---
+
+hey
+
+```{r, warning=FALSE, message=FALSE}
+library(plyr)  
+library(dplyr)
+library(tidyr)
+library(mtusRlocal)
+library(knitr)
+library(reshape2)
+library(xtable)
+
+load('/Users/giacomovagni/site/motsetchoses/_data/dtaEpisode.RData')
+dtaEpisode$weekend = ifelse(dtaEpisode$day == 1 | dtaEpisode$day == 7, 'weekend', 'weekdays')
+```
+
+```{r, fig.fullwidth = TRUE}
+kable(dtaEpisode [1:2, 1:5])
+```
+
+
+
+```{r}
+dtaEpisodeSumTime = dtaEpisode %>% group_by(idno, weekend, day, av) %>% summarise(sumtime = sum(time)) %>% group_by(idno) %>% mutate(nday = n_distinct(day)) 
+
+# by ind 
+dtaEpisodeSumTime %>% group_by(av, weekend) %>% summarise(mean(sumtime))
+
+# check 
+dtaEpisode %>% group_by(idno, day, av) %>% summarise(sumtime = sum(time)) %>% mutate(sum(sumtime))
+
+# spread 
+dtaEpisodeSumTimeSpread = dtaEpisodeSumTime %>% spread(av, sumtime, fill = 0)
+
+# does everybody has filled 2 days? 
+table(dtaEpisodeSumTimeSpread$nday) 
+```
+
+```{r}
+kable(dtaEpisodeSumTimeSpread[1:10,1:10])
+```
+
+```{r}
+aggregate(dtaEpisodeSumTimeSpread$`1` ~ dtaEpisodeSumTimeSpread$weekend, FUN = mean) 
+dtaEpisodeSumTimeSpread %>% select(-idno, -nday) %>% group_by(weekend) %>% summarise_each(funs(mean))
+
+dtMelt = dtaEpisodeSumTimeSpread %>% melt(id.vars = c('idno', 'weekend'))
+dtMelt %>% group_by(weekend, variable) %>% summarise(mv = mean(value)) %>% spread(variable, mv)
+
+# dtaEpisodeSumTime  %>% group_by() %>% group_by(av, weekend) %>% summarise(mv = mean(sumtime)) 
+```
+
+
+Function 
+```{r}
+TimeLongToWide = function(dta = weekend){
+  
+  # Sequence 
+  seqDay = dta[rep(1:nrow(dta), dta[,'time'] ), -3] %>%
+    group_by(id) %>% 
+    mutate( Time = 1:n() ) %>%
+    spread(Time, av)
+  
+  seqDay = as.data.frame(seqDay)
+  
+  row.names(seqDay) <- seqDay[,'id']
+  seqDay = seqDay [,-1]
+  
+  return(seqDay)
+}
+
+dtaWeekend = dtaEpisode %>% filter(weekend == 'weekend') %>% select(id = idno, av, time)
+
+# use it 
+dtaWideWeekend = TimeLongToWide(dtaWeekend)
+```
+
+```{r}
+kable(dtaWideWeekend [1:4, 1:10]) 
+```
+
+```{r}
+# id
+dtaWideWeekend$idno = row.names(dtaWideWeekend)
+# melt 
+dtaMelt = dtaWideWeekend %>% melt(id.vars = "idno") 
+```
+
+```{r}
+kable(dtaMelt %>% head())
+```
+
+
+```{r}
+intervals = 1
+dtaMelt %>% group_by(idno, value) %>% summarise(nsum = n() * intervals) %>% group_by(idno) %>% mutate(sum(nsum))
+```
+
+```{r}
+dtaMelt %>% group_by(idno, value) %>% summarise(nsum = n() * intervals) %>% group_by(value) %>% summarise(sum(nsum) / n_distinct(idno))
+dtaMelt %>% group_by(idno, value) %>% summarise(nsum = n() * intervals) %>% group_by(value) %>% summarise(mean(nsum))
+```
+
+

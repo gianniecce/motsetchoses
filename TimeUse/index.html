@@ -1,0 +1,14 @@
+---
+layout: page
+title: time use 
+---
+
+<ul>
+    {% for post in site.categories.time %}
+    
+    <li>
+        {{ post.date | date: "%b %d, %Y"  }} &mdash; <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+    </li>
+    {% endfor %}
+</ul>
+

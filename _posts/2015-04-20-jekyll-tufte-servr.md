@@ -76,13 +76,13 @@ options(width = 55, digits = 3)
 
 
 {% highlight text %}
-##  [1] -0.8360 -0.9145 -1.3082  2.5438 -1.0267 -1.5341
-##  [7] -1.6665 -2.1164 -0.7213  1.8363 -0.4469 -1.2415
-## [13] -0.0784 -1.1047 -0.2121  0.1171 -0.7758 -0.6058
-## [19]  1.2367  0.3841 -0.0552 -0.1453  2.3552 -1.5046
-## [25]  1.4422  0.7569  0.1339 -1.2041 -0.5141  0.1922
-## [31] -0.3786 -1.0385 -1.2517 -1.9286  0.1243 -0.3027
-## [37]  0.1328 -2.0541 -1.0230  0.2724
+##  [1]  1.7884  0.8210  0.3601  1.0294  0.7522  2.2889
+##  [7]  0.4871  0.6038 -1.4693 -0.8763 -0.5079  1.5787
+## [13] -1.3754  0.4881  0.2502 -0.1419 -0.2551  0.2767
+## [19] -1.0937 -0.4883  0.4633  0.3220 -0.2674  0.3528
+## [25] -0.9748  1.1646 -0.0718  0.3706  0.2746  0.6826
+## [31] -0.1077  0.6084 -0.3765 -0.4847  0.8459  1.7309
+## [37] -0.6345 -0.5931  0.6349 -1.8199
 {% endhighlight %}
 
 ## Mathjax
@@ -123,10 +123,9 @@ Table 1: Output from a simple linear regression in tabular form.
 </span>
 
 
-|term        | estimate| std.error| statistic| p.value|
-|:-----------|--------:|---------:|---------:|-------:|
-|(Intercept) |    1.357|     0.263|      5.17|   0.000|
-|wt          |   -0.286|     0.078|     -3.65|   0.001|
+{% highlight text %}
+## Error in loadNamespace(name): there is no package called 'broom'
+{% endhighlight %}
 
 
 ## Sidenotes
@@ -158,30 +157,27 @@ If you find any issues or want to help improve the implementation, [please let m
 
 
 {% highlight text %}
-## R version 3.1.3 (2015-03-09)
+## R version 3.2.1 (2015-06-18)
 ## Platform: x86_64-apple-darwin13.4.0 (64-bit)
-## Running under: OS X 10.10.3 (Yosemite)
+## Running under: OS X 10.10.5 (Yosemite)
 ## 
 ## locale:
-## [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+## [1] C
 ## 
 ## attached base packages:
-## [1] methods   stats     graphics  grDevices utils    
-## [6] datasets  base     
+## [1] methods   stats     graphics  grDevices utils     datasets 
+## [7] base     
 ## 
 ## other attached packages:
-## [1] mgcv_1.8-4       nlme_3.1-120     ggplot2_1.0.0.99
+## [1] mgcv_1.8-6    nlme_3.1-120  ggplot2_1.0.1
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] assertthat_0.1   broom_0.3.6      codetools_0.2-10
-##  [4] colorspace_1.2-4 DBI_0.3.1        digest_0.6.8    
-##  [7] dplyr_0.4.1      evaluate_0.5.5   formatR_1.0     
-## [10] grid_3.1.3       gtable_0.1.2     httpuv_1.3.2    
-## [13] knitr_1.9.3      labeling_0.3     lattice_0.20-30 
-## [16] magrittr_1.5     MASS_7.3-39      Matrix_1.1-5    
-## [19] mnormt_1.5-1     munsell_0.4.2    parallel_3.1.3  
-## [22] plyr_1.8.1       png_0.1-7        proto_0.3-10    
-## [25] psych_1.5.1      Rcpp_0.11.5      reshape2_1.4.1  
-## [28] scales_0.2.4     servr_0.1.18     stringr_0.6.2   
-## [31] tidyr_0.2.0      tools_3.1.3
+##  [1] Rcpp_0.12.0      codetools_0.2-11 lattice_0.20-31 
+##  [4] digest_0.6.8     MASS_7.3-40      grid_3.2.1      
+##  [7] plyr_1.8.3       gtable_0.1.2     formatR_1.2     
+## [10] magrittr_1.5     evaluate_0.7     scales_0.2.5    
+## [13] stringi_0.5-5    reshape2_1.4.1   Matrix_1.2-1    
+## [16] proto_0.3-10     tools_3.2.1      servr_0.2       
+## [19] stringr_1.0.0    munsell_0.4.2    httpuv_1.3.2    
+## [22] colorspace_1.2-6 knitr_1.10.5
 {% endhighlight %}
