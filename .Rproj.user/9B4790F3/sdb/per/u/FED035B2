@@ -1,0 +1,18 @@
+{
+    "contents" : "servr::jekyll(command = '/Users/giacomovagni/.rvm/gems/ruby-2.2.1/wrappers/jekyll build')\n",
+    "created" : 1453306808537.000,
+    "dirty" : true,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "2442480326",
+    "id" : "FED035B2",
+    "lastKnownWriteTime" : -6917529027369552562,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "type" : "r_source"
+}

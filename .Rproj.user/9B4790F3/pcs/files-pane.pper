@@ -1,0 +1,9 @@
+{
+    "path" : "~/site/motsetchoses",
+    "sortOrder" : [
+        {
+            "ascending" : true,
+            "columnIndex" : 2
+        }
+    ]
+}
