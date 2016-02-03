@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Number of Partner</title>
+    <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+">
+
+    <link rel="stylesheet" href="/motsetchoses/css/main.css">
+    <link rel="canonical" href="http://giacomovagni.github.io/motsetchoses/2016/02/retreive-ncouple.html">
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+
+
+  <body>
+
+    <!--- Header and nav template site-wide -->
+<header>
+  <nav class="group">
+    <a href="/motsetchoses\"><img class="badge" src="/motsetchoses/badge.png" alt="CH"></a>
+    
+      
+        <a class="page-link" href="/motsetchoses/about/">About</a>
+      
+    
+      
+    
+      
+        <a class="page-link" href="/motsetchoses/Tags/index.html">Tags</a>
+      
+    
+      
+        <a class="page-link" href="/motsetchoses/TimeUse/index.html">time use</a>
+      
+    
+      
+    
+      
+        <a class="page-link" href="/motsetchoses/page/">page</a>
+      
+    
+  </nav>
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Number of Partner</h1>
+    <p class="post-meta">Feb 3, 2016</p>
+  </header>
+
+  <article class="post-content">
+    <p>hey</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>plyr<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>dplyr<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>tidyr<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>mtusRlocal<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>knitr<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>reshape2<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>xtable<span class="p">)</span>
+
+<span class="kp">load</span><span class="p">(</span><span class="s">&#39;/Users/giacomovagni/site/motsetchoses/_data/dtaEpisode.RData&#39;</span><span class="p">)</span>
+dtaEpisode<span class="o">$</span>weekend <span class="o">=</span> <span class="kp">ifelse</span><span class="p">(</span>dtaEpisode<span class="o">$</span>day <span class="o">==</span> <span class="m">1</span> <span class="o">|</span> dtaEpisode<span class="o">$</span>day <span class="o">==</span> <span class="m">7</span><span class="p">,</span> <span class="s">&#39;weekend&#39;</span><span class="p">,</span> <span class="s">&#39;weekdays&#39;</span><span class="p">)</span></code></pre></div>
+
+<p>The code is :</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r">dtaEpisode <span class="o">%&gt;%</span> group_by<span class="p">(</span>hldid<span class="p">)</span> <span class="o">%&gt;%</span> mutate<span class="p">(</span>ncouple <span class="o">=</span> n_distinct<span class="p">(</span>idno<span class="p">))</span> <span class="o">%&gt;%</span> select<span class="p">(</span>idno<span class="p">,</span> hldid<span class="p">,</span> ncouple<span class="p">)</span></code></pre></div>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">## Source: local data frame [8,569 x 3]
+## Groups: hldid
+## 
+##      idno hldid ncouple
+## 1  3809_1  3809       2
+## 2  3809_1  3809       2
+## 3  3809_1  3809       2
+## 4  3809_1  3809       2
+## 5  3809_1  3809       2
+## 6  3809_1  3809       2
+## 7  3809_1  3809       2
+## 8  3809_1  3809       2
+## 9  3809_1  3809       2
+## 10 3809_1  3809       2
+## ..    ...   ...     ...</code></pre></div>
+
+
+  </article>
+
+</div>
+
+      </div>
+    </div>
+
+    <footer>
+  <ul class="footer-links group">
+    <li><a href="mailto:hate@spam.net"><span class="icon-mail"></span></a></li>
+    
+      <li>
+        <a href="//www.twitter.com/jekyllrb"><span class="icon-twitter"></span></a>
+      </li>
+    
+      <li>
+        <a href="//plus.google.com/explore/jekyllrb"><span class="icon-googleplus"></span></a>
+      </li>
+    
+      <li>
+        <a href="//github.com/jekyll"><span class="icon-github"></span></a>
+      </li>
+    
+      <li>
+        <a href="//www.flickr.com/explore"><span class="icon-flickr"></span></a>
+      </li>
+    
+      <li>
+        <a href="/feed.xml"><span class="icon-feed"></span></a>
+      </li>
+    
+  </ul>
+<div class="credits">
+<span>&copy; GIACOMO VAGNI &nbsp; 2016</span>
+<br>
+<span>This site was created with <a href="//github.com/cpsievert/knitr-jekyll">cpsievert/knitr-jekyll</a> -- a marriage of <a href="//github.com/yihui/knitr-jekyll">yihui/knitr-jekyll</a> and the <a href="//github.com/clayh53/tufte-jekyll">Tufte theme</a> for <a href="//jekyllrb.com">Jekyll</a>.</span>
+</div>
+</footer>
+
+
+  </body>
+
+</html>

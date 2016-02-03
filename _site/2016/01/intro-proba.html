@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Introduction to probabilities (Breen's class)</title>
+    <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+">
+
+    <link rel="stylesheet" href="/motsetchoses/css/main.css">
+    <link rel="canonical" href="http://giacomovagni.github.io/motsetchoses/2016/01/intro-proba.html">
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+
+
+  <body>
+
+    <!--- Header and nav template site-wide -->
+<header>
+  <nav class="group">
+    <a href="/motsetchoses\"><img class="badge" src="/motsetchoses/badge.png" alt="CH"></a>
+    
+      
+        <a class="page-link" href="/motsetchoses/about/">About</a>
+      
+    
+      
+    
+      
+        <a class="page-link" href="/motsetchoses/Tags/index.html">Tags</a>
+      
+    
+      
+        <a class="page-link" href="/motsetchoses/TimeUse/index.html">time use</a>
+      
+    
+      
+    
+      
+        <a class="page-link" href="/motsetchoses/page/">page</a>
+      
+    
+  </nav>
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Introduction to probabilities (Breen's class)</h1>
+    <p class="post-meta">Jan 21, 2016</p>
+  </header>
+
+  <article class="post-content">
+    <script type="text/javascript" async="" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<h2 id="some-concepts">Some concepts</h2>
+
+<p>Number of outcomes</p>
+
+<p>Sample space <script type="math/tex">\{1, 2, 3, 4\}</script></p>
+
+<p>Probabilities of events</p>
+
+<script type="math/tex; mode=display">P \{1, 2\} = \frac{1}{3}</script>
+
+<h3 id="disjunction">Disjunction</h3>
+
+<p>Events are not duplicated. All the probabilities sum up to 1.</p>
+
+<script type="math/tex; mode=display">P \{5, 6\}</script>
+
+<script type="math/tex; mode=display">P \{1\}</script>
+
+<script type="math/tex; mode=display">P \{2,3,4\}</script>
+
+<h3 id="joint-events">Joint Events</h3>
+
+<script type="math/tex; mode=display">A = \{1,2\}</script>
+
+<script type="math/tex; mode=display">B = \{2,4\}</script>
+
+<script type="math/tex; mode=display">P(A) = \frac{1}{3}</script>
+
+<script type="math/tex; mode=display">P(B) = \frac{1}{3}</script>
+
+<p>In set term : Union.</p>
+
+<script type="math/tex; mode=display">P(A \cup B) = P(A) + P(B) - P(A \cap B)</script>
+
+<script type="math/tex; mode=display">P(A \cup B) = \frac{1}{3} + \frac{1}{3} - \frac{1}{6} = \frac{1}{2}</script>
+
+<h3 id="cards">Cards</h3>
+
+<p>52 cards</p>
+
+<script type="math/tex; mode=display">P(Ace) = \frac{4}{52}</script>
+
+<script type="math/tex; mode=display">P(Red) = \frac{26}{52}</script>
+
+<script type="math/tex; mode=display">P(A \cup R) = P(A) + P(R) - P(A \cap R)</script>
+
+<script type="math/tex; mode=display">P(A \cup R) = \frac{4}{52} + \frac{26}{52} - \frac{2}{52} = \frac{1}{...}</script>
+
+<h2 id="multiplication-of-probabilities">Multiplication of probabilities</h2>
+
+<p>Ask yourself if the observations are <em>independant</em> or not. If Event influence the probabilities of one another (“Associated”).</p>
+
+<script type="math/tex; mode=display">X == red</script>
+
+<script type="math/tex; mode=display">Y == queen</script>
+
+<p>What is the probability of taking a red queen (X,Y) ?</p>
+
+<script type="math/tex; mode=display">P(X, Y) = P(X) \times P(Y)</script>
+
+<script type="math/tex; mode=display">P(X, Y) = \frac{26}{52} \times \frac{4}{52}</script>
+
+<h4 id="example">Example</h4>
+
+<script type="math/tex; mode=display">A = \{1,2\}</script>
+
+<script type="math/tex; mode=display">B = \{2,4\}</script>
+
+<script type="math/tex; mode=display">C = \{1,2,3,5,6\}</script>
+
+<script type="math/tex; mode=display">P(A \cup B \cup C) = P(A) + P(B) + P(C) - P(A \cap B) - P(A \cap C) - P(B \cap C) + P(A \cap B \cap C)</script>
+
+<h3 id="non-independance">Non independance</h3>
+
+<script type="math/tex; mode=display">X \perp Y</script>
+
+<p>What is the probabilities of having 2 aces ?</p>
+
+<ol>
+  <li>With replacement</li>
+</ol>
+
+<script type="math/tex; mode=display">P(Ace = 2) = \frac{4}{52} \times \frac{4}{52}</script>
+
+<ol>
+  <li>Without replacement</li>
+</ol>
+
+<script type="math/tex; mode=display">P(Ace = 2) = \frac{4}{52} \times \frac{3}{52}</script>
+
+<h4 id="example-1">Example</h4>
+
+<table style="border-collapse:collapse;border-spacing:0;border-color:#ccc"><tr><th style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#f0f0f0;text-align:center"><br /></th><th style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#f0f0f0;text-align:center">Labour</th><th style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#f0f0f0;text-align:center">Conservatice</th><th style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#f0f0f0;text-align:center;vertical-align:top"></th></tr><tr><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;text-align:center;vertical-align:top">Men </td><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;text-align:center;vertical-align:top">5</td><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;text-align:center;vertical-align:top">12</td><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;text-align:center;vertical-align:top">17</td></tr><tr><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;text-align:center;vertical-align:top">Women</td><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;text-align:center;vertical-align:top">33</td><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;text-align:center;vertical-align:top">10</td><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;text-align:center;vertical-align:top">43</td></tr><tr><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;text-align:center;vertical-align:top"></td><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;text-align:center;vertical-align:top">38</td><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;text-align:center;vertical-align:top">22</td><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;text-align:center;vertical-align:top">60<br /></td></tr></table>
+
+<p>** Marginal Unconditional Probability **</p>
+
+<script type="math/tex; mode=display">P(X)</script>
+
+<script type="math/tex; mode=display">P(sex == men) = \frac{17}{60}</script>
+
+<p>** Join Bivariate Proability **</p>
+
+<script type="math/tex; mode=display">P(X, Y)</script>
+
+<script type="math/tex; mode=display">% <![CDATA[
+P(sex == men \& party == labour) = \frac{5}{60} %]]></script>
+
+<p>** Conditional Probability **</p>
+
+<script type="math/tex; mode=display">P(Y \mid X)</script>
+
+<script type="math/tex; mode=display">P(Labour \mid Men)  = \frac{5}{17}</script>
+
+<p>Men is a <em>fixed condition</em></p>
+
+<h5 id="conditional-probability">Conditional Probability</h5>
+
+<script type="math/tex; mode=display">P(Y \mid X) = \frac{P(X,Y)}{P(X)}</script>
+
+<p><em>theoretical distribution independant</em></p>
+
+<script type="math/tex; mode=display">P(X, Y) =  P(X) \times P(Y)</script>
+
+<script type="math/tex; mode=display">X \perp Y = P(Y \mid X) = \frac{P(X,Y)}{P(X)} = \frac{P(X) \times P(Y)}{P(X)} = P(Y)</script>
+
+<blockquote>
+  <p>“independance : knowing one thing does not inform about another thing”</p>
+</blockquote>
+
+<h2 id="law-of-total-probability">Law of Total Probability</h2>
+
+<ul>
+  <li>Disjunction events : <script type="math/tex">A_{1}, A_{2}, \dots, A_{n}</script></li>
+</ul>
+
+<script type="math/tex; mode=display">P(B) = P(B|A_{1}) \times P(A_{1}) + \dots</script>
+
+<h5 id="example-2">Example</h5>
+
+<p>10 players</p>
+
+<ul>
+  <li>3 goods (G) <script type="math/tex">P(Win = 0.2)</script></li>
+  <li>5 indifferent (I) <script type="math/tex">P(Win = 0.5)</script></li>
+  <li>2 bads (B) <script type="math/tex">P(Win = 0.8)</script></li>
+</ul>
+
+<p>What is the probability of winning the first match ?</p>
+
+<script type="math/tex; mode=display">P(win) = P(w \mid G) \times P(G) + P(w \mid I) \times P(I) + P(w \mid B) \times P(B) = 
+(0.2 \times 0.3) + (0.5 \times 0.5) + (0.2 \times 0.8)</script>
+
+<h2 id="bayes-theorem">Bayes Theorem</h2>
+
+<p>$$ P(Y \mid X) = \frac{P(X \mid Y) \times P(Y)}{P(X)}</p>
+
+<p>Changing your belief after observations</p>
+
+<p>Frequentists (all in data) versus bayesian (data + update)</p>
+
+<h4 id="example-3">Example</h4>
+
+<p>Disease (D) and the test detection (T)</p>
+
+<ul>
+  <li>Proba of catching the disease</li>
+</ul>
+
+<script type="math/tex; mode=display">P(D = 1) = \frac{1}{10`000}</script>
+
+<script type="math/tex; mode=display">% <![CDATA[
+Test = 
+  \begin{cases}
+    1      & \quad \text{if } T \text{ is positive}\\
+    0  & \quad \text{if } T \text{ is negative}\\
+  \end{cases} %]]></script>
+
+<script type="math/tex; mode=display">P(T = 1 \mid D = 1) = 0.999</script>
+
+<p><em>test positif but no disease</em> 
+<script type="math/tex">P(T = 1 \mid D = 0) = 0.0001</script></p>
+
+<script type="math/tex; mode=display">P(T = 1 \mid D = 1) = \frac{ P(D = 1 \mid T = 1 ) \times P(D = 1) }{ P ( T = 1 ) } = \frac{1}{2}</script>
+
+<script type="math/tex; mode=display">\frac{0.999 \times 0.0001}{T = 1}</script>
+
+<p>What is <script type="math/tex">T = 1</script> ? Use the Law Total Probability</p>
+
+<script type="math/tex; mode=display">P(T = 1) = P(T = 1 \mid D = 1) \times P(D = 1) + \frac{P(T = 1 | D = 0)}{P(D = 0)}</script>
+
+<p>Take again the test and replace <script type="math/tex">D = 1</script> of <script type="math/tex">0.0001</script> but with replace with the new posterior beliefs <script type="math/tex">0.5</script></p>
+
+
+  </article>
+
+</div>
+
+      </div>
+    </div>
+
+    <footer>
+  <ul class="footer-links group">
+    <li><a href="mailto:hate@spam.net"><span class="icon-mail"></span></a></li>
+    
+      <li>
+        <a href="//www.twitter.com/jekyllrb"><span class="icon-twitter"></span></a>
+      </li>
+    
+      <li>
+        <a href="//plus.google.com/explore/jekyllrb"><span class="icon-googleplus"></span></a>
+      </li>
+    
+      <li>
+        <a href="//github.com/jekyll"><span class="icon-github"></span></a>
+      </li>
+    
+      <li>
+        <a href="//www.flickr.com/explore"><span class="icon-flickr"></span></a>
+      </li>
+    
+      <li>
+        <a href="/feed.xml"><span class="icon-feed"></span></a>
+      </li>
+    
+  </ul>
+<div class="credits">
+<span>&copy; GIACOMO VAGNI &nbsp; 2016</span>
+<br>
+<span>This site was created with <a href="//github.com/cpsievert/knitr-jekyll">cpsievert/knitr-jekyll</a> -- a marriage of <a href="//github.com/yihui/knitr-jekyll">yihui/knitr-jekyll</a> and the <a href="//github.com/clayh53/tufte-jekyll">Tufte theme</a> for <a href="//jekyllrb.com">Jekyll</a>.</span>
+</div>
+</footer>
+
+
+  </body>
+
+</html>
