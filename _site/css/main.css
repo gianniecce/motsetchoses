@@ -321,7 +321,7 @@ pre {
   border-radius: 3px;
   margin: 0px 0px 0px 0px;
   background-color: #f7f7f7;
-  width: 55%;
+  width: 80%; /* enable size of code box */ 
 }
 
 article {
@@ -391,7 +391,7 @@ sub {
   .sidenote, .marginnote {
     display: none; } }
 h1 {
-  font-style: italic;
+  font-style: normal;
   font-weight: 400;
   margin-top: 5%;
   margin-bottom: 1.568rem;
