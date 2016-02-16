@@ -1,0 +1,17 @@
+{
+    "contents" : "---\nlayout: post\ntitle:  \"Add Sum to Dataset\"\ncategories: [jekyll, rstats]\ntags: [knitr, servr, httpuv, websocket]\n---\n\n  hey\n\n```{r, warning=FALSE, message=FALSE}\nlibrary(plyr)\nlibrary(dplyr)\nlibrary(tidyr)\nlibrary(mtusRlocal)\nlibrary(knitr)\nlibrary(reshape2)\nlibrary(xtable)\n\nload('/Users/giacomovagni/site/motsetchoses/_data/dtaSimple.RData')\n```\n\nThe code is : \n```{r, fig.fullwidth = TRUE}\ndt = dtaSimple %>% group_by(sex) %>% \n  select(matches('av')) %>% summarise_each(funs(mean)) %>% \n  melt(id.vars = 'sex') %>% spread(sex, value) \n\ncolnames(dt) = c(\"variable\", \"men\", \"women\") \n\ndt %>% summarise(variable = \"Sum\", men = 1444, women = 1440) %>% \n  merge(dt, ., all = T) \n```\n\n",
+    "created" : 1455642634410.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2473986014",
+    "id" : "7E9053C9",
+    "lastKnownWriteTime" : 1455642673,
+    "path" : "~/site/motsetchoses/_source/2016-02-16-sumline.Rmd",
+    "project_path" : "_source/2016-02-16-sumline.Rmd",
+    "properties" : {
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "type" : "r_markdown"
+}

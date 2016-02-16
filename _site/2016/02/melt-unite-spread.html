@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Melt Unite Spread</title>
+    <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+">
+
+    <link rel="stylesheet" href="/motsetchoses/css/main.css">
+    <link rel="canonical" href="http://giacomovagni.github.io/motsetchoses/2016/02/melt-unite-spread.html">
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+
+
+  <body>
+
+    <!--- Header and nav template site-wide -->
+<header>
+  <nav class="group">
+    <a href="/motsetchoses\"><img class="badge" src="/motsetchoses/badge.png" alt="CH"></a>
+    
+      
+        <a class="page-link" href="/motsetchoses/about/">About</a>
+      
+    
+      
+    
+      
+        <a class="page-link" href="/motsetchoses/Tags/index.html">Tags</a>
+      
+    
+      
+        <a class="page-link" href="/motsetchoses/TimeUse/index.html">time use</a>
+      
+    
+      
+    
+      
+        <a class="page-link" href="/motsetchoses/page/">page</a>
+      
+    
+  </nav>
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Melt Unite Spread</h1>
+    <p class="post-meta">Feb 16, 2016</p>
+  </header>
+
+  <article class="post-content">
+    <p>hey</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>plyr<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>dplyr<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>tidyr<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>mtusRlocal<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>knitr<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>reshape2<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>xtable<span class="p">)</span>
+
+<span class="kp">load</span><span class="p">(</span>file <span class="o">=</span> <span class="s">&#39;/Users/giacomovagni/site/motsetchoses/_data/undp.RData&#39;</span><span class="p">)</span></code></pre></div>
+
+<p>The code is :</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r">undp2 <span class="o">=</span> undp <span class="o">%&gt;%</span> select<span class="p">(</span>Country<span class="p">,</span> Year<span class="p">,</span> Sex<span class="p">,</span> Marital.status<span class="p">,</span> X15.19<span class="p">,</span> X20.24<span class="p">,</span> X25.29<span class="p">,</span> X30.34<span class="p">,</span> X35.39<span class="p">,</span> X40.44<span class="p">,</span> X45.49<span class="p">,</span> X50.54<span class="p">,</span> X60.64<span class="p">,</span> X65.<span class="p">)</span> <span class="o">%&gt;%</span>
+  melt<span class="p">(</span>id.vars <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="s">&#39;Country&#39;</span><span class="p">,</span> <span class="s">&#39;Year&#39;</span><span class="p">,</span> <span class="s">&#39;Sex&#39;</span><span class="p">,</span> <span class="s">&#39;Marital.status&#39;</span><span class="p">))</span> <span class="o">%&gt;%</span> filter<span class="p">(</span>Country <span class="o">==</span> <span class="s">&#39;United Kingdom&#39;</span> <span class="p">)</span> 
+
+undp2 <span class="o">=</span> undp2 <span class="o">%&gt;%</span> filter<span class="p">(</span>variable <span class="o">%in%</span> <span class="kt">c</span><span class="p">(</span><span class="s">&#39;X20.24&#39;</span><span class="p">,</span> <span class="s">&#39;X25.29&#39;</span><span class="p">,</span> <span class="s">&#39;X30.34&#39;</span><span class="p">,</span> <span class="s">&#39;X35.39&#39;</span><span class="p">,</span> <span class="s">&#39;X40.44&#39;</span><span class="p">,</span> <span class="s">&#39;X45.49&#39;</span><span class="p">))</span>
+
+UNUK2050ysummary <span class="o">=</span> undp2 <span class="o">%&gt;%</span> filter<span class="p">(</span>Marital.status <span class="o">%in%</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;Married&quot;</span><span class="p">,</span> <span class="s">&quot;Single&quot;</span><span class="p">))</span> <span class="o">%&gt;%</span> group_by<span class="p">(</span>Country<span class="p">,</span> Year<span class="p">,</span> Sex<span class="p">,</span> Marital.status<span class="p">)</span> <span class="o">%&gt;%</span> 
+  summarise<span class="p">(</span>meanshare <span class="o">=</span> <span class="kp">mean</span><span class="p">(</span>value<span class="p">))</span> <span class="o">%&gt;%</span> unite<span class="p">(</span>SexMSVar<span class="p">,</span> Marital.status<span class="p">,</span> Sex<span class="p">)</span> <span class="o">%&gt;%</span> 
+  select<span class="p">(</span><span class="o">-</span>Country<span class="p">)</span> <span class="o">%&gt;%</span> spread<span class="p">(</span>SexMSVar<span class="p">,</span> meanshare<span class="p">)</span></code></pre></div>
+
+
+  </article>
+
+</div>
+
+      </div>
+    </div>
+
+    <footer>
+  <ul class="footer-links group">
+    <li><a href="mailto:hate@spam.net"><span class="icon-mail"></span></a></li>
+    
+      <li>
+        <a href="//www.twitter.com/jekyllrb"><span class="icon-twitter"></span></a>
+      </li>
+    
+      <li>
+        <a href="//plus.google.com/explore/jekyllrb"><span class="icon-googleplus"></span></a>
+      </li>
+    
+      <li>
+        <a href="//github.com/jekyll"><span class="icon-github"></span></a>
+      </li>
+    
+      <li>
+        <a href="//www.flickr.com/explore"><span class="icon-flickr"></span></a>
+      </li>
+    
+      <li>
+        <a href="/feed.xml"><span class="icon-feed"></span></a>
+      </li>
+    
+  </ul>
+<div class="credits">
+<span>&copy; GIACOMO VAGNI &nbsp; 2016</span>
+<br>
+<span>This site was created with <a href="//github.com/cpsievert/knitr-jekyll">cpsievert/knitr-jekyll</a> -- a marriage of <a href="//github.com/yihui/knitr-jekyll">yihui/knitr-jekyll</a> and the <a href="//github.com/clayh53/tufte-jekyll">Tufte theme</a> for <a href="//jekyllrb.com">Jekyll</a>.</span>
+</div>
+</footer>
+
+
+  </body>
+
+</html>

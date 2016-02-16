@@ -6,9 +6,144 @@
 </description>
     <link>http://giacomovagni.github.io/motsetchoses/</link>
     <atom:link href="http://giacomovagni.github.io/motsetchoses/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 11 Feb 2016 10:52:24 +0000</pubDate>
-    <lastBuildDate>Thu, 11 Feb 2016 10:52:24 +0000</lastBuildDate>
+    <pubDate>Tue, 16 Feb 2016 17:11:43 +0000</pubDate>
+    <lastBuildDate>Tue, 16 Feb 2016 17:11:43 +0000</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Add Sum to Dataset</title>
+        <description>&lt;p&gt;hey&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;plyr&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;dplyr&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;tidyr&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;mtusRlocal&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;knitr&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;reshape2&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;xtable&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;kp&quot;&gt;load&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;/Users/giacomovagni/site/motsetchoses/_data/dtaSimple.RData&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The code is :&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;dt &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; dtaSimple &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; group_by&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;sex&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
+  select&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;matches&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;av&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; summarise_each&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;funs&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
+  melt&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;id.vars &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;sex&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; spread&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;sex&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; value&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
+
+&lt;span class=&quot;kp&quot;&gt;colnames&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;dt&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;variable&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;men&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;women&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
+
+dt &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; summarise&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;variable &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Sum&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; men &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1444&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; women &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1440&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
+  &lt;span class=&quot;kp&quot;&gt;merge&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;dt&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; all &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;##    variable          men        women
+## 1     swave    0.0000000    0.0000000
+## 2       av1  238.7662338  198.3116883
+## 3       av2   16.4285714    3.0519481
+## 4       av3    0.0000000    0.1948052
+## 5       av4    0.0000000    2.0129870
+## 6       av5   36.0389610   25.1948052
+## 7       av6   25.5844156   58.8961039
+## 8       av7   26.4935065   65.9740260
+## 9       av8   33.4415584   11.2337662
+## 10      av9   18.5714286    7.8571429
+## 11     av10   28.9610390   38.3766234
+## 12     av11   33.4415584   67.5974026
+## 13     av12   26.4285714   34.2857143
+## 14     av13   35.7792208   45.1948052
+## 15     av14    0.8441558    2.2727273
+## 16     av15   54.4805195   53.8961039
+## 17     av16  494.3506494  514.3506494
+## 18     av17   35.1298701   32.7922078
+## 19     av18    4.2207792    4.8051948
+## 20     av19   18.4415584    6.1038961
+## 21     av20    3.2467532    2.4025974
+## 22     av21    7.9220779    9.4805195
+## 23     av22    4.4155844    3.5714286
+## 24     av23    1.0389610    4.6753247
+## 25     av24    1.8831169    2.4025974
+## 26     av25   18.0519481   15.5194805
+## 27     av26   -9.0000000   -9.0000000
+## 28     av27   -9.0000000   -9.0000000
+## 29     av28   23.6363636   24.1558442
+## 30     av29   18.1168831   26.8831169
+## 31     av30    4.7402597    0.4545455
+## 32     av31  131.8831169   97.9870130
+## 33     av32    2.3376623    0.9740260
+## 34     av33   14.0259740    5.0000000
+## 35     av34    6.0389610    7.8571429
+## 36     av35   10.9740260    8.4415584
+## 37     av36   14.3506494   16.6233766
+## 38     av37   12.7272727   15.1298701
+## 39     av38    6.6883117    6.8181818
+## 40     av39    0.0000000    3.6363636
+## 41     av40   10.0649351    5.7792208
+## 42     av41   20.4545455    9.8051948
+## 43      Sum 1444.0000000 1440.0000000&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+</description>
+        <pubDate>Tue, 16 Feb 2016 00:00:00 +0000</pubDate>
+        <link>http://giacomovagni.github.io/motsetchoses/2016/02/sumline.html</link>
+        <guid isPermaLink="true">http://giacomovagni.github.io/motsetchoses/2016/02/sumline.html</guid>
+        
+        <category>knitr</category>
+        
+        <category>servr</category>
+        
+        <category>httpuv</category>
+        
+        <category>websocket</category>
+        
+        
+        <category>jekyll</category>
+        
+        <category>rstats</category>
+        
+      </item>
+    
+      <item>
+        <title>Melt Unite Spread</title>
+        <description>&lt;p&gt;hey&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;plyr&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;dplyr&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;tidyr&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;mtusRlocal&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;knitr&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;reshape2&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;xtable&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;kp&quot;&gt;load&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;file &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;/Users/giacomovagni/site/motsetchoses/_data/undp.RData&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The code is :&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;undp2 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; undp &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; select&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;Country&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; Year&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; Sex&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; Marital.status&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; X15.19&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; X20.24&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; X25.29&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; X30.34&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; X35.39&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; X40.44&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; X45.49&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; X50.54&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; X60.64&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; X65.&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt;
+  melt&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;id.vars &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;Country&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;Year&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;Sex&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;Marital.status&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; filter&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;Country &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;United Kingdom&amp;#39;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
+
+undp2 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; undp2 &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; filter&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;variable &lt;span class=&quot;o&quot;&gt;%in%&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;X20.24&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;X25.29&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;X30.34&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;X35.39&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;X40.44&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;X45.49&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+UNUK2050ysummary &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; undp2 &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; filter&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;Marital.status &lt;span class=&quot;o&quot;&gt;%in%&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Married&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Single&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; group_by&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;Country&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; Year&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; Sex&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; Marital.status&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
+  summarise&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;meanshare &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;value&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; unite&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;SexMSVar&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; Marital.status&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; Sex&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
+  select&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;Country&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; spread&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;SexMSVar&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; meanshare&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+</description>
+        <pubDate>Tue, 16 Feb 2016 00:00:00 +0000</pubDate>
+        <link>http://giacomovagni.github.io/motsetchoses/2016/02/melt-unite-spread.html</link>
+        <guid isPermaLink="true">http://giacomovagni.github.io/motsetchoses/2016/02/melt-unite-spread.html</guid>
+        
+        <category>knitr</category>
+        
+        <category>servr</category>
+        
+        <category>httpuv</category>
+        
+        <category>websocket</category>
+        
+        
+        <category>jekyll</category>
+        
+        <category>rstats</category>
+        
+      </item>
     
       <item>
         <title>Number of Partner</title>

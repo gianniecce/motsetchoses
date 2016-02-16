@@ -1,10 +1,10 @@
 {
-    "contents" : "\nservr::jekyll(command = '/Users/giacomovagni/.rvm/gems/ruby-2.2.1/wrappers/jekyll build')\n\n\n35 + 60 + 55 \n ",
+    "contents" : "\nservr::jekyll(command = '/Users/giacomovagni/.rvm/gems/ruby-2.2.1/wrappers/jekyll build')\n\n35 + 60 + 55 \n ",
     "created" : 1453307202275.000,
     "dirty" : true,
     "encoding" : "",
     "folds" : "",
-    "hash" : "4199556716",
+    "hash" : "2719077683",
     "id" : "69657C54",
     "lastKnownWriteTime" : 4423502846691835904,
     "path" : null,

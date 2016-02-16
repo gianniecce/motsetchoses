@@ -1,0 +1,17 @@
+{
+    "contents" : "---\nlayout: post\ntitle:  \"Melt Unite Spread\"\ncategories: [jekyll, rstats]\ntags: [knitr, servr, httpuv, websocket]\n---\n\n  hey\n\n```{r, warning=FALSE, message=FALSE}\nlibrary(plyr)\nlibrary(dplyr)\nlibrary(tidyr)\nlibrary(mtusRlocal)\nlibrary(knitr)\nlibrary(reshape2)\nlibrary(xtable)\n\nload(file = '/Users/giacomovagni/site/motsetchoses/_data/undp.RData')\n```\n\nThe code is : \n```{r, fig.fullwidth = TRUE}\nundp2 = undp %>% select(Country, Year, Sex, Marital.status, X15.19, X20.24, X25.29, X30.34, X35.39, X40.44, X45.49, X50.54, X60.64, X65.) %>%\n  melt(id.vars = c('Country', 'Year', 'Sex', 'Marital.status')) %>% filter(Country == 'United Kingdom' ) \n\nundp2 = undp2 %>% filter(variable %in% c('X20.24', 'X25.29', 'X30.34', 'X35.39', 'X40.44', 'X45.49'))\n\nUNUK2050ysummary = undp2 %>% filter(Marital.status %in% c(\"Married\", \"Single\")) %>% group_by(Country, Year, Sex, Marital.status) %>% \n  summarise(meanshare = mean(value)) %>% unite(SexMSVar, Marital.status, Sex) %>% \n  select(-Country) %>% spread(SexMSVar, meanshare) \n```\n\n",
+    "created" : 1455642514907.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1303024848",
+    "id" : "CC560148",
+    "lastKnownWriteTime" : 1455642584,
+    "path" : "~/site/motsetchoses/_source/2016-02-16-melt-unite-spread2.Rmd",
+    "project_path" : "_source/2016-02-16-melt-unite-spread2.Rmd",
+    "properties" : {
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "type" : "r_markdown"
+}

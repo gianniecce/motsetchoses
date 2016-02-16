@@ -1,0 +1,33 @@
+---
+layout: post
+title:  "Add Sum to Dataset"
+categories: [jekyll, rstats]
+tags: [knitr, servr, httpuv, websocket]
+---
+
+  hey
+
+```{r, warning=FALSE, message=FALSE}
+library(plyr)
+library(dplyr)
+library(tidyr)
+library(mtusRlocal)
+library(knitr)
+library(reshape2)
+library(xtable)
+
+load('/Users/giacomovagni/site/motsetchoses/_data/dtaSimple.RData')
+```
+
+The code is : 
+```{r, fig.fullwidth = TRUE}
+dt = dtaSimple %>% group_by(sex) %>% 
+  select(matches('av')) %>% summarise_each(funs(mean)) %>% 
+  melt(id.vars = 'sex') %>% spread(sex, value) 
+
+colnames(dt) = c("variable", "men", "women") 
+
+dt %>% summarise(variable = "Sum", men = 1444, women = 1440) %>% 
+  merge(dt, ., all = T) 
+```
+
