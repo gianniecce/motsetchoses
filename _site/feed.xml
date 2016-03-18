@@ -6,9 +6,110 @@
 </description>
     <link>http://giacomovagni.github.io/motsetchoses/</link>
     <atom:link href="http://giacomovagni.github.io/motsetchoses/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 16 Feb 2016 17:11:43 +0000</pubDate>
-    <lastBuildDate>Tue, 16 Feb 2016 17:11:43 +0000</lastBuildDate>
+    <pubDate>Fri, 18 Mar 2016 11:37:14 +0000</pubDate>
+    <lastBuildDate>Fri, 18 Mar 2016 11:37:14 +0000</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Compute mean for activities</title>
+        <description>&lt;p&gt;hey&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;plyr&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;dplyr&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;tidyr&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;mtusRlocal&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;knitr&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;reshape2&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;xtable&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;kp&quot;&gt;load&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;/Users/giacomovagni/site/motsetchoses/_data/ukAllsub.RData&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;First we need to compute the mean at the individual level for each activities.&lt;/p&gt;
+
+&lt;p&gt;Using &lt;code&gt;matches&lt;/code&gt;, we select the relevant variables of the dataset.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;ukAllsub &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; ukAllsub &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; group_by&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;idind&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; day&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; mutate&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;ndiaries &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; n&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
+ukAllsub_act &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; ukAllsub &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; select&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; idind&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; day&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; ndiaries&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; matches&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;main&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The database looks like this&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;ukAllsub_act &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;as.data.frame&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;##         idind      day ndiaries main1 main2 main3 main4 main5 main6
+## 1 10121511974  Tuesday        1    NA    NA    NA    NA    NA    NA
+## 2 10121511974 Thursday        1    NA    NA    NA    NA    NA    NA
+## 3 10121511974   Friday        1    NA    NA    NA    NA    NA    NA
+## 4 10121511974 Saturday        1    NA    NA    NA    NA    NA    NA
+##   main7 main8 main9 main10 main11 main12 main13 main14 main15 main16
+## 1    NA    NA    NA     NA     NA     NA      2      2      2      2
+## 2    NA    NA    NA     NA     NA     NA      6      6      6      6
+## 3    NA    NA    NA     NA     NA     NA      2      2      2      2
+## 4    NA    NA    NA     NA     NA     NA      2      2      2      2
+##   main17 main18 main19
+## 1      2      2      2
+## 2      6      6      2
+## 3      2      2      2
+## 4      2      2      2&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;We set up the &lt;code&gt;missing&lt;/code&gt; values to &lt;code&gt;character&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;ukAllsub_act&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;is.na&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;ukAllsub_act&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;NA&amp;#39;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The number of episode is&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;c1&quot;&gt;# nbr of episodes &lt;/span&gt;
+&lt;span class=&quot;m&quot;&gt;19&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;5&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## [1] 95&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;ukAllsub_act_summary &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; ukAllsub_act &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; melt&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;id.vars &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;idind&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;day&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;ndiaries&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
+  &lt;span class=&quot;c1&quot;&gt;# in order to retreive the time (nbr episodes) # &lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;# mutate(variable = substr(variable, 5, 6)) %&amp;gt;% &lt;/span&gt;
+  group_by&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;idind&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; day&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; ndiaries&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; value&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
+  summarise&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;n &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; n&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt;
+  mutate&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;value &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;paste&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;act_&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; value&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; sep &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
+  spread&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;value&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; n&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; fill &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;We get&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;ukAllsub_act_summary&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Source: local data frame [4 x 6]
+## 
+##         idind      day ndiaries act_2 act_6 act_NA
+## 1 10121511974  Tuesday        1    35     0     60
+## 2 10121511974 Thursday        1     5    30     60
+## 3 10121511974   Friday        1    35     0     60
+## 4 10121511974 Saturday        1    35     0     60&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;ukAllsub_act_summary &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; select&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;matches&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;act&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; summarise_each&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;funs&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Source: local data frame [1 x 3]
+## 
+##   act_2 act_6 act_NA
+## 1  27.5   7.5     60&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;ukAllsub_act_summary &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; group_by&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;day&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt;  select&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;day&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; matches&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;act&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; summarise_each&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;funs&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Source: local data frame [4 x 4]
+## 
+##        day act_2 act_6 act_NA
+## 1  Tuesday    35     0     60
+## 2 Thursday     5    30     60
+## 3   Friday    35     0     60
+## 4 Saturday    35     0     60&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+</description>
+        <pubDate>Wed, 16 Mar 2016 00:00:00 +0000</pubDate>
+        <link>http://giacomovagni.github.io/motsetchoses/2016/03/compute-mean2.html</link>
+        <guid isPermaLink="true">http://giacomovagni.github.io/motsetchoses/2016/03/compute-mean2.html</guid>
+        
+        <category>mtus</category>
+        
+        
+        <category>jekyll</category>
+        
+      </item>
     
       <item>
         <title>Add Sum to Dataset</title>

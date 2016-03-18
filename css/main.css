@@ -316,6 +316,8 @@ pre code, pre code p, code {
 Use rmarkdown code block styling
 https://github.com/rstudio/rmarkdown/blob/master/inst/rmarkdown/templates/html_vignette/resources/vignette.css
 */
+
+/* codes here */ 
 pre {
   white-space: pre-wrap;    /* Wrap long lines */
   border-radius: 3px;
@@ -399,7 +401,7 @@ h1 {
   line-height: 0.784; }
 
 h2 {
-  font-style: italic;
+  font-style: normal; /*-- Made a change from italic --*/ 
   font-weight: 400;
   font-size: 2.1rem;
   margin-top: 1.86666666666667rem;

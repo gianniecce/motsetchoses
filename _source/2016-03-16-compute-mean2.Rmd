@@ -1,0 +1,77 @@
+---
+layout: post
+title:  "Compute mean for activities"
+categories: [jekyll]
+tags: [mtus]
+---
+
+  hey
+
+```{r, warning=FALSE, message=FALSE}
+library(plyr)
+library(dplyr)
+library(tidyr)
+library(mtusRlocal)
+library(knitr)
+library(reshape2)
+library(xtable)
+
+load('/Users/giacomovagni/site/motsetchoses/_data/ukAllsub.RData')
+```
+
+First we need to compute the mean at the individual level for each activities. 
+
+Using `matches`, we select the relevant variables of the dataset. 
+
+```{r}
+ukAllsub = ukAllsub %>% group_by(idind, day) %>% mutate(ndiaries = n())
+ukAllsub_act = ukAllsub %>% select( idind, day, ndiaries, matches('main')) 
+```
+
+The database looks like this 
+
+```{r}
+ukAllsub_act %>% as.data.frame() 
+```
+
+
+We set up the `missing` values to `character` 
+```{r}
+ukAllsub_act[is.na(ukAllsub_act)] <- 'NA'
+``` 
+
+The number of episode is 
+
+```{r}
+# nbr of episodes 
+19 * 5
+```
+
+
+```{r}
+ukAllsub_act_summary = ukAllsub_act %>% melt(id.vars = c('idind', 'day', 'ndiaries')) %>% 
+  # in order to retreive the time (nbr episodes) # 
+  # mutate(variable = substr(variable, 5, 6)) %>% 
+  group_by(idind, day, ndiaries, value) %>% 
+  summarise(n = n() * 5) %>%
+  mutate(value = paste('act_', value, sep = '')) %>% 
+  spread(value, n, fill = 0)
+```
+
+We get 
+```{r} 
+ukAllsub_act_summary
+```
+
+```{r}
+ukAllsub_act_summary %>% select(matches('act')) %>% summarise_each(funs(mean))
+```
+
+```{r}
+ukAllsub_act_summary %>% group_by(day) %>%  select(day, matches('act')) %>% summarise_each(funs(mean))
+```
+
+
+
+
+

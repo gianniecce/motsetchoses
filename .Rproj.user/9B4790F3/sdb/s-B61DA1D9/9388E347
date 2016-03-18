@@ -1,0 +1,17 @@
+{
+    "contents" : "---\nlayout: post\ntitle:  \"Compute mean for activities\"\ncategories: [jekyll]\ntags: [mtus]\n---\n\n  hey\n\n```{r, warning=FALSE, message=FALSE}\nlibrary(plyr)\nlibrary(dplyr)\nlibrary(tidyr)\nlibrary(mtusRlocal)\nlibrary(knitr)\nlibrary(reshape2)\nlibrary(xtable)\n\nload('/Users/giacomovagni/site/motsetchoses/_data/ukAllsub.RData')\n```\n\nFirst we need to compute the mean at the individual level for each activities. \n\nUsing `matches`, we select the relevant variables of the dataset. \n\n```{r}\nukAllsub = ukAllsub %>% group_by(idind, day) %>% mutate(ndiaries = n())\nukAllsub_act = ukAllsub %>% select( idind, day, ndiaries, matches('main')) \n```\n\nThe database looks like this \n\n```{r}\nukAllsub_act %>% as.data.frame() \n```\n\n\nWe set up the `missing` values to `character` \n```{r}\nukAllsub_act[is.na(ukAllsub_act)] <- 'NA'\n``` \n\nThe number of episode is \n\n```{r}\n# nbr of episodes \n19 * 5\n```\n\n\n```{r}\nukAllsub_act_summary = ukAllsub_act %>% melt(id.vars = c('idind', 'day', 'ndiaries')) %>% \n  # in order to retreive the time (nbr episodes) # \n  # mutate(variable = substr(variable, 5, 6)) %>% \n  group_by(idind, day, ndiaries, value) %>% \n  summarise(n = n() * 5) %>%\n  mutate(value = paste('act_', value, sep = '')) %>% \n  spread(value, n, fill = 0)\n```\n\nWe get \n```{r} \nukAllsub_act_summary\n```\n\n```{r}\nukAllsub_act_summary %>% select(matches('act')) %>% summarise_each(funs(mean))\n```\n\n```{r}\nukAllsub_act_summary %>% group_by(day) %>%  select(day, matches('act')) %>% summarise_each(funs(mean))\n```\n\n\n\n\n\n",
+    "created" : 1458132671448.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2338477537",
+    "id" : "9388E347",
+    "lastKnownWriteTime" : 1458301028,
+    "path" : "~/site/motsetchoses/_source/2016-03-16-compute-mean2.Rmd",
+    "project_path" : "_source/2016-03-16-compute-mean2.Rmd",
+    "properties" : {
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "type" : "r_markdown"
+}
