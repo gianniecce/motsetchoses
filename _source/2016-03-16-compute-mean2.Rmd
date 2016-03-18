@@ -5,7 +5,10 @@ categories: [jekyll]
 tags: [mtus]
 ---
 
-  hey
+
+<span class='newthought'>This post</span> will demonstrate how to simply calcualte mean time of different activities from a *wide format* dataset. 
+
+- Load the libraries and data
 
 ```{r, warning=FALSE, message=FALSE}
 library(plyr)
@@ -19,7 +22,22 @@ library(xtable)
 load('/Users/giacomovagni/site/motsetchoses/_data/ukAllsub.RData')
 ```
 
-First we need to compute the mean at the individual level for each activities. 
+Let us take a look at the data using `head` 
+
+```{r}
+ukAllsub %>% head()
+```
+
+- Individual-level mean
+
+<span class='marginnote'> 
+$$
+x = {-b \pm \sqrt{b^2-4ac} \over 2a}.
+$$
+</span>
+
+
+We first need to compute the *mean* at the individual level for each activities. 
 
 Using `matches`, we select the relevant variables of the dataset. 
 

@@ -25,27 +25,33 @@
     
       
         <a class="page-link" href="/motsetchoses/about/">About</a>
+        
       
     
       
     
       
         <a class="page-link" href="/motsetchoses/Tags/index.html">Tags</a>
+        
       
     
       
         <a class="page-link" href="/motsetchoses/TimeUse/index.html">time use</a>
+        
       
     
       
     
       
         <a class="page-link" href="/motsetchoses/page/">page</a>
+        
       
     
   </nav>
+  
 </header>
 
+ 
 
     <div class="page-content">
       <div class="wrapper">
@@ -56,8 +62,14 @@
     <p class="post-meta">Mar 16, 2016</p>
   </header>
 
+ <hr width = 10%>
+
   <article class="post-content">
-    <p>hey</p>
+    <p><span class="newthought">This post</span> will demonstrate how to simply calcualte mean time of different activities from a <em>wide format</em> dataset.</p>
+
+<ul>
+  <li>Load the libraries and data</li>
+</ul>
 
 <div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>plyr<span class="p">)</span>
 <span class="kn">library</span><span class="p">(</span>dplyr<span class="p">)</span>
@@ -69,7 +81,45 @@
 
 <span class="kp">load</span><span class="p">(</span><span class="s">&#39;/Users/giacomovagni/site/motsetchoses/_data/ukAllsub.RData&#39;</span><span class="p">)</span></code></pre></div>
 
-<p>First we need to compute the mean at the individual level for each activities.</p>
+<p>Let us take a look at the data using <code>head</code></p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r">ukAllsub <span class="o">%&gt;%</span> <span class="kp">head</span><span class="p">()</span></code></pre></div>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">##         idind  hldid survey   sex      day hhldsize
+## 1 10121511974 101215   1974 Woman  Tuesday        3
+## 2 10121511974 101215   1974 Woman Thursday        3
+## 3 10121511974 101215   1974 Woman   Friday        3
+## 4 10121511974 101215   1974 Woman Saturday        3
+##                                         civstat                cohab
+## 1 In couple (married/cohabit/civil partnership) could not be created
+## 2 In couple (married/cohabit/civil partnership) could not be created
+## 3 In couple (married/cohabit/civil partnership) could not be created
+## 4 In couple (married/cohabit/civil partnership) could not be created
+##   empsp                                  famstat season main1 main2
+## 1  &lt;NA&gt; Aged 40+ with no coresident children &lt;18 Summer    NA    NA
+## 2  &lt;NA&gt; Aged 40+ with no coresident children &lt;18 Summer    NA    NA
+## 3  &lt;NA&gt; Aged 40+ with no coresident children &lt;18 Summer    NA    NA
+## 4  &lt;NA&gt; Aged 40+ with no coresident children &lt;18 Summer    NA    NA
+##   main3 main4 main5 main6 main7 main8 main9 main10 main11 main12
+## 1    NA    NA    NA    NA    NA    NA    NA     NA     NA     NA
+## 2    NA    NA    NA    NA    NA    NA    NA     NA     NA     NA
+## 3    NA    NA    NA    NA    NA    NA    NA     NA     NA     NA
+## 4    NA    NA    NA    NA    NA    NA    NA     NA     NA     NA
+##   main13 main14 main15 main16 main17 main18 main19
+## 1      2      2      2      2      2      2      2
+## 2      6      6      6      6      6      6      2
+## 3      2      2      2      2      2      2      2
+## 4      2      2      2      2      2      2      2</code></pre></div>
+
+<ul>
+  <li>Individual-level mean</li>
+</ul>
+
+<p><span class="marginnote"> 
+<script type="math/tex">x = {-b \pm \sqrt{b^2-4ac} \over 2a}.</script>
+</span></p>
+
+<p>We first need to compute the <em>mean</em> at the individual level for each activities.</p>
 
 <p>Using <code>matches</code>, we select the relevant variables of the dataset.</p>
 

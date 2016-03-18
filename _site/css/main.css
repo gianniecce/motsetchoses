@@ -302,12 +302,13 @@ cite {
   font-family: "Gill Sans", "Gill Sans MT", "Lato", Calibri, sans-serif; }
 
 pre code, pre code p, code {
-  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-family: Monaco, "Liberation Mono", Menlo, Courier, monospace;
   color: #222;
-  font-size: 1rem;
+   /* padding-left: 2cm; does not work */ 
+  font-size: 0.8rem;
   line-height: 1.63333333333;
   background-color: #f7f7f7;
-  border-radius: 3px;
+  border-radius: 2px;
   white-space: pre-wrap;    /* Wrap long lines */
   width: 55%;
 }
@@ -323,7 +324,7 @@ pre {
   border-radius: 3px;
   margin: 0px 0px 0px 0px;
   background-color: #f7f7f7;
-  width: 80%; /* enable size of code box */ 
+  width: 55%; /* enable size of code box */ 
 }
 
 article {

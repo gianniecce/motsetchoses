@@ -5,7 +5,10 @@ categories: [jekyll]
 tags: [mtus]
 ---
 
-  hey
+
+<span class='newthought'>This post</span> will demonstrate how to simply calcualte mean time of different activities from a *wide format* dataset. 
+
+- Load the libraries and data
 
 
 {% highlight r %}
@@ -20,7 +23,53 @@ library(xtable)
 load('/Users/giacomovagni/site/motsetchoses/_data/ukAllsub.RData')
 {% endhighlight %}
 
-First we need to compute the mean at the individual level for each activities. 
+Let us take a look at the data using `head` 
+
+
+{% highlight r %}
+ukAllsub %>% head()
+{% endhighlight %}
+
+
+
+{% highlight text %}
+##         idind  hldid survey   sex      day hhldsize
+## 1 10121511974 101215   1974 Woman  Tuesday        3
+## 2 10121511974 101215   1974 Woman Thursday        3
+## 3 10121511974 101215   1974 Woman   Friday        3
+## 4 10121511974 101215   1974 Woman Saturday        3
+##                                         civstat                cohab
+## 1 In couple (married/cohabit/civil partnership) could not be created
+## 2 In couple (married/cohabit/civil partnership) could not be created
+## 3 In couple (married/cohabit/civil partnership) could not be created
+## 4 In couple (married/cohabit/civil partnership) could not be created
+##   empsp                                  famstat season main1 main2
+## 1  <NA> Aged 40+ with no coresident children <18 Summer    NA    NA
+## 2  <NA> Aged 40+ with no coresident children <18 Summer    NA    NA
+## 3  <NA> Aged 40+ with no coresident children <18 Summer    NA    NA
+## 4  <NA> Aged 40+ with no coresident children <18 Summer    NA    NA
+##   main3 main4 main5 main6 main7 main8 main9 main10 main11 main12
+## 1    NA    NA    NA    NA    NA    NA    NA     NA     NA     NA
+## 2    NA    NA    NA    NA    NA    NA    NA     NA     NA     NA
+## 3    NA    NA    NA    NA    NA    NA    NA     NA     NA     NA
+## 4    NA    NA    NA    NA    NA    NA    NA     NA     NA     NA
+##   main13 main14 main15 main16 main17 main18 main19
+## 1      2      2      2      2      2      2      2
+## 2      6      6      6      6      6      6      2
+## 3      2      2      2      2      2      2      2
+## 4      2      2      2      2      2      2      2
+{% endhighlight %}
+
+- Individual-level mean
+
+<span class='marginnote'> 
+$$
+x = {-b \pm \sqrt{b^2-4ac} \over 2a}.
+$$
+</span>
+
+
+We first need to compute the *mean* at the individual level for each activities. 
 
 Using `matches`, we select the relevant variables of the dataset. 
 
