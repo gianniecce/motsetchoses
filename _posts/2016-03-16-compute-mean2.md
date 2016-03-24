@@ -8,6 +8,8 @@ tags: [mtus]
 
 <span class='newthought'>This post</span> will demonstrate how to simply calcualte mean time of different activities from a *wide format* dataset. 
 
+
+
 - Load the libraries and data
 
 

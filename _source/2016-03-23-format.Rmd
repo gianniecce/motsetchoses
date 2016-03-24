@@ -1,0 +1,101 @@
+---
+layout: post
+title:  "Data Format"
+categories: [jekyll]
+tags: [mtus]
+---
+
+
+<span class='newthought'>This post</span> will discuss the 3 most common data format in Time Use: 
+
+1. Short Person-Persion ("Spells") format 
+2. Long Person-Persion ("Spells") format 
+3. State sequences (Wide) format 
+
+
+#### Load the libraries and data 
+
+```{r, warning=FALSE, message=FALSE}
+library(plyr)
+library(dplyr)
+library(tidyr)
+library(mtusRlocal)
+library(knitr)
+library(reshape2)
+library(xtable)
+
+library('schoolmath')
+
+dta = read.csv('/Users/giacomovagni/site/motsetchoses/_data/dtaSpells.csv')
+```
+
+```{r, results='asis', echo=FALSE}
+kable(dta, align = 'c') 
+```
+
+```{r} 
+dtaPP = dta[rep(1:nrow(dta), dta$duration), ] %>% 
+  select(-duration) %>% 
+  group_by(id, day) %>% 
+  mutate( Time = 1:n())
+```
+
+Let's look at the first 10 entries 
+
+```{r, results='asis', echo=FALSE}
+kable(dtaPP [1:10, ], align = 'c') 
+```
+
+The maximum time per day is 
+```{r}
+dtaPP %>% group_by(id, day) %>% summarise(max(Time))
+```
+
+which means that we have created a one minute interval dataset, known as **Long Person-Period**: 
+
+This code enables to transform the long file into a **Wide Sequence** file. 
+```{r}
+dtaWide = dtaPP %>% select(-epnum) %>% spread(Time, activities)
+```
+
+The 10 first sequence episodes look like this : 
+
+```{r, results='asis', echo=FALSE}
+kable( dtaWide [, 1:12] , align = 'c') 
+```
+
+
+## Change the interval time 
+
+Find the greatest common divisor 
+
+```{r}
+l = length(dta$duration) 
+v = array(0, l)
+
+for(i in 2:l){
+  v[i] = gcd(dta$duration[i], dta$duration[i-1]) 
+}
+
+minV = min(v[-1]) 
+minV
+dta$duration = dta$duration / minV
+```
+
+```{r}
+dtaPP = dta[rep(1:nrow(dta), dta$duration), ] %>% 
+  select(-duration) %>% 
+  group_by(id, day) %>% 
+  mutate( Time = 1:n())
+```
+
+The new Long Person Period file has now `72` episodes, which is equals to `1440` when multiplied by `20` 
+
+```{r}
+dtaPP %>% group_by(id, day) %>% summarise(max(Time))
+
+72 * 20
+```
+
+
+
