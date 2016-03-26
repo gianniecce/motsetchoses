@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Change the interval time </title>
+    <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+">
+
+    <link rel="stylesheet" href="/motsetchoses/css/main.css">
+    <link rel="canonical" href="http://giacomovagni.github.io/motsetchoses/2016/03/change-interval-time.html">
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+
+
+  <body>
+
+    <!--- Header and nav template site-wide -->
+<header>
+  <nav class="group">
+    <a href="/motsetchoses\"><img class="badge" src="/motsetchoses/badge.png" alt="CH"></a>
+    
+      
+        <a class="page-link" href="/motsetchoses/about/">About</a>
+        
+      
+    
+      
+    
+      
+        <a class="page-link" href="/motsetchoses/Tags/index.html">Tags</a>
+        
+      
+    
+      
+        <a class="page-link" href="/motsetchoses/TimeUse/index.html">time use</a>
+        
+      
+    
+      
+    
+      
+        <a class="page-link" href="/motsetchoses/page/">page</a>
+        
+      
+    
+  </nav>
+  
+</header>
+
+ 
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Change the interval time </h1>
+    <p class="post-meta">Mar 26, 2016</p>
+  </header>
+
+ <hr width = 10%>
+
+  <article class="post-content">
+    <p><span class="newthought">This post</span> will discuss how to change the interval time when transforming time use data</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span><span class="s">&#39;schoolmath&#39;</span><span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>dplyr<span class="p">)</span>
+
+dta <span class="o">=</span> read.csv<span class="p">(</span><span class="s">&#39;/Users/giacomovagni/site/motsetchoses/_data/dtaSpells.csv&#39;</span><span class="p">)</span></code></pre></div>
+
+<h3 id="find-the-greatest-common-divisor">Find the greatest common divisor</h3>
+<p>We need first</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r">l <span class="o">=</span> <span class="kp">length</span><span class="p">(</span>dta<span class="o">$</span>duration<span class="p">)</span> 
+v <span class="o">=</span> <span class="kt">array</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> l<span class="p">)</span>
+
+<span class="kr">for</span><span class="p">(</span>i <span class="kr">in</span> <span class="m">2</span><span class="o">:</span>l<span class="p">){</span>
+  v<span class="p">[</span>i<span class="p">]</span> <span class="o">=</span> gcd<span class="p">(</span>dta<span class="o">$</span>duration<span class="p">[</span>i<span class="p">],</span> dta<span class="o">$</span>duration<span class="p">[</span>i<span class="m">-1</span><span class="p">])</span> 
+<span class="p">}</span>
+
+minV <span class="o">=</span> <span class="kp">min</span><span class="p">(</span>v<span class="p">[</span><span class="m">-1</span><span class="p">])</span> 
+minV</code></pre></div>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">## [1] 20</code></pre></div>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r">dta<span class="o">$</span>duration <span class="o">=</span> dta<span class="o">$</span>duration <span class="o">/</span> minV</code></pre></div>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r">dtaPP <span class="o">=</span> dta<span class="p">[</span><span class="kp">rep</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="kp">nrow</span><span class="p">(</span>dta<span class="p">),</span> dta<span class="o">$</span>duration<span class="p">),</span> <span class="p">]</span> <span class="o">%&gt;%</span> 
+  select<span class="p">(</span><span class="o">-</span>duration<span class="p">)</span> <span class="o">%&gt;%</span> 
+  group_by<span class="p">(</span>id<span class="p">,</span> day<span class="p">)</span> <span class="o">%&gt;%</span> 
+  mutate<span class="p">(</span> Time <span class="o">=</span> <span class="m">1</span><span class="o">:</span>n<span class="p">())</span></code></pre></div>
+
+<p>The new Long Person Period file has now <code>72</code> episodes, which is equals to <code>1440</code> when multiplied by <code>20</code></p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r">dtaPP <span class="o">%&gt;%</span> group_by<span class="p">(</span>id<span class="p">,</span> day<span class="p">)</span> <span class="o">%&gt;%</span> summarise<span class="p">(</span><span class="kp">max</span><span class="p">(</span>Time<span class="p">))</span></code></pre></div>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">## Source: local data frame [4 x 3]
+## Groups: id
+## 
+##   id      day max(Time)
+## 1  1   Monday        72
+## 2  1 Saturday        72
+## 3  2   Monday        72
+## 4  2 Saturday        71</code></pre></div>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="m">72</span> <span class="o">*</span> <span class="m">20</span></code></pre></div>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">## [1] 1440</code></pre></div>
+
+
+  </article>
+
+</div>
+
+      </div>
+    </div>
+
+    <footer>
+  <ul class="footer-links group">
+    <li><a href="mailto:hate@spam.net"><span class="icon-mail"></span></a></li>
+    
+      <li>
+        <a href="//www.twitter.com/jekyllrb"><span class="icon-twitter"></span></a>
+      </li>
+    
+      <li>
+        <a href="//plus.google.com/explore/jekyllrb"><span class="icon-googleplus"></span></a>
+      </li>
+    
+      <li>
+        <a href="//github.com/jekyll"><span class="icon-github"></span></a>
+      </li>
+    
+      <li>
+        <a href="//www.flickr.com/explore"><span class="icon-flickr"></span></a>
+      </li>
+    
+      <li>
+        <a href="/feed.xml"><span class="icon-feed"></span></a>
+      </li>
+    
+  </ul>
+<div class="credits">
+<span>&copy; GIACOMO VAGNI &nbsp; 2016</span>
+<br>
+<span>This site was created with <a href="//github.com/cpsievert/knitr-jekyll">cpsievert/knitr-jekyll</a> -- a marriage of <a href="//github.com/yihui/knitr-jekyll">yihui/knitr-jekyll</a> and the <a href="//github.com/clayh53/tufte-jekyll">Tufte theme</a> for <a href="//jekyllrb.com">Jekyll</a>.</span>
+</div>
+</footer>
+
+
+  </body>
+
+</html>

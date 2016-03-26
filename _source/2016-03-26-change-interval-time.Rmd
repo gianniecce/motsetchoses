@@ -1,0 +1,49 @@
+---
+layout: post
+title:  "Change the interval time "
+categories: [jekyll]
+tags: [mtus]
+---
+
+
+<span class='newthought'>This post</span> will discuss how to change the interval time when transforming time use data 
+
+
+```{r, warning=FALSE, message=FALSE}
+library('schoolmath')
+library(dplyr)
+
+dta = read.csv('/Users/giacomovagni/site/motsetchoses/_data/dtaSpells.csv')
+```
+
+
+### Find the greatest common divisor 
+We need first 
+
+```{r}
+l = length(dta$duration) 
+v = array(0, l)
+
+for(i in 2:l){
+  v[i] = gcd(dta$duration[i], dta$duration[i-1]) 
+}
+
+minV = min(v[-1]) 
+minV
+dta$duration = dta$duration / minV
+```
+
+```{r}
+dtaPP = dta[rep(1:nrow(dta), dta$duration), ] %>% 
+  select(-duration) %>% 
+  group_by(id, day) %>% 
+  mutate( Time = 1:n())
+```
+
+The new Long Person Period file has now `72` episodes, which is equals to `1440` when multiplied by `20` 
+
+```{r}
+dtaPP %>% group_by(id, day) %>% summarise(max(Time))
+
+72 * 20
+```

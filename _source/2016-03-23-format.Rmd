@@ -6,16 +6,19 @@ tags: [mtus]
 ---
 
 
-<span class='newthought'>This post</span> will discuss the 3 most common data format in Time Use: 
+<span class='newthought'>This post</span> will discuss how to transform the 3 most common data format in Time Use using `R`. 
 
-1. Short Person-Persion ("Spells") format 
-2. Long Person-Persion ("Spells") format 
-3. State sequences (Wide) format 
+The data formats will be referred to as : 
+
+a) Person Period Short format \\
+b) Person Period Long format \\
+c) State sequences (*Wide*) format
 
 
-#### Load the libraries and data 
 
 ```{r, warning=FALSE, message=FALSE}
+# Load the libraries and data
+
 library(plyr)
 library(dplyr)
 library(tidyr)
@@ -24,10 +27,13 @@ library(knitr)
 library(reshape2)
 library(xtable)
 
-library('schoolmath')
-
 dta = read.csv('/Users/giacomovagni/site/motsetchoses/_data/dtaSpells.csv')
 ```
+
+### Person Period Short format 
+
+Time use data generally come into a shortened *Person-Period* format. 
+Take a look at this sample : 
 
 ```{r, results='asis', echo=FALSE}
 kable(dta, align = 'c') 
@@ -39,6 +45,8 @@ dtaPP = dta[rep(1:nrow(dta), dta$duration), ] %>%
   group_by(id, day) %>% 
   mutate( Time = 1:n())
 ```
+
+### Person Period Long format 
 
 Let's look at the first 10 entries 
 
@@ -53,6 +61,8 @@ dtaPP %>% group_by(id, day) %>% summarise(max(Time))
 
 which means that we have created a one minute interval dataset, known as **Long Person-Period**: 
 
+### Sequence (Wide) format
+
 This code enables to transform the long file into a **Wide Sequence** file. 
 ```{r}
 dtaWide = dtaPP %>% select(-epnum) %>% spread(Time, activities)
@@ -64,38 +74,26 @@ The 10 first sequence episodes look like this :
 kable( dtaWide [, 1:12] , align = 'c') 
 ```
 
+### Return to short PP format
 
-## Change the interval time 
+A simple and convenient way to return to the original short PP way 
 
-Find the greatest common divisor 
 
 ```{r}
-l = length(dta$duration) 
-v = array(0, l)
-
-for(i in 2:l){
-  v[i] = gcd(dta$duration[i], dta$duration[i-1]) 
-}
-
-minV = min(v[-1]) 
-minV
-dta$duration = dta$duration / minV
+dtaMeltPP = dtaWide %>% melt(id.vars = c("id", "day")) %>% arrange(id, day, variable)
+dtaMeltPP %>% head()
 ```
 
 ```{r}
-dtaPP = dta[rep(1:nrow(dta), dta$duration), ] %>% 
-  select(-duration) %>% 
+  dtaMeltPP %>% 
+  group_by(id, day, value) %>% 
+  mutate(time = n() * 1) %>% 
+  select(-variable) %>% distinct() %>% # keeps the order 
   group_by(id, day) %>% 
-  mutate( Time = 1:n())
+  mutate(epnum = 1:n())
 ```
 
-The new Long Person Period file has now `72` episodes, which is equals to `1440` when multiplied by `20` 
 
-```{r}
-dtaPP %>% group_by(id, day) %>% summarise(max(Time))
-
-72 * 20
-```
 
 
 
