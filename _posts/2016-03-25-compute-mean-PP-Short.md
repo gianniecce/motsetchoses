@@ -6,7 +6,7 @@ tags: [mtus]
 ---
 
 
-<span class='newthought'>This post</span> will demonstrate how to simply calcualte mean time of different activities from a *PP-short* dataset. 
+<span class='newthought'>This post</span> will demonstrate how to simply calcualte mean time of different activities for different format. 
 
 
 {% highlight r %}
@@ -22,7 +22,7 @@ library(xtable)
 dta = read.csv('/Users/giacomovagni/site/motsetchoses/_data/dtaSpells.csv')
 {% endhighlight %}
 
-### Mean of Short PP file 
+### 1. Mean of Short PP file 
 
 The `sum` of all activites duration for each individuals for a day must be **1440**. 
 
@@ -115,7 +115,9 @@ dta %>% group_by(activities) %>% summarise(mean(duration))
 ## 6      sleep      450.00000
 {% endhighlight %}
 
-### Mean of Long PP file 
+### 2. Mean of Long PP file 
+
+For Long PP file 
 
 
 {% highlight r %}
@@ -148,10 +150,10 @@ dtaPP %>% group_by(id, day, activities) %>% summarise(time = n()) %>% # transfor
 ## 9      sleep Saturday        550
 {% endhighlight %}
 
-### Mean of Sequence File 
+### 3. Mean of Sequence File 
 
 
-#### Aggregate  
+#### 3.1. Aggregate  
 
 The mean time of activities for long PP can be computed by the following codes : 
 
@@ -188,7 +190,8 @@ N
 {% highlight r %}
 # by act only
 dtaSeq %>% select(idind, day, matches('main')) %>% 
-  melt(id.vars = c("idind", "day")) %>% group_by(value) %>% summarise(n = n()) %>% # back to PP 
+  melt(id.vars = c("idind", "day")) %>% group_by(value) %>% 
+  summarise(n = n()) %>% # back to PP 
   mutate(time =  (n* 1) / 4 ) %>% # divide by count 
   mutate(TimeClock(time)) 
 {% endhighlight %}
@@ -212,7 +215,8 @@ dtaSeq %>% select(idind, day, matches('main')) %>%
 {% highlight r %}
 # by act and days 
 dtaSeq %>% select(idind, day, matches('main')) %>% 
-  melt(id.vars = c("idind", "day")) %>% group_by(day, value) %>% summarise(n = n()) %>% 
+  melt(id.vars = c("idind", "day")) %>% group_by(day, value) %>% 
+  summarise(n = n()) %>% 
   mutate(time =  (n* 1) / 2) %>% # divide by count 
   mutate(TimeClock(time)) 
 {% endhighlight %}
@@ -240,7 +244,8 @@ dtaSeq %>% select(idind, day, matches('main')) %>%
 {% highlight r %}
 # if you haev the full data then group by what you want  
 dtaSeq %>% select(idind, day, matches('main')) %>% 
-  melt(id.vars = c("idind", "day")) %>% group_by(idind, day, value) %>% summarise(n = n()) %>% 
+  melt(id.vars = c("idind", "day")) %>% group_by(idind, day, value) %>% 
+  summarise(n = n()) %>% 
   group_by(value) %>% summarise( mean(n) ) 
 {% endhighlight %}
 
@@ -275,8 +280,11 @@ dtaSeq %>% select(idind, day, matches('main')) %>%
 {% highlight r %}
 # or simply activities 
   dtaSeq %>% select(idind, day, matches('main')) %>% 
-  melt(id.vars = c("idind", "day")) %>% group_by(idind, day, value) %>% summarise(n = n()) %>% 
-  group_by(value, day) %>% summarise( mean(n) ) 
+    melt(id.vars = c("idind", "day")) %>% 
+    group_by(idind, day, value) %>% 
+    summarise(n = n()) %>% 
+    group_by(value, day) %>% 
+    summarise( mean(n) ) 
 {% endhighlight %}
 
 
@@ -309,7 +317,35 @@ dtaSeq %>% select(idind, day, matches('main')) %>%
 ## Error in eval(expr, envir, enclos): not compatible with requested type
 {% endhighlight %}
 
-#### Individual
+Alternative when you are unsure of the `count` results 
+
+
+{% highlight r %}
+dtaSeq %>% select(idind, day, matches('main')) %>% 
+  melt(id.vars = c("idind", "day")) %>% group_by(value) %>% 
+    summarise(n = n()) %>% # back to PP 
+    mutate(p = n / sum(n)) %>% 
+    mutate(time =  1440 * p) %>% # divide by count 
+  mutate(TimeClock(time)) 
+{% endhighlight %}
+
+
+
+{% highlight text %}
+## Source: local data frame [6 x 5]
+## 
+##       value    n          p  time TimeClock(time)
+## 1        TV  980 0.17013889 245.0           04:05
+## 2  domestic  650 0.11284722 162.5           02:42
+## 3    eating  530 0.09201389 132.5           02:12
+## 4 free time  700 0.12152778 175.0           02:55
+## 5 paid work 1100 0.19097222 275.0           04:35
+## 6     sleep 1800 0.31250000 450.0           07:30
+{% endhighlight %}
+
+
+
+#### 3.2. Individual
 
 From a PP file  
 
@@ -372,6 +408,68 @@ dtaPP_sum %>% select(-id, -day) %>% summarise_each(funs(mean))
 ##   act_TV act_domestic act_eating act_free time act_paid work
 ## 1    245        162.5      132.5           175           275
 ## Variables not shown: act_sleep (dbl)
+{% endhighlight %}
+
+#### 3.3. Weighted Sum and Weighted Mean 
+
+
+
+{% highlight r %}
+# weights of weekdays 
+weekendproba = (2 / 7)
+
+# weights - 1 is weekdays 
+dtaSeq$day_weights = ifelse(dtaSeq$day %in% "Monday", 1, 1 - weekendproba)
+
+# Weighted mean 
+dtaSeq %>% select(idind, day, day_weights, matches('main')) %>% 
+  melt(id.vars = c("idind", "day", "day_weights")) %>% 
+  group_by(idind, day, day_weights, value) %>% 
+  summarise(n = n()) %>% 
+  mutate(value = paste('act_', value, sep = '')) %>% 
+  spread(value, n, fill = 0) %>% 
+  summarise(meanTV = mean(act_TV), weightedmean = weighted.mean(act_TV, day_weights)) 
+{% endhighlight %}
+
+
+
+{% highlight text %}
+## Source: local data frame [1 x 2]
+## 
+##   meanTV weightedmean
+## 1    245        262.5
+{% endhighlight %}
+
+The weighted sum 
+
+{% highlight r %}
+dtaSeq %>% count(day) %>% mutate(p = n / sum(n))
+{% endhighlight %}
+
+
+
+{% highlight text %}
+## Source: local data frame [2 x 3]
+## 
+##        day n   p
+## 1   Monday 2 0.5
+## 2 Saturday 2 0.5
+{% endhighlight %}
+
+
+
+{% highlight r %}
+dtaSeq %>% count(day, wt = day_weights) %>% mutate(p = n / sum(n))
+{% endhighlight %}
+
+
+
+{% highlight text %}
+## Source: local data frame [2 x 3]
+## 
+##        day        n         p
+## 1   Monday 2.000000 0.5833333
+## 2 Saturday 1.428571 0.4166667
 {% endhighlight %}
 
 

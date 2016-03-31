@@ -65,7 +65,7 @@
  <hr width = 10%>
 
   <article class="post-content">
-    <p><span class="newthought">This post</span> will demonstrate how to simply calcualte mean time of different activities from a <em>PP-short</em> dataset.</p>
+    <p><span class="newthought">This post</span> will demonstrate how to simply calcualte mean time of different activities for different format.</p>
 
 <div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># Load the libraries and data</span>
 <span class="kn">library</span><span class="p">(</span>plyr<span class="p">)</span>
@@ -78,7 +78,7 @@
 
 dta <span class="o">=</span> read.csv<span class="p">(</span><span class="s">&#39;/Users/giacomovagni/site/motsetchoses/_data/dtaSpells.csv&#39;</span><span class="p">)</span></code></pre></div>
 
-<h3 id="mean-of-short-pp-file">Mean of Short PP file</h3>
+<h3 id="mean-of-short-pp-file">1. Mean of Short PP file</h3>
 
 <p>The <code>sum</code> of all activites duration for each individuals for a day must be <strong>1440</strong>.</p>
 
@@ -146,7 +146,9 @@ dta <span class="o">=</span> read.csv<span class="p">(</span><span class="s">&#3
 ## 5  paid work      550.00000
 ## 6      sleep      450.00000</code></pre></div>
 
-<h3 id="mean-of-long-pp-file">Mean of Long PP file</h3>
+<h3 id="mean-of-long-pp-file">2. Mean of Long PP file</h3>
+
+<p>For Long PP file</p>
 
 <div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># transform </span>
 dtaPP<span class="o">=</span> dta<span class="p">[</span><span class="kp">rep</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="kp">nrow</span><span class="p">(</span>dta<span class="p">),</span> dta<span class="o">$</span>duration<span class="p">),</span> <span class="p">]</span> <span class="o">%&gt;%</span> 
@@ -172,9 +174,9 @@ dtaPP <span class="o">%&gt;%</span> group_by<span class="p">(</span>id<span clas
 ## 8      sleep   Monday        350
 ## 9      sleep Saturday        550</code></pre></div>
 
-<h3 id="mean-of-sequence-file">Mean of Sequence File</h3>
+<h3 id="mean-of-sequence-file">3. Mean of Sequence File</h3>
 
-<h4 id="aggregate">Aggregate</h4>
+<h4 id="aggregate">3.1. Aggregate</h4>
 
 <p>The mean time of activities for long PP can be computed by the following codes :</p>
 
@@ -198,7 +200,8 @@ N</code></pre></div>
 
 <div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># by act only</span>
 dtaSeq <span class="o">%&gt;%</span> select<span class="p">(</span>idind<span class="p">,</span> day<span class="p">,</span> matches<span class="p">(</span><span class="s">&#39;main&#39;</span><span class="p">))</span> <span class="o">%&gt;%</span> 
-  melt<span class="p">(</span>id.vars <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;idind&quot;</span><span class="p">,</span> <span class="s">&quot;day&quot;</span><span class="p">))</span> <span class="o">%&gt;%</span> group_by<span class="p">(</span>value<span class="p">)</span> <span class="o">%&gt;%</span> summarise<span class="p">(</span>n <span class="o">=</span> n<span class="p">())</span> <span class="o">%&gt;%</span> <span class="c1"># back to PP </span>
+  melt<span class="p">(</span>id.vars <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;idind&quot;</span><span class="p">,</span> <span class="s">&quot;day&quot;</span><span class="p">))</span> <span class="o">%&gt;%</span> group_by<span class="p">(</span>value<span class="p">)</span> <span class="o">%&gt;%</span> 
+  summarise<span class="p">(</span>n <span class="o">=</span> n<span class="p">())</span> <span class="o">%&gt;%</span> <span class="c1"># back to PP </span>
   mutate<span class="p">(</span>time <span class="o">=</span>  <span class="p">(</span>n<span class="o">*</span> <span class="m">1</span><span class="p">)</span> <span class="o">/</span> <span class="m">4</span> <span class="p">)</span> <span class="o">%&gt;%</span> <span class="c1"># divide by count </span>
   mutate<span class="p">(</span>TimeClock<span class="p">(</span>time<span class="p">))</span></code></pre></div>
 
@@ -214,7 +217,8 @@ dtaSeq <span class="o">%&gt;%</span> select<span class="p">(</span>idind<span cl
 
 <div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># by act and days </span>
 dtaSeq <span class="o">%&gt;%</span> select<span class="p">(</span>idind<span class="p">,</span> day<span class="p">,</span> matches<span class="p">(</span><span class="s">&#39;main&#39;</span><span class="p">))</span> <span class="o">%&gt;%</span> 
-  melt<span class="p">(</span>id.vars <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;idind&quot;</span><span class="p">,</span> <span class="s">&quot;day&quot;</span><span class="p">))</span> <span class="o">%&gt;%</span> group_by<span class="p">(</span>day<span class="p">,</span> value<span class="p">)</span> <span class="o">%&gt;%</span> summarise<span class="p">(</span>n <span class="o">=</span> n<span class="p">())</span> <span class="o">%&gt;%</span> 
+  melt<span class="p">(</span>id.vars <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;idind&quot;</span><span class="p">,</span> <span class="s">&quot;day&quot;</span><span class="p">))</span> <span class="o">%&gt;%</span> group_by<span class="p">(</span>day<span class="p">,</span> value<span class="p">)</span> <span class="o">%&gt;%</span> 
+  summarise<span class="p">(</span>n <span class="o">=</span> n<span class="p">())</span> <span class="o">%&gt;%</span> 
   mutate<span class="p">(</span>time <span class="o">=</span>  <span class="p">(</span>n<span class="o">*</span> <span class="m">1</span><span class="p">)</span> <span class="o">/</span> <span class="m">2</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="c1"># divide by count </span>
   mutate<span class="p">(</span>TimeClock<span class="p">(</span>time<span class="p">))</span></code></pre></div>
 
@@ -234,7 +238,8 @@ dtaSeq <span class="o">%&gt;%</span> select<span class="p">(</span>idind<span cl
 
 <div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># if you haev the full data then group by what you want  </span>
 dtaSeq <span class="o">%&gt;%</span> select<span class="p">(</span>idind<span class="p">,</span> day<span class="p">,</span> matches<span class="p">(</span><span class="s">&#39;main&#39;</span><span class="p">))</span> <span class="o">%&gt;%</span> 
-  melt<span class="p">(</span>id.vars <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;idind&quot;</span><span class="p">,</span> <span class="s">&quot;day&quot;</span><span class="p">))</span> <span class="o">%&gt;%</span> group_by<span class="p">(</span>idind<span class="p">,</span> day<span class="p">,</span> value<span class="p">)</span> <span class="o">%&gt;%</span> summarise<span class="p">(</span>n <span class="o">=</span> n<span class="p">())</span> <span class="o">%&gt;%</span> 
+  melt<span class="p">(</span>id.vars <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;idind&quot;</span><span class="p">,</span> <span class="s">&quot;day&quot;</span><span class="p">))</span> <span class="o">%&gt;%</span> group_by<span class="p">(</span>idind<span class="p">,</span> day<span class="p">,</span> value<span class="p">)</span> <span class="o">%&gt;%</span> 
+  summarise<span class="p">(</span>n <span class="o">=</span> n<span class="p">())</span> <span class="o">%&gt;%</span> 
   group_by<span class="p">(</span>value<span class="p">)</span> <span class="o">%&gt;%</span> summarise<span class="p">(</span> <span class="kp">mean</span><span class="p">(</span>n<span class="p">)</span> <span class="p">)</span></code></pre></div>
 
 <div class="highlight"><pre><code class="language-text" data-lang="text">## Source: local data frame [6 x 2]
@@ -253,8 +258,11 @@ dtaSeq <span class="o">%&gt;%</span> select<span class="p">(</span>idind<span cl
 
 <div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># or simply activities </span>
   dtaSeq <span class="o">%&gt;%</span> select<span class="p">(</span>idind<span class="p">,</span> day<span class="p">,</span> matches<span class="p">(</span><span class="s">&#39;main&#39;</span><span class="p">))</span> <span class="o">%&gt;%</span> 
-  melt<span class="p">(</span>id.vars <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;idind&quot;</span><span class="p">,</span> <span class="s">&quot;day&quot;</span><span class="p">))</span> <span class="o">%&gt;%</span> group_by<span class="p">(</span>idind<span class="p">,</span> day<span class="p">,</span> value<span class="p">)</span> <span class="o">%&gt;%</span> summarise<span class="p">(</span>n <span class="o">=</span> n<span class="p">())</span> <span class="o">%&gt;%</span> 
-  group_by<span class="p">(</span>value<span class="p">,</span> day<span class="p">)</span> <span class="o">%&gt;%</span> summarise<span class="p">(</span> <span class="kp">mean</span><span class="p">(</span>n<span class="p">)</span> <span class="p">)</span></code></pre></div>
+    melt<span class="p">(</span>id.vars <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;idind&quot;</span><span class="p">,</span> <span class="s">&quot;day&quot;</span><span class="p">))</span> <span class="o">%&gt;%</span> 
+    group_by<span class="p">(</span>idind<span class="p">,</span> day<span class="p">,</span> value<span class="p">)</span> <span class="o">%&gt;%</span> 
+    summarise<span class="p">(</span>n <span class="o">=</span> n<span class="p">())</span> <span class="o">%&gt;%</span> 
+    group_by<span class="p">(</span>value<span class="p">,</span> day<span class="p">)</span> <span class="o">%&gt;%</span> 
+    summarise<span class="p">(</span> <span class="kp">mean</span><span class="p">(</span>n<span class="p">)</span> <span class="p">)</span></code></pre></div>
 
 <div class="highlight"><pre><code class="language-text" data-lang="text">## Source: local data frame [9 x 3]
 ## Groups: value
@@ -274,7 +282,26 @@ dtaSeq <span class="o">%&gt;%</span> select<span class="p">(</span>idind<span cl
 
 <div class="highlight"><pre><code class="language-text" data-lang="text">## Error in eval(expr, envir, enclos): not compatible with requested type</code></pre></div>
 
-<h4 id="individual">Individual</h4>
+<p>Alternative when you are unsure of the <code>count</code> results</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r">dtaSeq <span class="o">%&gt;%</span> select<span class="p">(</span>idind<span class="p">,</span> day<span class="p">,</span> matches<span class="p">(</span><span class="s">&#39;main&#39;</span><span class="p">))</span> <span class="o">%&gt;%</span> 
+  melt<span class="p">(</span>id.vars <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;idind&quot;</span><span class="p">,</span> <span class="s">&quot;day&quot;</span><span class="p">))</span> <span class="o">%&gt;%</span> group_by<span class="p">(</span>value<span class="p">)</span> <span class="o">%&gt;%</span> 
+    summarise<span class="p">(</span>n <span class="o">=</span> n<span class="p">())</span> <span class="o">%&gt;%</span> <span class="c1"># back to PP </span>
+    mutate<span class="p">(</span>p <span class="o">=</span> n <span class="o">/</span> <span class="kp">sum</span><span class="p">(</span>n<span class="p">))</span> <span class="o">%&gt;%</span> 
+    mutate<span class="p">(</span>time <span class="o">=</span>  <span class="m">1440</span> <span class="o">*</span> p<span class="p">)</span> <span class="o">%&gt;%</span> <span class="c1"># divide by count </span>
+  mutate<span class="p">(</span>TimeClock<span class="p">(</span>time<span class="p">))</span></code></pre></div>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">## Source: local data frame [6 x 5]
+## 
+##       value    n          p  time TimeClock(time)
+## 1        TV  980 0.17013889 245.0           04:05
+## 2  domestic  650 0.11284722 162.5           02:42
+## 3    eating  530 0.09201389 132.5           02:12
+## 4 free time  700 0.12152778 175.0           02:55
+## 5 paid work 1100 0.19097222 275.0           04:35
+## 6     sleep 1800 0.31250000 450.0           07:30</code></pre></div>
+
+<h4 id="individual">3.2. Individual</h4>
 
 <p>From a PP file</p>
 
@@ -315,6 +342,46 @@ dtaPP_sum</code></pre></div>
 ##   act_TV act_domestic act_eating act_free time act_paid work
 ## 1    245        162.5      132.5           175           275
 ## Variables not shown: act_sleep (dbl)</code></pre></div>
+
+<h4 id="weighted-sum-and-weighted-mean">3.3. Weighted Sum and Weighted Mean</h4>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># weights of weekdays </span>
+weekendproba <span class="o">=</span> <span class="p">(</span><span class="m">2</span> <span class="o">/</span> <span class="m">7</span><span class="p">)</span>
+
+<span class="c1"># weights - 1 is weekdays </span>
+dtaSeq<span class="o">$</span>day_weights <span class="o">=</span> <span class="kp">ifelse</span><span class="p">(</span>dtaSeq<span class="o">$</span>day <span class="o">%in%</span> <span class="s">&quot;Monday&quot;</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">1</span> <span class="o">-</span> weekendproba<span class="p">)</span>
+
+<span class="c1"># Weighted mean </span>
+dtaSeq <span class="o">%&gt;%</span> select<span class="p">(</span>idind<span class="p">,</span> day<span class="p">,</span> day_weights<span class="p">,</span> matches<span class="p">(</span><span class="s">&#39;main&#39;</span><span class="p">))</span> <span class="o">%&gt;%</span> 
+  melt<span class="p">(</span>id.vars <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;idind&quot;</span><span class="p">,</span> <span class="s">&quot;day&quot;</span><span class="p">,</span> <span class="s">&quot;day_weights&quot;</span><span class="p">))</span> <span class="o">%&gt;%</span> 
+  group_by<span class="p">(</span>idind<span class="p">,</span> day<span class="p">,</span> day_weights<span class="p">,</span> value<span class="p">)</span> <span class="o">%&gt;%</span> 
+  summarise<span class="p">(</span>n <span class="o">=</span> n<span class="p">())</span> <span class="o">%&gt;%</span> 
+  mutate<span class="p">(</span>value <span class="o">=</span> <span class="kp">paste</span><span class="p">(</span><span class="s">&#39;act_&#39;</span><span class="p">,</span> value<span class="p">,</span> sep <span class="o">=</span> <span class="s">&#39;&#39;</span><span class="p">))</span> <span class="o">%&gt;%</span> 
+  spread<span class="p">(</span>value<span class="p">,</span> n<span class="p">,</span> fill <span class="o">=</span> <span class="m">0</span><span class="p">)</span> <span class="o">%&gt;%</span> 
+  summarise<span class="p">(</span>meanTV <span class="o">=</span> <span class="kp">mean</span><span class="p">(</span>act_TV<span class="p">),</span> weightedmean <span class="o">=</span> weighted.mean<span class="p">(</span>act_TV<span class="p">,</span> day_weights<span class="p">))</span></code></pre></div>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">## Source: local data frame [1 x 2]
+## 
+##   meanTV weightedmean
+## 1    245        262.5</code></pre></div>
+
+<p>The weighted sum</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r">dtaSeq <span class="o">%&gt;%</span> count<span class="p">(</span>day<span class="p">)</span> <span class="o">%&gt;%</span> mutate<span class="p">(</span>p <span class="o">=</span> n <span class="o">/</span> <span class="kp">sum</span><span class="p">(</span>n<span class="p">))</span></code></pre></div>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">## Source: local data frame [2 x 3]
+## 
+##        day n   p
+## 1   Monday 2 0.5
+## 2 Saturday 2 0.5</code></pre></div>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r">dtaSeq <span class="o">%&gt;%</span> count<span class="p">(</span>day<span class="p">,</span> wt <span class="o">=</span> day_weights<span class="p">)</span> <span class="o">%&gt;%</span> mutate<span class="p">(</span>p <span class="o">=</span> n <span class="o">/</span> <span class="kp">sum</span><span class="p">(</span>n<span class="p">))</span></code></pre></div>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">## Source: local data frame [2 x 3]
+## 
+##        day        n         p
+## 1   Monday 2.000000 0.5833333
+## 2 Saturday 1.428571 0.4166667</code></pre></div>
 
 
   </article>
