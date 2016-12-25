@@ -6,9 +6,120 @@
 </description>
     <link>http://giacomovagni.github.io/motsetchoses/</link>
     <atom:link href="http://giacomovagni.github.io/motsetchoses/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 25 Dec 2016 12:25:24 +0000</pubDate>
-    <lastBuildDate>Sun, 25 Dec 2016 12:25:24 +0000</lastBuildDate>
+    <pubDate>Sun, 25 Dec 2016 20:12:24 +0000</pubDate>
+    <lastBuildDate>Sun, 25 Dec 2016 20:12:24 +0000</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Create a website in 5min on Github using Jekyll 2</title>
+        <description>&lt;p&gt;&lt;span class=&quot;newthought&quot;&gt;In this post&lt;/span&gt; I will show you how you can easily create a website using Github and Jekyll.&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 26 Dec 2016 00:00:00 +0000</pubDate>
+        <link>http://giacomovagni.github.io/motsetchoses/2016/12/postnew.html</link>
+        <guid isPermaLink="true">http://giacomovagni.github.io/motsetchoses/2016/12/postnew.html</guid>
+        
+        <category>mtus</category>
+        
+        
+        <category>jekyll</category>
+        
+      </item>
+    
+      <item>
+        <title>Create a website in 5min on Github using Jekyll</title>
+        <description>&lt;p&gt;&lt;span class=&quot;newthought&quot;&gt;In this post&lt;/span&gt; I will show you how you can easily create a website using Github and Jekyll.&lt;/p&gt;
+
+&lt;h2 id=&quot;create-gh-pages-repository&quot;&gt;1. Create gh-pages repository&lt;/h2&gt;
+&lt;p&gt;The first step is to create a &lt;code&gt;new repository&lt;/code&gt;. 
+For instance, name you directory &lt;code&gt;website&lt;/code&gt;. Click on the &lt;em&gt;Initialize this repository with a README&lt;/em&gt;. Add also a  License if you want.&lt;/p&gt;
+
+&lt;p&gt;&lt;a data-flickr-embed=&quot;true&quot; href=&quot;https://www.flickr.com/photos/136480412@N05/31724074152/in/album-72157674402348604/&quot; title=&quot;git_1&quot;&gt;&lt;img src=&quot;https://c1.staticflickr.com/1/289/31724074152_943278753c_z.jpg&quot; width=&quot;640&quot; height=&quot;447&quot; alt=&quot;git_1&quot; /&gt;&lt;/a&gt;&lt;script async=&quot;&quot; src=&quot;//embedr.flickr.com/assets/client-code.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Once the repository created click on &lt;code&gt;Branch: master&lt;/code&gt;. You will need to write &lt;code&gt;gh-pages&lt;/code&gt; and select it.&lt;/p&gt;
+
+&lt;p&gt;&lt;a data-flickr-embed=&quot;true&quot; href=&quot;https://www.flickr.com/photos/136480412@N05/31724070252/in/album-72157674402348604/&quot; title=&quot;git_2&quot;&gt;&lt;img src=&quot;https://c5.staticflickr.com/1/350/31724070252_7a2c60d64d_z.jpg&quot; width=&quot;640&quot; height=&quot;180&quot; alt=&quot;git_2&quot; /&gt;&lt;/a&gt;&lt;script async=&quot;&quot; src=&quot;//embedr.flickr.com/assets/client-code.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a data-flickr-embed=&quot;true&quot; href=&quot;https://www.flickr.com/photos/136480412@N05/31062123953/in/album-72157674402348604/&quot; title=&quot;git_3&quot;&gt;&lt;img src=&quot;https://c2.staticflickr.com/1/421/31062123953_e115b116d6_z.jpg&quot; width=&quot;640&quot; height=&quot;167&quot; alt=&quot;git_3&quot; /&gt;&lt;/a&gt;&lt;script async=&quot;&quot; src=&quot;//embedr.flickr.com/assets/client-code.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Go then to &lt;strong&gt;Setting&lt;/strong&gt; and again to &lt;code&gt;Branches&lt;/code&gt;. Change &lt;code&gt;master&lt;/code&gt; to &lt;code&gt;gh-pages&lt;/code&gt;. Click on &lt;em&gt;update&lt;/em&gt;. Ignore the warning and update.&lt;/p&gt;
+
+&lt;p&gt;&lt;a data-flickr-embed=&quot;true&quot; href=&quot;https://www.flickr.com/photos/136480412@N05/31871653905/in/album-72157674402348604/&quot; title=&quot;git_4&quot;&gt;&lt;img src=&quot;https://c2.staticflickr.com/1/276/31871653905_b4f3f5fac8_z.jpg&quot; width=&quot;640&quot; height=&quot;206&quot; alt=&quot;git_4&quot; /&gt;&lt;/a&gt;&lt;script async=&quot;&quot; src=&quot;//embedr.flickr.com/assets/client-code.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a data-flickr-embed=&quot;true&quot; href=&quot;https://www.flickr.com/photos/136480412@N05/31724066292/in/album-72157674402348604/&quot; title=&quot;git_5&quot;&gt;&lt;img src=&quot;https://c5.staticflickr.com/1/557/31724066292_8c5bca0c2c_z.jpg&quot; width=&quot;640&quot; height=&quot;208&quot; alt=&quot;git_5&quot; /&gt;&lt;/a&gt;&lt;script async=&quot;&quot; src=&quot;//embedr.flickr.com/assets/client-code.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a data-flickr-embed=&quot;true&quot; href=&quot;https://www.flickr.com/photos/136480412@N05/31724064242/in/album-72157674402348604/&quot; title=&quot;git_6&quot;&gt;&lt;img src=&quot;https://c3.staticflickr.com/1/558/31724064242_0b7985e310_z.jpg&quot; width=&quot;300&quot; height=&quot;150&quot; alt=&quot;git_6&quot; /&gt;&lt;/a&gt;&lt;script async=&quot;&quot; src=&quot;//embedr.flickr.com/assets/client-code.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;clone&quot;&gt;2. Clone&lt;/h2&gt;
+&lt;p&gt;The second step consists of “importing” your webiste on your computer. Because I am not very handy with the &lt;code&gt;Terminal&lt;/code&gt; command line, I am using the excellent github desktop.&lt;/p&gt;
+
+&lt;p&gt;You can download at&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://desktop.github.com/&quot;&gt;https://desktop.github.com/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Once you downloaded the github desktop, go back to your github page and click on &lt;code&gt;Clone or download&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a data-flickr-embed=&quot;true&quot; href=&quot;https://www.flickr.com/photos/136480412@N05/31062118413/in/album-72157674402348604/&quot; title=&quot;git_7&quot;&gt;&lt;img src=&quot;https://c6.staticflickr.com/1/682/31062118413_c4e46d53d2_z.jpg&quot; width=&quot;400&quot; height=&quot;290&quot; alt=&quot;git_7&quot; /&gt;&lt;/a&gt;&lt;script async=&quot;&quot; src=&quot;//embedr.flickr.com/assets/client-code.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Then click on &lt;code&gt;Open in Desktop&lt;/code&gt;. This will open a repository on your personal computer with the name of the githubt repository (&lt;code&gt;clone as Website&lt;/code&gt; in our case).&lt;/p&gt;
+
+&lt;p&gt;&lt;a data-flickr-embed=&quot;true&quot; href=&quot;https://www.flickr.com/photos/136480412@N05/31833757686/in/album-72157674402348604/&quot; title=&quot;git_8&quot;&gt;&lt;img src=&quot;https://c7.staticflickr.com/1/555/31833757686_6ab6827e1d_z.jpg&quot; width=&quot;400&quot; height=&quot;100&quot; alt=&quot;git_8&quot; /&gt;&lt;/a&gt;&lt;script async=&quot;&quot; src=&quot;//embedr.flickr.com/assets/client-code.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Your page will then be visible on your github desktop.&lt;/p&gt;
+
+&lt;p&gt;Now open the &lt;code&gt;website&lt;/code&gt; folder that as been &lt;em&gt;cloned&lt;/em&gt; (copied) on your desktop. It only contains the &lt;code&gt;Readme&lt;/code&gt; file and the Licence if you added one.&lt;/p&gt;
+
+&lt;h2 id=&quot;create-your-website-design&quot;&gt;3. Create your website design&lt;/h2&gt;
+
+&lt;p&gt;If you are not familiar with web design, you can start by downloading a &lt;code&gt;theme&lt;/code&gt; (which is a style or design of your webpage).&lt;/p&gt;
+
+&lt;p&gt;Jekyll as a lot of great readymade design you can download on the internet.&lt;/p&gt;
+
+&lt;p&gt;For instance, here&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://themes.jekyllrc.org/&quot;&gt;http://themes.jekyllrc.org/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Choose a template or theme you like and simply download it.&lt;/p&gt;
+
+&lt;p&gt;&lt;a data-flickr-embed=&quot;true&quot; href=&quot;https://www.flickr.com/photos/136480412@N05/31031061374/in/album-72157674402348604/&quot; title=&quot;git_9&quot;&gt;&lt;img src=&quot;https://c7.staticflickr.com/1/298/31031061374_087ddacf43_z.jpg&quot; width=&quot;400&quot; height=&quot;200&quot; alt=&quot;git_9&quot; /&gt;&lt;/a&gt;&lt;script async=&quot;&quot; src=&quot;//embedr.flickr.com/assets/client-code.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Unzip the file and copy the file in the github folder on your computer. In doing so, you simply copy the codes of the website. This will enable you to generate the same website on your github page.&lt;/p&gt;
+
+&lt;p&gt;&lt;a data-flickr-embed=&quot;true&quot; href=&quot;https://www.flickr.com/photos/136480412@N05/31724076582/in/album-72157674402348604/&quot; title=&quot;git_10&quot;&gt;&lt;img src=&quot;https://c7.staticflickr.com/1/777/31724076582_8cdb7b9cb9_z.jpg&quot; width=&quot;400&quot; height=&quot;210&quot; alt=&quot;git_10&quot; /&gt;&lt;/a&gt;&lt;script async=&quot;&quot; src=&quot;//embedr.flickr.com/assets/client-code.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Now go back to the github desktop and you will notice that you can see the files you just copied. When using github you need to &lt;code&gt;commit&lt;/code&gt; (send) file to your github page. Write down a note and click on &lt;code&gt;Commit to gh-pages&lt;/code&gt;. This will send the codes on your page.&lt;/p&gt;
+
+&lt;p&gt;&lt;a data-flickr-embed=&quot;true&quot; href=&quot;https://www.flickr.com/photos/136480412@N05/31724077862/in/album-72157674402348604/&quot; title=&quot;git_11&quot;&gt;&lt;img src=&quot;https://c7.staticflickr.com/1/398/31724077862_7bc92fd0c5_z.jpg&quot; width=&quot;537&quot; height=&quot;640&quot; alt=&quot;git_11&quot; /&gt;&lt;/a&gt;&lt;script async=&quot;&quot; src=&quot;//embedr.flickr.com/assets/client-code.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;the-website-is-ready&quot;&gt;4. The website is ready&lt;/h2&gt;
+
+&lt;p&gt;Go back on your github page. Go to &lt;code&gt;Settings&lt;/code&gt; and scroll down. You will see that it says: &lt;code&gt;Your site is published at: https://YOURNAME.github.io/website/&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Click on the website will appear!&lt;/p&gt;
+
+&lt;p&gt;&lt;a data-flickr-embed=&quot;true&quot; href=&quot;https://www.flickr.com/photos/136480412@N05/31724071312/in/album-72157674402348604/&quot; title=&quot;git_12&quot;&gt;&lt;img src=&quot;https://c1.staticflickr.com/1/426/31724071312_61ba38cc3a_z.jpg&quot; width=&quot;640&quot; height=&quot;169&quot; alt=&quot;git_12&quot; /&gt;&lt;/a&gt;&lt;script async=&quot;&quot; src=&quot;//embedr.flickr.com/assets/client-code.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;write-posts&quot;&gt;5. Write posts&lt;/h2&gt;
+
+&lt;p&gt;There are many ways to write posts on github. One simple way is to create posts manually in the website folder on your desktop.&lt;/p&gt;
+
+&lt;p&gt;Posts are stored in the folder &lt;code&gt;_posts&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a data-flickr-embed=&quot;true&quot; href=&quot;https://www.flickr.com/photos/136480412@N05/31062907453/in/album-72157674402348604/&quot; title=&quot;git_13&quot;&gt;&lt;img src=&quot;https://c6.staticflickr.com/1/276/31062907453_fa7bbc1e6a_m.jpg&quot; width=&quot;340&quot; height=&quot;120&quot; alt=&quot;git_13&quot; /&gt;&lt;/a&gt;&lt;script async=&quot;&quot; src=&quot;//embedr.flickr.com/assets/client-code.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;What you need to do is created a Markdown file and simply store it in the &lt;code&gt;_posts&lt;/code&gt; folder. Posts are generally stored by dates. Make your life easy in copying an existing post (provided by the website imported from the internet) and start tweaking it with a new date and a new name.&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 25 Dec 2016 00:00:00 +0000</pubDate>
+        <link>http://giacomovagni.github.io/motsetchoses/2016/12/github-website.html</link>
+        <guid isPermaLink="true">http://giacomovagni.github.io/motsetchoses/2016/12/github-website.html</guid>
+        
+        <category>mtus</category>
+        
+        
+        <category>jekyll</category>
+        
+      </item>
     
       <item>
         <title>Github + RStudio - an Intro</title>
@@ -1216,278 +1327,6 @@ UNUK2050ysummary &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; undp2 &lt;span c
         <pubDate>Tue, 16 Feb 2016 00:00:00 +0000</pubDate>
         <link>http://giacomovagni.github.io/motsetchoses/2016/02/melt-unite-spread.html</link>
         <guid isPermaLink="true">http://giacomovagni.github.io/motsetchoses/2016/02/melt-unite-spread.html</guid>
-        
-        <category>knitr</category>
-        
-        <category>servr</category>
-        
-        <category>httpuv</category>
-        
-        <category>websocket</category>
-        
-        
-        <category>jekyll</category>
-        
-        <category>rstats</category>
-        
-      </item>
-    
-      <item>
-        <title>Number of Partner</title>
-        <description>&lt;p&gt;hey&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;plyr&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;dplyr&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;tidyr&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;mtusRlocal&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;knitr&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;reshape2&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;xtable&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;kp&quot;&gt;load&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;/Users/giacomovagni/site/motsetchoses/_data/dtaEpisode.RData&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-dtaEpisode&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;weekend &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;ifelse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;dtaEpisode&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;day &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; dtaEpisode&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;day &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;weekend&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;weekdays&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;The code is :&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;dtaEpisode &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; group_by&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;hldid&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; mutate&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;ncouple &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; n_distinct&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;idno&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; select&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;idno&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; hldid&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; ncouple&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Source: local data frame [8,569 x 3]
-## Groups: hldid
-## 
-##      idno hldid ncouple
-## 1  3809_1  3809       2
-## 2  3809_1  3809       2
-## 3  3809_1  3809       2
-## 4  3809_1  3809       2
-## 5  3809_1  3809       2
-## 6  3809_1  3809       2
-## 7  3809_1  3809       2
-## 8  3809_1  3809       2
-## 9  3809_1  3809       2
-## 10 3809_1  3809       2
-## ..    ...   ...     ...&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-</description>
-        <pubDate>Wed, 03 Feb 2016 00:00:00 +0000</pubDate>
-        <link>http://giacomovagni.github.io/motsetchoses/2016/02/retreive-ncouple.html</link>
-        <guid isPermaLink="true">http://giacomovagni.github.io/motsetchoses/2016/02/retreive-ncouple.html</guid>
-        
-        <category>knitr</category>
-        
-        <category>servr</category>
-        
-        <category>httpuv</category>
-        
-        <category>websocket</category>
-        
-        
-        <category>jekyll</category>
-        
-        <category>rstats</category>
-        
-      </item>
-    
-      <item>
-        <title>Introduction to probabilities (Breen&#39;s class)</title>
-        <description>&lt;script type=&quot;text/javascript&quot; async=&quot;&quot; src=&quot;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML&quot;&gt;
-&lt;/script&gt;
-
-&lt;h2 id=&quot;some-concepts&quot;&gt;Some concepts&lt;/h2&gt;
-
-&lt;p&gt;Number of outcomes&lt;/p&gt;
-
-&lt;p&gt;Sample space &lt;script type=&quot;math/tex&quot;&gt;\{1, 2, 3, 4\}&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;Probabilities of events&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;P \{1, 2\} = \frac{1}{3}&lt;/script&gt;
-
-&lt;h3 id=&quot;disjunction&quot;&gt;Disjunction&lt;/h3&gt;
-
-&lt;p&gt;Events are not duplicated. All the probabilities sum up to 1.&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;P \{5, 6\}&lt;/script&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;P \{1\}&lt;/script&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;P \{2,3,4\}&lt;/script&gt;
-
-&lt;h3 id=&quot;joint-events&quot;&gt;Joint Events&lt;/h3&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;A = \{1,2\}&lt;/script&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;B = \{2,4\}&lt;/script&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;P(A) = \frac{1}{3}&lt;/script&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;P(B) = \frac{1}{3}&lt;/script&gt;
-
-&lt;p&gt;In set term : Union.&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;P(A \cup B) = P(A) + P(B) - P(A \cap B)&lt;/script&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;P(A \cup B) = \frac{1}{3} + \frac{1}{3} - \frac{1}{6} = \frac{1}{2}&lt;/script&gt;
-
-&lt;h3 id=&quot;cards&quot;&gt;Cards&lt;/h3&gt;
-
-&lt;p&gt;52 cards&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;P(Ace) = \frac{4}{52}&lt;/script&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;P(Red) = \frac{26}{52}&lt;/script&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;P(A \cup R) = P(A) + P(R) - P(A \cap R)&lt;/script&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;P(A \cup R) = \frac{4}{52} + \frac{26}{52} - \frac{2}{52} = \frac{1}{...}&lt;/script&gt;
-
-&lt;h2 id=&quot;multiplication-of-probabilities&quot;&gt;Multiplication of probabilities&lt;/h2&gt;
-
-&lt;p&gt;Ask yourself if the observations are &lt;em&gt;independant&lt;/em&gt; or not. If Event influence the probabilities of one another (“Associated”).&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;X == red&lt;/script&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;Y == queen&lt;/script&gt;
-
-&lt;p&gt;What is the probability of taking a red queen (X,Y) ?&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;P(X, Y) = P(X) \times P(Y)&lt;/script&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;P(X, Y) = \frac{26}{52} \times \frac{4}{52}&lt;/script&gt;
-
-&lt;h4 id=&quot;example&quot;&gt;Example&lt;/h4&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;A = \{1,2\}&lt;/script&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;B = \{2,4\}&lt;/script&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;C = \{1,2,3,5,6\}&lt;/script&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;P(A \cup B \cup C) = P(A) + P(B) + P(C) - P(A \cap B) - P(A \cap C) - P(B \cap C) + P(A \cap B \cap C)&lt;/script&gt;
-
-&lt;h3 id=&quot;non-independance&quot;&gt;Non independance&lt;/h3&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;X \perp Y&lt;/script&gt;
-
-&lt;p&gt;What is the probabilities of having 2 aces ?&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;With replacement&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;P(Ace = 2) = \frac{4}{52} \times \frac{4}{52}&lt;/script&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Without replacement&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;P(Ace = 2) = \frac{4}{52} \times \frac{3}{52}&lt;/script&gt;
-
-&lt;h4 id=&quot;example-1&quot;&gt;Example&lt;/h4&gt;
-
-&lt;table style=&quot;border-collapse:collapse;border-spacing:0;border-color:#ccc&quot;&gt;&lt;tr&gt;&lt;th style=&quot;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#f0f0f0;text-align:center&quot;&gt;&lt;br /&gt;&lt;/th&gt;&lt;th style=&quot;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#f0f0f0;text-align:center&quot;&gt;Labour&lt;/th&gt;&lt;th style=&quot;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#f0f0f0;text-align:center&quot;&gt;Conservatice&lt;/th&gt;&lt;th style=&quot;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#f0f0f0;text-align:center;vertical-align:top&quot;&gt;&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;text-align:center;vertical-align:top&quot;&gt;Men &lt;/td&gt;&lt;td style=&quot;font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;text-align:center;vertical-align:top&quot;&gt;5&lt;/td&gt;&lt;td style=&quot;font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;text-align:center;vertical-align:top&quot;&gt;12&lt;/td&gt;&lt;td style=&quot;font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;text-align:center;vertical-align:top&quot;&gt;17&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;text-align:center;vertical-align:top&quot;&gt;Women&lt;/td&gt;&lt;td style=&quot;font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;text-align:center;vertical-align:top&quot;&gt;33&lt;/td&gt;&lt;td style=&quot;font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;text-align:center;vertical-align:top&quot;&gt;10&lt;/td&gt;&lt;td style=&quot;font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;text-align:center;vertical-align:top&quot;&gt;43&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;text-align:center;vertical-align:top&quot;&gt;&lt;/td&gt;&lt;td style=&quot;font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;text-align:center;vertical-align:top&quot;&gt;38&lt;/td&gt;&lt;td style=&quot;font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;text-align:center;vertical-align:top&quot;&gt;22&lt;/td&gt;&lt;td style=&quot;font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;text-align:center;vertical-align:top&quot;&gt;60&lt;br /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-
-&lt;p&gt;** Marginal Unconditional Probability **&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;P(X)&lt;/script&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;P(sex == men) = \frac{17}{60}&lt;/script&gt;
-
-&lt;p&gt;** Join Bivariate Proability **&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;P(X, Y)&lt;/script&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-P(sex == men \&amp; party == labour) = \frac{5}{60} %]]&gt;&lt;/script&gt;
-
-&lt;p&gt;** Conditional Probability **&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;P(Y \mid X)&lt;/script&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;P(Labour \mid Men)  = \frac{5}{17}&lt;/script&gt;
-
-&lt;p&gt;Men is a &lt;em&gt;fixed condition&lt;/em&gt;&lt;/p&gt;
-
-&lt;h5 id=&quot;conditional-probability&quot;&gt;Conditional Probability&lt;/h5&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;P(Y \mid X) = \frac{P(X,Y)}{P(X)}&lt;/script&gt;
-
-&lt;p&gt;&lt;em&gt;theoretical distribution independant&lt;/em&gt;&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;P(X, Y) =  P(X) \times P(Y)&lt;/script&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;X \perp Y = P(Y \mid X) = \frac{P(X,Y)}{P(X)} = \frac{P(X) \times P(Y)}{P(X)} = P(Y)&lt;/script&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;“independance : knowing one thing does not inform about another thing”&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;law-of-total-probability&quot;&gt;Law of Total Probability&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Disjunction events : &lt;script type=&quot;math/tex&quot;&gt;A_{1}, A_{2}, \dots, A_{n}&lt;/script&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;P(B) = P(B|A_{1}) \times P(A_{1}) + \dots&lt;/script&gt;
-
-&lt;h5 id=&quot;example-2&quot;&gt;Example&lt;/h5&gt;
-
-&lt;p&gt;10 players&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;3 goods (G) &lt;script type=&quot;math/tex&quot;&gt;P(Win = 0.2)&lt;/script&gt;&lt;/li&gt;
-  &lt;li&gt;5 indifferent (I) &lt;script type=&quot;math/tex&quot;&gt;P(Win = 0.5)&lt;/script&gt;&lt;/li&gt;
-  &lt;li&gt;2 bads (B) &lt;script type=&quot;math/tex&quot;&gt;P(Win = 0.8)&lt;/script&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;What is the probability of winning the first match ?&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;P(win) = P(w \mid G) \times P(G) + P(w \mid I) \times P(I) + P(w \mid B) \times P(B) = 
-(0.2 \times 0.3) + (0.5 \times 0.5) + (0.2 \times 0.8)&lt;/script&gt;
-
-&lt;h2 id=&quot;bayes-theorem&quot;&gt;Bayes Theorem&lt;/h2&gt;
-
-&lt;p&gt;$$ P(Y \mid X) = \frac{P(X \mid Y) \times P(Y)}{P(X)}&lt;/p&gt;
-
-&lt;p&gt;Changing your belief after observations&lt;/p&gt;
-
-&lt;p&gt;Frequentists (all in data) versus bayesian (data + update)&lt;/p&gt;
-
-&lt;h4 id=&quot;example-3&quot;&gt;Example&lt;/h4&gt;
-
-&lt;p&gt;Disease (D) and the test detection (T)&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Proba of catching the disease&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;P(D = 1) = \frac{1}{10`000}&lt;/script&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-Test = 
-  \begin{cases}
-    1      &amp; \quad \text{if } T \text{ is positive}\\
-    0  &amp; \quad \text{if } T \text{ is negative}\\
-  \end{cases} %]]&gt;&lt;/script&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;P(T = 1 \mid D = 1) = 0.999&lt;/script&gt;
-
-&lt;p&gt;&lt;em&gt;test positif but no disease&lt;/em&gt; 
-&lt;script type=&quot;math/tex&quot;&gt;P(T = 1 \mid D = 0) = 0.0001&lt;/script&gt;&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;P(T = 1 \mid D = 1) = \frac{ P(D = 1 \mid T = 1 ) \times P(D = 1) }{ P ( T = 1 ) } = \frac{1}{2}&lt;/script&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{0.999 \times 0.0001}{T = 1}&lt;/script&gt;
-
-&lt;p&gt;What is &lt;script type=&quot;math/tex&quot;&gt;T = 1&lt;/script&gt; ? Use the Law Total Probability&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;P(T = 1) = P(T = 1 \mid D = 1) \times P(D = 1) + \frac{P(T = 1 | D = 0)}{P(D = 0)}&lt;/script&gt;
-
-&lt;p&gt;Take again the test and replace &lt;script type=&quot;math/tex&quot;&gt;D = 1&lt;/script&gt; of &lt;script type=&quot;math/tex&quot;&gt;0.0001&lt;/script&gt; but with replace with the new posterior beliefs &lt;script type=&quot;math/tex&quot;&gt;0.5&lt;/script&gt;&lt;/p&gt;
-
-</description>
-        <pubDate>Thu, 21 Jan 2016 00:00:00 +0000</pubDate>
-        <link>http://giacomovagni.github.io/motsetchoses/2016/01/intro-proba.html</link>
-        <guid isPermaLink="true">http://giacomovagni.github.io/motsetchoses/2016/01/intro-proba.html</guid>
         
         <category>knitr</category>
         

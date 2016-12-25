@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Create a website in 5min on Github using Jekyll</title>
+    <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+">
+
+    <link rel="stylesheet" href="/motsetchoses/css/main.css">
+    <link rel="canonical" href="http://giacomovagni.github.io/motsetchoses/2016/12/github-website.html">
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+
+
+  <body>
+
+    <!--- Header and nav template site-wide -->
+<header>
+  <nav class="group">
+    <a href="/motsetchoses\"><img class="badge" src="/motsetchoses/badge.png" alt="CH"></a>
+    
+      
+        <a class="page-link" href="/motsetchoses/about/">About</a>
+        
+      
+    
+      
+    
+      
+        <a class="page-link" href="/motsetchoses/Tags/index.html">Tags</a>
+        
+      
+    
+      
+        <a class="page-link" href="/motsetchoses/TimeUse/index.html">time use</a>
+        
+      
+    
+      
+    
+      
+        <a class="page-link" href="/motsetchoses/page/">page</a>
+        
+      
+    
+  </nav>
+  
+</header>
+
+ 
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Create a website in 5min on Github using Jekyll</h1>
+    <p class="post-meta">Dec 25, 2016</p>
+  </header>
+
+ <hr width = 10%>
+
+  <article class="post-content">
+    <p><span class="newthought">In this post</span> I will show you how you can easily create a website using Github and Jekyll.</p>
+
+<h2 id="create-gh-pages-repository">1. Create gh-pages repository</h2>
+<p>The first step is to create a <code>new repository</code>. 
+For instance, name you directory <code>website</code>. Click on the <em>Initialize this repository with a README</em>. Add also a  License if you want.</p>
+
+<p><a data-flickr-embed="true" href="https://www.flickr.com/photos/136480412@N05/31724074152/in/album-72157674402348604/" title="git_1"><img src="https://c1.staticflickr.com/1/289/31724074152_943278753c_z.jpg" width="640" height="447" alt="git_1" /></a><script async="" src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script></p>
+
+<p>Once the repository created click on <code>Branch: master</code>. You will need to write <code>gh-pages</code> and select it.</p>
+
+<p><a data-flickr-embed="true" href="https://www.flickr.com/photos/136480412@N05/31724070252/in/album-72157674402348604/" title="git_2"><img src="https://c5.staticflickr.com/1/350/31724070252_7a2c60d64d_z.jpg" width="640" height="180" alt="git_2" /></a><script async="" src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script></p>
+
+<p><a data-flickr-embed="true" href="https://www.flickr.com/photos/136480412@N05/31062123953/in/album-72157674402348604/" title="git_3"><img src="https://c2.staticflickr.com/1/421/31062123953_e115b116d6_z.jpg" width="640" height="167" alt="git_3" /></a><script async="" src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script></p>
+
+<p>Go then to <strong>Setting</strong> and again to <code>Branches</code>. Change <code>master</code> to <code>gh-pages</code>. Click on <em>update</em>. Ignore the warning and update.</p>
+
+<p><a data-flickr-embed="true" href="https://www.flickr.com/photos/136480412@N05/31871653905/in/album-72157674402348604/" title="git_4"><img src="https://c2.staticflickr.com/1/276/31871653905_b4f3f5fac8_z.jpg" width="640" height="206" alt="git_4" /></a><script async="" src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script></p>
+
+<p><a data-flickr-embed="true" href="https://www.flickr.com/photos/136480412@N05/31724066292/in/album-72157674402348604/" title="git_5"><img src="https://c5.staticflickr.com/1/557/31724066292_8c5bca0c2c_z.jpg" width="640" height="208" alt="git_5" /></a><script async="" src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script></p>
+
+<p><a data-flickr-embed="true" href="https://www.flickr.com/photos/136480412@N05/31724064242/in/album-72157674402348604/" title="git_6"><img src="https://c3.staticflickr.com/1/558/31724064242_0b7985e310_z.jpg" width="300" height="150" alt="git_6" /></a><script async="" src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script></p>
+
+<h2 id="clone">2. Clone</h2>
+<p>The second step consists of “importing” your webiste on your computer. Because I am not very handy with the <code>Terminal</code> command line, I am using the excellent github desktop.</p>
+
+<p>You can download at</p>
+
+<p><a href="https://desktop.github.com/">https://desktop.github.com/</a></p>
+
+<p>Once you downloaded the github desktop, go back to your github page and click on <code>Clone or download</code></p>
+
+<p><a data-flickr-embed="true" href="https://www.flickr.com/photos/136480412@N05/31062118413/in/album-72157674402348604/" title="git_7"><img src="https://c6.staticflickr.com/1/682/31062118413_c4e46d53d2_z.jpg" width="400" height="290" alt="git_7" /></a><script async="" src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script></p>
+
+<p>Then click on <code>Open in Desktop</code>. This will open a repository on your personal computer with the name of the githubt repository (<code>clone as Website</code> in our case).</p>
+
+<p><a data-flickr-embed="true" href="https://www.flickr.com/photos/136480412@N05/31833757686/in/album-72157674402348604/" title="git_8"><img src="https://c7.staticflickr.com/1/555/31833757686_6ab6827e1d_z.jpg" width="400" height="100" alt="git_8" /></a><script async="" src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script></p>
+
+<p>Your page will then be visible on your github desktop.</p>
+
+<p>Now open the <code>website</code> folder that as been <em>cloned</em> (copied) on your desktop. It only contains the <code>Readme</code> file and the Licence if you added one.</p>
+
+<h2 id="create-your-website-design">3. Create your website design</h2>
+
+<p>If you are not familiar with web design, you can start by downloading a <code>theme</code> (which is a style or design of your webpage).</p>
+
+<p>Jekyll as a lot of great readymade design you can download on the internet.</p>
+
+<p>For instance, here</p>
+
+<p><a href="http://themes.jekyllrc.org/">http://themes.jekyllrc.org/</a></p>
+
+<p>Choose a template or theme you like and simply download it.</p>
+
+<p><a data-flickr-embed="true" href="https://www.flickr.com/photos/136480412@N05/31031061374/in/album-72157674402348604/" title="git_9"><img src="https://c7.staticflickr.com/1/298/31031061374_087ddacf43_z.jpg" width="400" height="200" alt="git_9" /></a><script async="" src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script></p>
+
+<p>Unzip the file and copy the file in the github folder on your computer. In doing so, you simply copy the codes of the website. This will enable you to generate the same website on your github page.</p>
+
+<p><a data-flickr-embed="true" href="https://www.flickr.com/photos/136480412@N05/31724076582/in/album-72157674402348604/" title="git_10"><img src="https://c7.staticflickr.com/1/777/31724076582_8cdb7b9cb9_z.jpg" width="400" height="210" alt="git_10" /></a><script async="" src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script></p>
+
+<p>Now go back to the github desktop and you will notice that you can see the files you just copied. When using github you need to <code>commit</code> (send) file to your github page. Write down a note and click on <code>Commit to gh-pages</code>. This will send the codes on your page.</p>
+
+<p><a data-flickr-embed="true" href="https://www.flickr.com/photos/136480412@N05/31724077862/in/album-72157674402348604/" title="git_11"><img src="https://c7.staticflickr.com/1/398/31724077862_7bc92fd0c5_z.jpg" width="537" height="640" alt="git_11" /></a><script async="" src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script></p>
+
+<h2 id="the-website-is-ready">4. The website is ready</h2>
+
+<p>Go back on your github page. Go to <code>Settings</code> and scroll down. You will see that it says: <code>Your site is published at: https://YOURNAME.github.io/website/</code>.</p>
+
+<p>Click on the website will appear!</p>
+
+<p><a data-flickr-embed="true" href="https://www.flickr.com/photos/136480412@N05/31724071312/in/album-72157674402348604/" title="git_12"><img src="https://c1.staticflickr.com/1/426/31724071312_61ba38cc3a_z.jpg" width="640" height="169" alt="git_12" /></a><script async="" src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script></p>
+
+<h2 id="write-posts">5. Write posts</h2>
+
+<p>There are many ways to write posts on github. One simple way is to create posts manually in the website folder on your desktop.</p>
+
+<p>Posts are stored in the folder <code>_posts</code>.</p>
+
+<p><a data-flickr-embed="true" href="https://www.flickr.com/photos/136480412@N05/31062907453/in/album-72157674402348604/" title="git_13"><img src="https://c6.staticflickr.com/1/276/31062907453_fa7bbc1e6a_m.jpg" width="340" height="120" alt="git_13" /></a><script async="" src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script></p>
+
+<p>What you need to do is created a Markdown file and simply store it in the <code>_posts</code> folder. Posts are generally stored by dates. Make your life easy in copying an existing post (provided by the website imported from the internet) and start tweaking it with a new date and a new name.</p>
+
+
+  </article>
+
+</div>
+
+      </div>
+    </div>
+
+    <footer>
+  <ul class="footer-links group">
+    <li><a href="mailto:hate@spam.net"><span class="icon-mail"></span></a></li>
+    
+      <li>
+        <a href="//www.twitter.com/jekyllrb"><span class="icon-twitter"></span></a>
+      </li>
+    
+      <li>
+        <a href="//plus.google.com/explore/jekyllrb"><span class="icon-googleplus"></span></a>
+      </li>
+    
+      <li>
+        <a href="//github.com/jekyll"><span class="icon-github"></span></a>
+      </li>
+    
+      <li>
+        <a href="//www.flickr.com/explore"><span class="icon-flickr"></span></a>
+      </li>
+    
+      <li>
+        <a href="/feed.xml"><span class="icon-feed"></span></a>
+      </li>
+    
+  </ul>
+<div class="credits">
+<span>&copy; GIACOMO VAGNI &nbsp; 2016</span>
+<br>
+<span>This site was created with <a href="//github.com/cpsievert/knitr-jekyll">cpsievert/knitr-jekyll</a> -- a marriage of <a href="//github.com/yihui/knitr-jekyll">yihui/knitr-jekyll</a> and the <a href="//github.com/clayh53/tufte-jekyll">Tufte theme</a> for <a href="//jekyllrb.com">Jekyll</a>.</span>
+</div>
+</footer>
+
+
+  </body>
+
+</html>
