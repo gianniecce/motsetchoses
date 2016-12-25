@@ -35,13 +35,14 @@ dta %>% group_by(id, day) %>% summarise(sum(duration))
 
 {% highlight text %}
 ## Source: local data frame [4 x 3]
-## Groups: id
+## Groups: id [?]
 ## 
-##   id      day sum(duration)
-## 1  1   Monday          1440
-## 2  1 Saturday          1440
-## 3  2   Monday          1440
-## 4  2 Saturday          1440
+##      id      day `sum(duration)`
+##   <int>   <fctr>           <int>
+## 1     1   Monday            1440
+## 2     1 Saturday            1440
+## 3     2   Monday            1440
+## 4     2 Saturday            1440
 {% endhighlight %}
 
 The individual mean can be computed such as : 
@@ -54,21 +55,22 @@ dta %>% group_by(id, activities) %>% summarise(mean(duration))
 
 {% highlight text %}
 ## Source: local data frame [12 x 3]
-## Groups: id
+## Groups: id [?]
 ## 
-##    id activities mean(duration)
-## 1   1         TV      270.00000
-## 2   1   domestic      300.00000
-## 3   1     eating      113.33333
-## 4   1  free time      400.00000
-## 5   1  paid work      500.00000
-## 6   1      sleep      400.00000
-## 7   2         TV      220.00000
-## 8   2   domestic      350.00000
-## 9   2     eating       63.33333
-## 10  2  free time      300.00000
-## 11  2  paid work      600.00000
-## 12  2      sleep      500.00000
+##       id activities `mean(duration)`
+##    <int>     <fctr>            <dbl>
+## 1      1         TV        270.00000
+## 2      1   domestic        300.00000
+## 3      1     eating        113.33333
+## 4      1  free time        400.00000
+## 5      1  paid work        500.00000
+## 6      1      sleep        400.00000
+## 7      2         TV        220.00000
+## 8      2   domestic        350.00000
+## 9      2     eating         63.33333
+## 10     2  free time        300.00000
+## 11     2  paid work        600.00000
+## 12     2      sleep        500.00000
 {% endhighlight %}
 
 The aggregate mean by day : 
@@ -81,18 +83,19 @@ dta %>% group_by(day, activities) %>% summarise(mean(duration))
 
 {% highlight text %}
 ## Source: local data frame [9 x 3]
-## Groups: day
+## Groups: day [?]
 ## 
-##        day activities mean(duration)
-## 1   Monday         TV            350
-## 2   Monday     eating             95
-## 3   Monday  paid work            550
-## 4   Monday      sleep            350
-## 5 Saturday         TV            140
-## 6 Saturday   domestic            325
-## 7 Saturday     eating             75
-## 8 Saturday  free time            350
-## 9 Saturday      sleep            550
+##        day activities `mean(duration)`
+##     <fctr>     <fctr>            <dbl>
+## 1   Monday         TV              350
+## 2   Monday     eating               95
+## 3   Monday  paid work              550
+## 4   Monday      sleep              350
+## 5 Saturday         TV              140
+## 6 Saturday   domestic              325
+## 7 Saturday     eating               75
+## 8 Saturday  free time              350
+## 9 Saturday      sleep              550
 {% endhighlight %}
 
 The aggregate mean by activities, regardless of the day : 
@@ -104,15 +107,15 @@ dta %>% group_by(activities) %>% summarise(mean(duration))
 
 
 {% highlight text %}
-## Source: local data frame [6 x 2]
-## 
-##   activities mean(duration)
-## 1         TV      245.00000
-## 2   domestic      325.00000
-## 3     eating       88.33333
-## 4  free time      350.00000
-## 5  paid work      550.00000
-## 6      sleep      450.00000
+## # A tibble: 6 <U+00D7> 2
+##   activities `mean(duration)`
+##       <fctr>            <dbl>
+## 1         TV        245.00000
+## 2   domestic        325.00000
+## 3     eating         88.33333
+## 4  free time        350.00000
+## 5  paid work        550.00000
+## 6      sleep        450.00000
 {% endhighlight %}
 
 ### 2. Mean of Long PP file 
@@ -136,18 +139,19 @@ dtaPP %>% group_by(id, day, activities) %>% summarise(time = n()) %>% # transfor
 
 {% highlight text %}
 ## Source: local data frame [9 x 3]
-## Groups: activities
+## Groups: activities [?]
 ## 
-##   activities      day mean(time)
-## 1         TV   Monday        350
-## 2         TV Saturday        140
-## 3   domestic Saturday        325
-## 4     eating   Monday        190
-## 5     eating Saturday         75
-## 6  free time Saturday        350
-## 7  paid work   Monday        550
-## 8      sleep   Monday        350
-## 9      sleep Saturday        550
+##   activities      day `mean(time)`
+##       <fctr>   <fctr>        <dbl>
+## 1         TV   Monday          350
+## 2         TV Saturday          140
+## 3   domestic Saturday          325
+## 4     eating   Monday          190
+## 5     eating Saturday           75
+## 6  free time Saturday          350
+## 7  paid work   Monday          550
+## 8      sleep   Monday          350
+## 9      sleep Saturday          550
 {% endhighlight %}
 
 ### 3. Mean of Sequence File 
@@ -174,110 +178,42 @@ colnames(dtaSeq) = c('idind', 'day', paste("main", 1:1440, sep = ""))
 {% highlight r %}
 N = count(dtaSeq) 
 N 
-{% endhighlight %}
-
-
-
-{% highlight text %}
-## Source: local data frame [1 x 1]
-## 
-##   n
-## 1 4
-{% endhighlight %}
-
-
-
-{% highlight r %}
 # by act only
 dtaSeq %>% select(idind, day, matches('main')) %>% 
-  melt(id.vars = c("idind", "day")) %>% group_by(value) %>% 
+  melt(id.vars = c("idind", "day")) %>% group_by(value, day) %>% 
   summarise(n = n()) %>% # back to PP 
   mutate(time =  (n* 1) / 4 ) %>% # divide by count 
   mutate(TimeClock(time)) 
-{% endhighlight %}
+
+# if dummy variables 
+dtaSeq %>% select(idind, day, matches('main')) %>% 
+  melt(id.vars = c("idind", "day")) %>% 
+  mutate(value = ifelse(value == 'sleep', 1, 0)) %>% 
+  group_by(idind, day) %>% summarise(n())
+
+
+%>% mutate(nid = n_distinct(idind)) %>% 
+  group_by(nid, day) %>% 
+  summarise(n = sum(value) * 1) %>% 
+  mutate(meanN = n / nid) %>% mutate(meanN = TimeClock(meanN))
 
 
 
-{% highlight text %}
-## Source: local data frame [6 x 4]
-## 
-##       value    n  time TimeClock(time)
-## 1        TV  980 245.0           04:05
-## 2  domestic  650 162.5           02:42
-## 3    eating  530 132.5           02:12
-## 4 free time  700 175.0           02:55
-## 5 paid work 1100 275.0           04:35
-## 6     sleep 1800 450.0           07:30
-{% endhighlight %}
 
-
-
-{% highlight r %}
 # by act and days 
 dtaSeq %>% select(idind, day, matches('main')) %>% 
   melt(id.vars = c("idind", "day")) %>% group_by(day, value) %>% 
   summarise(n = n()) %>% 
   mutate(time =  (n* 1) / 2) %>% # divide by count 
   mutate(TimeClock(time)) 
-{% endhighlight %}
 
-
-
-{% highlight text %}
-## Source: local data frame [9 x 5]
-## Groups: day
-## 
-##        day     value    n time TimeClock(time)
-## 1   Monday        TV  700  350           05:50
-## 2   Monday    eating  380  190           03:10
-## 3   Monday paid work 1100  550           09:10
-## 4   Monday     sleep  700  350           05:50
-## 5 Saturday        TV  280  140           02:20
-## 6 Saturday  domestic  650  325           05:25
-## 7 Saturday    eating  150   75           01:15
-## 8 Saturday free time  700  350           05:50
-## 9 Saturday     sleep 1100  550           09:10
-{% endhighlight %}
-
-
-
-{% highlight r %}
 # if you haev the full data then group by what you want  
 dtaSeq %>% select(idind, day, matches('main')) %>% 
   melt(id.vars = c("idind", "day")) %>% group_by(idind, day, value) %>% 
   summarise(n = n()) %>% 
   group_by(value) %>% summarise( mean(n) ) 
-{% endhighlight %}
-
-
-
-{% highlight text %}
-## Source: local data frame [6 x 2]
-## 
-##       value mean(n)
-## 1        TV   245.0
-## 2  domestic   325.0
-## 3    eating   132.5
-## 4 free time   350.0
-## 5 paid work   550.0
-## 6     sleep   450.0
-{% endhighlight %}
-
-
-
-{% highlight r %}
   mutate(TimeClock(time)) 
-{% endhighlight %}
-
-
-
-{% highlight text %}
-## Error in eval(expr, envir, enclos): not compatible with requested type
-{% endhighlight %}
-
-
-
-{% highlight r %}
+  
 # or simply activities 
   dtaSeq %>% select(idind, day, matches('main')) %>% 
     melt(id.vars = c("idind", "day")) %>% 
@@ -285,36 +221,16 @@ dtaSeq %>% select(idind, day, matches('main')) %>%
     summarise(n = n()) %>% 
     group_by(value, day) %>% 
     summarise( mean(n) ) 
-{% endhighlight %}
-
-
-
-{% highlight text %}
-## Source: local data frame [9 x 3]
-## Groups: value
-## 
-##       value      day mean(n)
-## 1        TV   Monday     350
-## 2        TV Saturday     140
-## 3  domestic Saturday     325
-## 4    eating   Monday     190
-## 5    eating Saturday      75
-## 6 free time Saturday     350
-## 7 paid work   Monday     550
-## 8     sleep   Monday     350
-## 9     sleep Saturday     550
-{% endhighlight %}
-
-
-
-{% highlight r %}
   mutate(TimeClock(time)) 
 {% endhighlight %}
 
 
 
 {% highlight text %}
-## Error in eval(expr, envir, enclos): not compatible with requested type
+## Error: <text>:17:1: unexpected SPECIAL
+## 16: 
+## 17: %>%
+##     ^
 {% endhighlight %}
 
 Alternative when you are unsure of the `count` results 
@@ -332,15 +248,13 @@ dtaSeq %>% select(idind, day, matches('main')) %>%
 
 
 {% highlight text %}
-## Source: local data frame [6 x 5]
-## 
-##       value    n          p  time TimeClock(time)
-## 1        TV  980 0.17013889 245.0           04:05
-## 2  domestic  650 0.11284722 162.5           02:42
-## 3    eating  530 0.09201389 132.5           02:12
-## 4 free time  700 0.12152778 175.0           02:55
-## 5 paid work 1100 0.19097222 275.0           04:35
-## 6     sleep 1800 0.31250000 450.0           07:30
+## Adding missing grouping variables: `id`
+{% endhighlight %}
+
+
+
+{% highlight text %}
+## Error in eval(expr, envir, enclos): invalid column index : NA for variable: id = id
 {% endhighlight %}
 
 
@@ -358,15 +272,16 @@ head(dtaPP)
 
 {% highlight text %}
 ## Source: local data frame [6 x 5]
-## Groups: id, day
+## Groups: id, day [1]
 ## 
-##   id      day activities epnum Time
-## 1  1 Saturday      sleep     1    1
-## 2  1 Saturday      sleep     1    2
-## 3  1 Saturday      sleep     1    3
-## 4  1 Saturday      sleep     1    4
-## 5  1 Saturday      sleep     1    5
-## 6  1 Saturday      sleep     1    6
+##      id      day activities epnum  Time
+##   <int>   <fctr>     <fctr> <int> <int>
+## 1     1 Saturday      sleep     1     1
+## 2     1 Saturday      sleep     1     2
+## 3     1 Saturday      sleep     1     3
+## 4     1 Saturday      sleep     1     4
+## 5     1 Saturday      sleep     1     5
+## 6     1 Saturday      sleep     1     6
 {% endhighlight %}
 
 
@@ -385,13 +300,15 @@ dtaPP_sum
 
 {% highlight text %}
 ## Source: local data frame [4 x 8]
+## Groups: id, day [4]
 ## 
-##   id      day act_TV act_domestic act_eating act_free time
-## 1  1   Monday    400            0        240             0
-## 2  1 Saturday    140          300        100           400
-## 3  2   Monday    300            0        140             0
-## 4  2 Saturday    140          350         50           300
-## Variables not shown: act_paid work (dbl), act_sleep (dbl)
+##      id      day act_TV act_domestic act_eating `act_free time`
+## * <int>   <fctr>  <dbl>        <dbl>      <dbl>           <dbl>
+## 1     1   Monday    400            0        240               0
+## 2     1 Saturday    140          300        100             400
+## 3     2   Monday    300            0        140               0
+## 4     2 Saturday    140          350         50             300
+## # ... with 2 more variables: `act_paid work` <dbl>, act_sleep <dbl>
 {% endhighlight %}
 
 
@@ -403,11 +320,22 @@ dtaPP_sum %>% select(-id, -day) %>% summarise_each(funs(mean))
 
 
 {% highlight text %}
-## Source: local data frame [1 x 6]
+## Adding missing grouping variables: `id`, `day`
+{% endhighlight %}
+
+
+
+{% highlight text %}
+## Source: local data frame [4 x 8]
+## Groups: id [?]
 ## 
-##   act_TV act_domestic act_eating act_free time act_paid work
-## 1    245        162.5      132.5           175           275
-## Variables not shown: act_sleep (dbl)
+##      id      day act_TV act_domestic act_eating `act_free time`
+##   <int>   <fctr>  <dbl>        <dbl>      <dbl>           <dbl>
+## 1     1   Monday    400            0        240               0
+## 2     1 Saturday    140          300        100             400
+## 3     2   Monday    300            0        140               0
+## 4     2 Saturday    140          350         50             300
+## # ... with 2 more variables: `act_paid work` <dbl>, act_sleep <dbl>
 {% endhighlight %}
 
 #### 3.3. Weighted Sum and Weighted Mean 
@@ -434,10 +362,13 @@ dtaSeq %>% select(idind, day, day_weights, matches('main')) %>%
 
 
 {% highlight text %}
-## Source: local data frame [1 x 2]
-## 
-##   meanTV weightedmean
-## 1    245        262.5
+## Adding missing grouping variables: `id`
+{% endhighlight %}
+
+
+
+{% highlight text %}
+## Error in eval(expr, envir, enclos): invalid column index : NA for variable: id = id
 {% endhighlight %}
 
 The weighted sum 
@@ -449,11 +380,7 @@ dtaSeq %>% count(day) %>% mutate(p = n / sum(n))
 
 
 {% highlight text %}
-## Source: local data frame [2 x 3]
-## 
-##        day n   p
-## 1   Monday 2 0.5
-## 2 Saturday 2 0.5
+## Error in eval(expr, envir, enclos): unknown column 'idind'
 {% endhighlight %}
 
 
@@ -465,11 +392,7 @@ dtaSeq %>% count(day, wt = day_weights) %>% mutate(p = n / sum(n))
 
 
 {% highlight text %}
-## Source: local data frame [2 x 3]
-## 
-##        day        n         p
-## 1   Monday 2.000000 0.5833333
-## 2 Saturday 1.428571 0.4166667
+## Error in eval(expr, envir, enclos): unknown column 'idind'
 {% endhighlight %}
 
 

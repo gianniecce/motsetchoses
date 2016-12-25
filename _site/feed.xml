@@ -6,9 +6,28 @@
 </description>
     <link>http://giacomovagni.github.io/motsetchoses/</link>
     <atom:link href="http://giacomovagni.github.io/motsetchoses/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 28 Mar 2016 15:41:51 +0100</pubDate>
-    <lastBuildDate>Mon, 28 Mar 2016 15:41:51 +0100</lastBuildDate>
+    <pubDate>Sun, 25 Dec 2016 12:25:24 +0000</pubDate>
+    <lastBuildDate>Sun, 25 Dec 2016 12:25:24 +0000</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Github + RStudio - an Intro</title>
+        <description>&lt;p&gt;&lt;span class=&quot;newthought&quot;&gt;This post&lt;/span&gt; will discuss how to change the interval time when transforming time use data&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;c1&quot;&gt;# servr::jekyll(command = &amp;#39;/Users/giacomovagni/.rvm/gems/ruby-2.2.1/wrappers/jekyll build&amp;#39;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;ffff&lt;/p&gt;
+</description>
+        <pubDate>Sun, 25 Dec 2016 00:00:00 +0000</pubDate>
+        <link>http://giacomovagni.github.io/motsetchoses/2016/12/git-RStudio.html</link>
+        <guid isPermaLink="true">http://giacomovagni.github.io/motsetchoses/2016/12/git-RStudio.html</guid>
+        
+        <category>mtus</category>
+        
+        
+        <category>jekyll</category>
+        
+      </item>
     
       <item>
         <title>Change the interval time </title>
@@ -92,66 +111,69 @@ dta &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; read.csv&lt;span class=&quot;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;dta &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; group_by&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;id&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; day&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; summarise&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;duration&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Source: local data frame [4 x 3]
-## Groups: id
+## Groups: id [?]
 ## 
-##   id      day sum(duration)
-## 1  1   Monday          1440
-## 2  1 Saturday          1440
-## 3  2   Monday          1440
-## 4  2 Saturday          1440&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+##      id      day `sum(duration)`
+##   &amp;lt;int&amp;gt;   &amp;lt;fctr&amp;gt;           &amp;lt;int&amp;gt;
+## 1     1   Monday            1440
+## 2     1 Saturday            1440
+## 3     2   Monday            1440
+## 4     2 Saturday            1440&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;The individual mean can be computed such as :&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;dta &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; group_by&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;id&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; activities&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; summarise&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;duration&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Source: local data frame [12 x 3]
-## Groups: id
+## Groups: id [?]
 ## 
-##    id activities mean(duration)
-## 1   1         TV      270.00000
-## 2   1   domestic      300.00000
-## 3   1     eating      113.33333
-## 4   1  free time      400.00000
-## 5   1  paid work      500.00000
-## 6   1      sleep      400.00000
-## 7   2         TV      220.00000
-## 8   2   domestic      350.00000
-## 9   2     eating       63.33333
-## 10  2  free time      300.00000
-## 11  2  paid work      600.00000
-## 12  2      sleep      500.00000&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+##       id activities `mean(duration)`
+##    &amp;lt;int&amp;gt;     &amp;lt;fctr&amp;gt;            &amp;lt;dbl&amp;gt;
+## 1      1         TV        270.00000
+## 2      1   domestic        300.00000
+## 3      1     eating        113.33333
+## 4      1  free time        400.00000
+## 5      1  paid work        500.00000
+## 6      1      sleep        400.00000
+## 7      2         TV        220.00000
+## 8      2   domestic        350.00000
+## 9      2     eating         63.33333
+## 10     2  free time        300.00000
+## 11     2  paid work        600.00000
+## 12     2      sleep        500.00000&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;The aggregate mean by day :&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;dta &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; group_by&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;day&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; activities&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; summarise&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;duration&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Source: local data frame [9 x 3]
-## Groups: day
+## Groups: day [?]
 ## 
-##        day activities mean(duration)
-## 1   Monday         TV            350
-## 2   Monday     eating             95
-## 3   Monday  paid work            550
-## 4   Monday      sleep            350
-## 5 Saturday         TV            140
-## 6 Saturday   domestic            325
-## 7 Saturday     eating             75
-## 8 Saturday  free time            350
-## 9 Saturday      sleep            550&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+##        day activities `mean(duration)`
+##     &amp;lt;fctr&amp;gt;     &amp;lt;fctr&amp;gt;            &amp;lt;dbl&amp;gt;
+## 1   Monday         TV              350
+## 2   Monday     eating               95
+## 3   Monday  paid work              550
+## 4   Monday      sleep              350
+## 5 Saturday         TV              140
+## 6 Saturday   domestic              325
+## 7 Saturday     eating               75
+## 8 Saturday  free time              350
+## 9 Saturday      sleep              550&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;The aggregate mean by activities, regardless of the day :&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;dta &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; group_by&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;activities&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; summarise&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;duration&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Source: local data frame [6 x 2]
-## 
-##   activities mean(duration)
-## 1         TV      245.00000
-## 2   domestic      325.00000
-## 3     eating       88.33333
-## 4  free time      350.00000
-## 5  paid work      550.00000
-## 6      sleep      450.00000&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## # A tibble: 6 &amp;lt;U+00D7&amp;gt; 2
+##   activities `mean(duration)`
+##       &amp;lt;fctr&amp;gt;            &amp;lt;dbl&amp;gt;
+## 1         TV        245.00000
+## 2   domestic        325.00000
+## 3     eating         88.33333
+## 4  free time        350.00000
+## 5  paid work        550.00000
+## 6      sleep        450.00000&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;mean-of-long-pp-file&quot;&gt;2. Mean of Long PP file&lt;/h3&gt;
 
@@ -168,18 +190,19 @@ dtaPP &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; group_by&lt;span c
   summarise&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;time&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Source: local data frame [9 x 3]
-## Groups: activities
+## Groups: activities [?]
 ## 
-##   activities      day mean(time)
-## 1         TV   Monday        350
-## 2         TV Saturday        140
-## 3   domestic Saturday        325
-## 4     eating   Monday        190
-## 5     eating Saturday         75
-## 6  free time Saturday        350
-## 7  paid work   Monday        550
-## 8      sleep   Monday        350
-## 9      sleep Saturday        550&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+##   activities      day `mean(time)`
+##       &amp;lt;fctr&amp;gt;   &amp;lt;fctr&amp;gt;        &amp;lt;dbl&amp;gt;
+## 1         TV   Monday          350
+## 2         TV Saturday          140
+## 3   domestic Saturday          325
+## 4     eating   Monday          190
+## 5     eating Saturday           75
+## 6  free time Saturday          350
+## 7  paid work   Monday          550
+## 8      sleep   Monday          350
+## 9      sleep Saturday          550&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;mean-of-sequence-file&quot;&gt;3. Mean of Sequence File&lt;/h3&gt;
 
@@ -198,96 +221,56 @@ dtaSeq &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; dta&lt;span class=&quot;p&
 &lt;span class=&quot;kp&quot;&gt;colnames&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;dtaSeq&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;idind&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;day&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;paste&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;main&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1440&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; sep &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;N &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; count&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;dtaSeq&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
-N&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Source: local data frame [1 x 1]
-## 
-##   n
-## 1 4&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;c1&quot;&gt;# by act only&lt;/span&gt;
+N 
+&lt;span class=&quot;c1&quot;&gt;# by act only&lt;/span&gt;
 dtaSeq &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; select&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;idind&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; day&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; matches&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;main&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
-  melt&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;id.vars &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;idind&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;day&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; group_by&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;value&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
+  melt&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;id.vars &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;idind&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;day&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; group_by&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;value&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; day&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
   summarise&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;n &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; n&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# back to PP &lt;/span&gt;
   mutate&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;time &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;n&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;4&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# divide by count &lt;/span&gt;
-  mutate&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;TimeClock&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;time&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  mutate&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;TimeClock&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;time&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; 
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Source: local data frame [6 x 4]
-## 
-##       value    n  time TimeClock(time)
-## 1        TV  980 245.0           04:05
-## 2  domestic  650 162.5           02:42
-## 3    eating  530 132.5           02:12
-## 4 free time  700 175.0           02:55
-## 5 paid work 1100 275.0           04:35
-## 6     sleep 1800 450.0           07:30&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;c1&quot;&gt;# if dummy variables &lt;/span&gt;
+dtaSeq &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; select&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;idind&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; day&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; matches&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;main&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
+  melt&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;id.vars &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;idind&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;day&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
+  mutate&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;value &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;ifelse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;value &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;sleep&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
+  group_by&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;idind&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; day&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; summarise&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;n&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;c1&quot;&gt;# by act and days &lt;/span&gt;
+
+&lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; mutate&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;nid &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; n_distinct&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;idind&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
+  group_by&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;nid&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; day&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
+  summarise&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;n &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;value&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
+  mutate&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;meanN &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; n &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; nid&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; mutate&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;meanN &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; TimeClock&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;meanN&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+
+
+
+&lt;span class=&quot;c1&quot;&gt;# by act and days &lt;/span&gt;
 dtaSeq &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; select&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;idind&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; day&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; matches&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;main&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
   melt&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;id.vars &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;idind&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;day&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; group_by&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;day&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; value&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
   summarise&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;n &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; n&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
   mutate&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;time &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;n&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# divide by count &lt;/span&gt;
-  mutate&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;TimeClock&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;time&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  mutate&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;TimeClock&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;time&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; 
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Source: local data frame [9 x 5]
-## Groups: day
-## 
-##        day     value    n time TimeClock(time)
-## 1   Monday        TV  700  350           05:50
-## 2   Monday    eating  380  190           03:10
-## 3   Monday paid work 1100  550           09:10
-## 4   Monday     sleep  700  350           05:50
-## 5 Saturday        TV  280  140           02:20
-## 6 Saturday  domestic  650  325           05:25
-## 7 Saturday    eating  150   75           01:15
-## 8 Saturday free time  700  350           05:50
-## 9 Saturday     sleep 1100  550           09:10&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;c1&quot;&gt;# if you haev the full data then group by what you want  &lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# if you haev the full data then group by what you want  &lt;/span&gt;
 dtaSeq &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; select&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;idind&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; day&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; matches&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;main&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
   melt&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;id.vars &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;idind&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;day&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; group_by&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;idind&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; day&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; value&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
   summarise&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;n &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; n&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
-  group_by&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;value&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; summarise&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;n&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Source: local data frame [6 x 2]
-## 
-##       value mean(n)
-## 1        TV   245.0
-## 2  domestic   325.0
-## 3    eating   132.5
-## 4 free time   350.0
-## 5 paid work   550.0
-## 6     sleep   450.0&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;mutate&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;TimeClock&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;time&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Error in eval(expr, envir, enclos): not compatible with requested type&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;c1&quot;&gt;# or simply activities &lt;/span&gt;
+  group_by&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;value&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; summarise&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;n&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
+  mutate&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;TimeClock&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;time&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; 
+  
+&lt;span class=&quot;c1&quot;&gt;# or simply activities &lt;/span&gt;
   dtaSeq &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; select&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;idind&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; day&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; matches&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;main&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
     melt&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;id.vars &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;idind&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;day&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
     group_by&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;idind&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; day&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; value&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
     summarise&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;n &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; n&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
     group_by&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;value&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; day&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
-    summarise&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;n&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+    summarise&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;n&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
+  mutate&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;TimeClock&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;time&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Source: local data frame [9 x 3]
-## Groups: value
-## 
-##       value      day mean(n)
-## 1        TV   Monday     350
-## 2        TV Saturday     140
-## 3  domestic Saturday     325
-## 4    eating   Monday     190
-## 5    eating Saturday      75
-## 6 free time Saturday     350
-## 7 paid work   Monday     550
-## 8     sleep   Monday     350
-## 9     sleep Saturday     550&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;mutate&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;TimeClock&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;time&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Error in eval(expr, envir, enclos): not compatible with requested type&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Error: &amp;lt;text&amp;gt;:17:1: unexpected SPECIAL
+## 16: 
+## 17: %&amp;gt;%
+##     ^&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Alternative when you are unsure of the &lt;code&gt;count&lt;/code&gt; results&lt;/p&gt;
 
@@ -298,15 +281,9 @@ dtaSeq &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; select&lt;span cl
     mutate&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;time &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;  &lt;span class=&quot;m&quot;&gt;1440&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; p&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# divide by count &lt;/span&gt;
   mutate&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;TimeClock&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;time&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Source: local data frame [6 x 5]
-## 
-##       value    n          p  time TimeClock(time)
-## 1        TV  980 0.17013889 245.0           04:05
-## 2  domestic  650 0.11284722 162.5           02:42
-## 3    eating  530 0.09201389 132.5           02:12
-## 4 free time  700 0.12152778 175.0           02:55
-## 5 paid work 1100 0.19097222 275.0           04:35
-## 6     sleep 1800 0.31250000 450.0           07:30&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Adding missing grouping variables: `id`&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Error in eval(expr, envir, enclos): invalid column index : NA for variable: id = id&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h4 id=&quot;individual&quot;&gt;3.2. Individual&lt;/h4&gt;
 
@@ -315,15 +292,16 @@ dtaSeq &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; select&lt;span cl
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;kp&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;dtaPP&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Source: local data frame [6 x 5]
-## Groups: id, day
+## Groups: id, day [1]
 ## 
-##   id      day activities epnum Time
-## 1  1 Saturday      sleep     1    1
-## 2  1 Saturday      sleep     1    2
-## 3  1 Saturday      sleep     1    3
-## 4  1 Saturday      sleep     1    4
-## 5  1 Saturday      sleep     1    5
-## 6  1 Saturday      sleep     1    6&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+##      id      day activities epnum  Time
+##   &amp;lt;int&amp;gt;   &amp;lt;fctr&amp;gt;     &amp;lt;fctr&amp;gt; &amp;lt;int&amp;gt; &amp;lt;int&amp;gt;
+## 1     1 Saturday      sleep     1     1
+## 2     1 Saturday      sleep     1     2
+## 3     1 Saturday      sleep     1     3
+## 4     1 Saturday      sleep     1     4
+## 5     1 Saturday      sleep     1     5
+## 6     1 Saturday      sleep     1     6&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;dtaPP_sum &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; dtaPP &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
   group_by&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;id&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; day&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; activities&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
@@ -334,21 +312,30 @@ dtaSeq &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; select&lt;span cl
 dtaPP_sum&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Source: local data frame [4 x 8]
+## Groups: id, day [4]
 ## 
-##   id      day act_TV act_domestic act_eating act_free time
-## 1  1   Monday    400            0        240             0
-## 2  1 Saturday    140          300        100           400
-## 3  2   Monday    300            0        140             0
-## 4  2 Saturday    140          350         50           300
-## Variables not shown: act_paid work (dbl), act_sleep (dbl)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+##      id      day act_TV act_domestic act_eating `act_free time`
+## * &amp;lt;int&amp;gt;   &amp;lt;fctr&amp;gt;  &amp;lt;dbl&amp;gt;        &amp;lt;dbl&amp;gt;      &amp;lt;dbl&amp;gt;           &amp;lt;dbl&amp;gt;
+## 1     1   Monday    400            0        240               0
+## 2     1 Saturday    140          300        100             400
+## 3     2   Monday    300            0        140               0
+## 4     2 Saturday    140          350         50             300
+## # ... with 2 more variables: `act_paid work` &amp;lt;dbl&amp;gt;, act_sleep &amp;lt;dbl&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;dtaPP_sum &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; select&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;id&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;day&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; summarise_each&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;funs&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Source: local data frame [1 x 6]
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Adding missing grouping variables: `id`, `day`&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Source: local data frame [4 x 8]
+## Groups: id [?]
 ## 
-##   act_TV act_domestic act_eating act_free time act_paid work
-## 1    245        162.5      132.5           175           275
-## Variables not shown: act_sleep (dbl)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+##      id      day act_TV act_domestic act_eating `act_free time`
+##   &amp;lt;int&amp;gt;   &amp;lt;fctr&amp;gt;  &amp;lt;dbl&amp;gt;        &amp;lt;dbl&amp;gt;      &amp;lt;dbl&amp;gt;           &amp;lt;dbl&amp;gt;
+## 1     1   Monday    400            0        240               0
+## 2     1 Saturday    140          300        100             400
+## 3     2   Monday    300            0        140               0
+## 4     2 Saturday    140          350         50             300
+## # ... with 2 more variables: `act_paid work` &amp;lt;dbl&amp;gt;, act_sleep &amp;lt;dbl&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h4 id=&quot;weighted-sum-and-weighted-mean&quot;&gt;3.3. Weighted Sum and Weighted Mean&lt;/h4&gt;
 
@@ -367,28 +354,19 @@ dtaSeq &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; select&lt;span cl
   spread&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;value&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; n&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; fill &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
   summarise&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;meanTV &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;act_TV&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; weightedmean &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; weighted.mean&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;act_TV&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; day_weights&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Source: local data frame [1 x 2]
-## 
-##   meanTV weightedmean
-## 1    245        262.5&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Adding missing grouping variables: `id`&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Error in eval(expr, envir, enclos): invalid column index : NA for variable: id = id&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;The weighted sum&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;dtaSeq &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; count&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;day&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; mutate&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;p &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; n &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;n&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Source: local data frame [2 x 3]
-## 
-##        day n   p
-## 1   Monday 2 0.5
-## 2 Saturday 2 0.5&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Error in eval(expr, envir, enclos): unknown column &amp;#39;idind&amp;#39;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;dtaSeq &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; count&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;day&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; wt &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; day_weights&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; mutate&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;p &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; n &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;n&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Source: local data frame [2 x 3]
-## 
-##        day        n         p
-## 1   Monday 2.000000 0.5833333
-## 2 Saturday 1.428571 0.4166667&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Error in eval(expr, envir, enclos): unknown column &amp;#39;idind&amp;#39;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 </description>
         <pubDate>Fri, 25 Mar 2016 00:00:00 +0000</pubDate>
@@ -1510,122 +1488,6 @@ Test =
         <pubDate>Thu, 21 Jan 2016 00:00:00 +0000</pubDate>
         <link>http://giacomovagni.github.io/motsetchoses/2016/01/intro-proba.html</link>
         <guid isPermaLink="true">http://giacomovagni.github.io/motsetchoses/2016/01/intro-proba.html</guid>
-        
-        <category>knitr</category>
-        
-        <category>servr</category>
-        
-        <category>httpuv</category>
-        
-        <category>websocket</category>
-        
-        
-        <category>jekyll</category>
-        
-        <category>rstats</category>
-        
-      </item>
-    
-      <item>
-        <title>Retrieve Days and Dates in R</title>
-        <description>&lt;p&gt;In this post, we will see how to handle dates in &lt;code&gt;R&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Copy-paste the following lines of codes with the dataset.&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;c1&quot;&gt;# the data &lt;/span&gt;
-dta &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;structure&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;id &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;1001893912015&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;1001893912015&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;10067992412015&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
-&lt;span class=&quot;s&quot;&gt;&amp;quot;10067992412015&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;10079545612015&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;10079545612015&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;10079545622015&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
-&lt;span class=&quot;s&quot;&gt;&amp;quot;10079545622015&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;1012460812015&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;1012460812015&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; age &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;36&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
-&lt;span class=&quot;m&quot;&gt;36&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;54&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;54&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;60&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;60&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;22&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;22&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;30&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;30&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; DiaryDay &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;13615862400&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
-&lt;span class=&quot;m&quot;&gt;13616035200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;13617504000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;13617849600&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;13619664000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;13619923200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
-&lt;span class=&quot;m&quot;&gt;13619664000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;13619923200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;13633574400&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;13633833600&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)),&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;.&lt;/span&gt;Names &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;id&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
-&lt;span class=&quot;s&quot;&gt;&amp;quot;age&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;DiaryDay&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; row.names &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;NA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10L&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; class &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;data.frame&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Let’s have a look at it&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;kp&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;dta&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;##               id age    DiaryDay
-## 1  1001893912015  36 13615862400
-## 2  1001893912015  36 13616035200
-## 3 10067992412015  54 13617504000
-## 4 10067992412015  54 13617849600
-## 5 10079545612015  60 13619664000
-## 6 10079545612015  60 13619923200&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;We can see that there is 3 variables in this dataset - a personal identifier &lt;code&gt;id&lt;/code&gt;, the age and the &lt;code&gt;DiaryDay&lt;/code&gt;. Diary day is the vector of interest where the date as been stored.&lt;/p&gt;
-
-&lt;p&gt;There exist an international standard for dates. As explained&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;“The purpose of this standard is to provide an unambiguous and well-defined method of representing dates and times.”&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;[][https://en.wikipedia.org/wiki/ISO_8601]&lt;/p&gt;
-
-&lt;p&gt;This dataset as been imported from &lt;code&gt;SPSS&lt;/code&gt; and as a special &lt;code&gt;origin&lt;/code&gt;. In order to get the dates right, we have to indicate what is the origin that the software as taken.&lt;/p&gt;
-
-&lt;p&gt;In order to retreive dates in R, we use the function &lt;code&gt;as.Dates&lt;/code&gt;. 
-Looking at the documentation, we find that 
-&amp;gt; Matlab’s origin is 719529 days before ours&lt;/p&gt;
-
-&lt;p&gt;However, nothing is specified for &lt;code&gt;SPSS&lt;/code&gt;. After a bit of research, we found that SPSS takes as origin &lt;code&gt;1582-10-14&lt;/code&gt; [here][http://www.uic.edu/depts/accc/software/isodates/datepgm.html].&lt;/p&gt;
-
-&lt;p&gt;The Uni of York propose then a simply command&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;spss2date &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;x&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;as.Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;x&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;86400&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; origin &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;1582-10-14&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;They divided by &lt;code&gt;86400&lt;/code&gt; because they transform “turn seconds into days” [MathYork][http://scs.math.yorku.ca/index.php/R:_Importing_dates_from_SPSS].&lt;/p&gt;
-
-&lt;p&gt;Let us try&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;dta&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;DiaryDayConverted &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; spss2date&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;dta&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;DiaryDay&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;We get&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;dta&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;##                id age    DiaryDay DiaryDayConverted
-## 1   1001893912015  36 13615862400        2014-04-03
-## 2   1001893912015  36 13616035200        2014-04-05
-## 3  10067992412015  54 13617504000        2014-04-22
-## 4  10067992412015  54 13617849600        2014-04-26
-## 5  10079545612015  60 13619664000        2014-05-17
-## 6  10079545612015  60 13619923200        2014-05-20
-## 7  10079545622015  22 13619664000        2014-05-17
-## 8  10079545622015  22 13619923200        2014-05-20
-## 9   1012460812015  30 13633574400        2014-10-25
-## 10  1012460812015  30 13633833600        2014-10-28&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Now we want to retreive the days of the week.&lt;/p&gt;
-
-&lt;p&gt;In order to do so, we need to use the library &lt;code&gt;lubridate&lt;/code&gt;. In this library, you will find the function &lt;code&gt;wday&lt;/code&gt;.&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;lubridate&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Warning: package &amp;#39;lubridate&amp;#39; was built under R version 3.2.3&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Loading required package: methods&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;dta&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;weekdayvar &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; wday&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;dta&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;DiaryDayConverted&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; label &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
-dta&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;##                id age    DiaryDay DiaryDayConverted weekdayvar
-## 1   1001893912015  36 13615862400        2014-04-03      Thurs
-## 2   1001893912015  36 13616035200        2014-04-05        Sat
-## 3  10067992412015  54 13617504000        2014-04-22       Tues
-## 4  10067992412015  54 13617849600        2014-04-26        Sat
-## 5  10079545612015  60 13619664000        2014-05-17        Sat
-## 6  10079545612015  60 13619923200        2014-05-20       Tues
-## 7  10079545622015  22 13619664000        2014-05-17        Sat
-## 8  10079545622015  22 13619923200        2014-05-20       Tues
-## 9   1012460812015  30 13633574400        2014-10-25        Sat
-## 10  1012460812015  30 13633833600        2014-10-28       Tues&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-</description>
-        <pubDate>Wed, 20 Jan 2016 00:00:00 +0000</pubDate>
-        <link>http://giacomovagni.github.io/motsetchoses/2016/01/days-conversion-with-R.html</link>
-        <guid isPermaLink="true">http://giacomovagni.github.io/motsetchoses/2016/01/days-conversion-with-R.html</guid>
         
         <category>knitr</category>
         

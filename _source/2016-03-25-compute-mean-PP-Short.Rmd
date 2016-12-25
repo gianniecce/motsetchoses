@@ -85,10 +85,25 @@ N = count(dtaSeq)
 N 
 # by act only
 dtaSeq %>% select(idind, day, matches('main')) %>% 
-  melt(id.vars = c("idind", "day")) %>% group_by(value) %>% 
+  melt(id.vars = c("idind", "day")) %>% group_by(value, day) %>% 
   summarise(n = n()) %>% # back to PP 
   mutate(time =  (n* 1) / 4 ) %>% # divide by count 
   mutate(TimeClock(time)) 
+
+# if dummy variables 
+dtaSeq %>% select(idind, day, matches('main')) %>% 
+  melt(id.vars = c("idind", "day")) %>% 
+  mutate(value = ifelse(value == 'sleep', 1, 0)) %>% 
+  group_by(idind, day) %>% summarise(n())
+
+
+%>% mutate(nid = n_distinct(idind)) %>% 
+  group_by(nid, day) %>% 
+  summarise(n = sum(value) * 1) %>% 
+  mutate(meanN = n / nid) %>% mutate(meanN = TimeClock(meanN))
+
+
+
 
 # by act and days 
 dtaSeq %>% select(idind, day, matches('main')) %>% 

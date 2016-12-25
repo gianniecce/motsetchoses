@@ -85,66 +85,69 @@ dta <span class="o">=</span> read.csv<span class="p">(</span><span class="s">&#3
 <div class="highlight"><pre><code class="language-r" data-lang="r">dta <span class="o">%&gt;%</span> group_by<span class="p">(</span>id<span class="p">,</span> day<span class="p">)</span> <span class="o">%&gt;%</span> summarise<span class="p">(</span><span class="kp">sum</span><span class="p">(</span>duration<span class="p">))</span></code></pre></div>
 
 <div class="highlight"><pre><code class="language-text" data-lang="text">## Source: local data frame [4 x 3]
-## Groups: id
+## Groups: id [?]
 ## 
-##   id      day sum(duration)
-## 1  1   Monday          1440
-## 2  1 Saturday          1440
-## 3  2   Monday          1440
-## 4  2 Saturday          1440</code></pre></div>
+##      id      day `sum(duration)`
+##   &lt;int&gt;   &lt;fctr&gt;           &lt;int&gt;
+## 1     1   Monday            1440
+## 2     1 Saturday            1440
+## 3     2   Monday            1440
+## 4     2 Saturday            1440</code></pre></div>
 
 <p>The individual mean can be computed such as :</p>
 
 <div class="highlight"><pre><code class="language-r" data-lang="r">dta <span class="o">%&gt;%</span> group_by<span class="p">(</span>id<span class="p">,</span> activities<span class="p">)</span> <span class="o">%&gt;%</span> summarise<span class="p">(</span><span class="kp">mean</span><span class="p">(</span>duration<span class="p">))</span></code></pre></div>
 
 <div class="highlight"><pre><code class="language-text" data-lang="text">## Source: local data frame [12 x 3]
-## Groups: id
+## Groups: id [?]
 ## 
-##    id activities mean(duration)
-## 1   1         TV      270.00000
-## 2   1   domestic      300.00000
-## 3   1     eating      113.33333
-## 4   1  free time      400.00000
-## 5   1  paid work      500.00000
-## 6   1      sleep      400.00000
-## 7   2         TV      220.00000
-## 8   2   domestic      350.00000
-## 9   2     eating       63.33333
-## 10  2  free time      300.00000
-## 11  2  paid work      600.00000
-## 12  2      sleep      500.00000</code></pre></div>
+##       id activities `mean(duration)`
+##    &lt;int&gt;     &lt;fctr&gt;            &lt;dbl&gt;
+## 1      1         TV        270.00000
+## 2      1   domestic        300.00000
+## 3      1     eating        113.33333
+## 4      1  free time        400.00000
+## 5      1  paid work        500.00000
+## 6      1      sleep        400.00000
+## 7      2         TV        220.00000
+## 8      2   domestic        350.00000
+## 9      2     eating         63.33333
+## 10     2  free time        300.00000
+## 11     2  paid work        600.00000
+## 12     2      sleep        500.00000</code></pre></div>
 
 <p>The aggregate mean by day :</p>
 
 <div class="highlight"><pre><code class="language-r" data-lang="r">dta <span class="o">%&gt;%</span> group_by<span class="p">(</span>day<span class="p">,</span> activities<span class="p">)</span> <span class="o">%&gt;%</span> summarise<span class="p">(</span><span class="kp">mean</span><span class="p">(</span>duration<span class="p">))</span></code></pre></div>
 
 <div class="highlight"><pre><code class="language-text" data-lang="text">## Source: local data frame [9 x 3]
-## Groups: day
+## Groups: day [?]
 ## 
-##        day activities mean(duration)
-## 1   Monday         TV            350
-## 2   Monday     eating             95
-## 3   Monday  paid work            550
-## 4   Monday      sleep            350
-## 5 Saturday         TV            140
-## 6 Saturday   domestic            325
-## 7 Saturday     eating             75
-## 8 Saturday  free time            350
-## 9 Saturday      sleep            550</code></pre></div>
+##        day activities `mean(duration)`
+##     &lt;fctr&gt;     &lt;fctr&gt;            &lt;dbl&gt;
+## 1   Monday         TV              350
+## 2   Monday     eating               95
+## 3   Monday  paid work              550
+## 4   Monday      sleep              350
+## 5 Saturday         TV              140
+## 6 Saturday   domestic              325
+## 7 Saturday     eating               75
+## 8 Saturday  free time              350
+## 9 Saturday      sleep              550</code></pre></div>
 
 <p>The aggregate mean by activities, regardless of the day :</p>
 
 <div class="highlight"><pre><code class="language-r" data-lang="r">dta <span class="o">%&gt;%</span> group_by<span class="p">(</span>activities<span class="p">)</span> <span class="o">%&gt;%</span> summarise<span class="p">(</span><span class="kp">mean</span><span class="p">(</span>duration<span class="p">))</span></code></pre></div>
 
-<div class="highlight"><pre><code class="language-text" data-lang="text">## Source: local data frame [6 x 2]
-## 
-##   activities mean(duration)
-## 1         TV      245.00000
-## 2   domestic      325.00000
-## 3     eating       88.33333
-## 4  free time      350.00000
-## 5  paid work      550.00000
-## 6      sleep      450.00000</code></pre></div>
+<div class="highlight"><pre><code class="language-text" data-lang="text">## # A tibble: 6 &lt;U+00D7&gt; 2
+##   activities `mean(duration)`
+##       &lt;fctr&gt;            &lt;dbl&gt;
+## 1         TV        245.00000
+## 2   domestic        325.00000
+## 3     eating         88.33333
+## 4  free time        350.00000
+## 5  paid work        550.00000
+## 6      sleep        450.00000</code></pre></div>
 
 <h3 id="mean-of-long-pp-file">2. Mean of Long PP file</h3>
 
@@ -161,18 +164,19 @@ dtaPP <span class="o">%&gt;%</span> group_by<span class="p">(</span>id<span clas
   summarise<span class="p">(</span><span class="kp">mean</span><span class="p">(</span>time<span class="p">))</span></code></pre></div>
 
 <div class="highlight"><pre><code class="language-text" data-lang="text">## Source: local data frame [9 x 3]
-## Groups: activities
+## Groups: activities [?]
 ## 
-##   activities      day mean(time)
-## 1         TV   Monday        350
-## 2         TV Saturday        140
-## 3   domestic Saturday        325
-## 4     eating   Monday        190
-## 5     eating Saturday         75
-## 6  free time Saturday        350
-## 7  paid work   Monday        550
-## 8      sleep   Monday        350
-## 9      sleep Saturday        550</code></pre></div>
+##   activities      day `mean(time)`
+##       &lt;fctr&gt;   &lt;fctr&gt;        &lt;dbl&gt;
+## 1         TV   Monday          350
+## 2         TV Saturday          140
+## 3   domestic Saturday          325
+## 4     eating   Monday          190
+## 5     eating Saturday           75
+## 6  free time Saturday          350
+## 7  paid work   Monday          550
+## 8      sleep   Monday          350
+## 9      sleep Saturday          550</code></pre></div>
 
 <h3 id="mean-of-sequence-file">3. Mean of Sequence File</h3>
 
@@ -191,96 +195,56 @@ dtaSeq <span class="o">=</span> dta<span class="p">[</span><span class="kp">rep<
 <span class="kp">colnames</span><span class="p">(</span>dtaSeq<span class="p">)</span> <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="s">&#39;idind&#39;</span><span class="p">,</span> <span class="s">&#39;day&#39;</span><span class="p">,</span> <span class="kp">paste</span><span class="p">(</span><span class="s">&quot;main&quot;</span><span class="p">,</span> <span class="m">1</span><span class="o">:</span><span class="m">1440</span><span class="p">,</span> sep <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">))</span></code></pre></div>
 
 <div class="highlight"><pre><code class="language-r" data-lang="r">N <span class="o">=</span> count<span class="p">(</span>dtaSeq<span class="p">)</span> 
-N</code></pre></div>
-
-<div class="highlight"><pre><code class="language-text" data-lang="text">## Source: local data frame [1 x 1]
-## 
-##   n
-## 1 4</code></pre></div>
-
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># by act only</span>
+N 
+<span class="c1"># by act only</span>
 dtaSeq <span class="o">%&gt;%</span> select<span class="p">(</span>idind<span class="p">,</span> day<span class="p">,</span> matches<span class="p">(</span><span class="s">&#39;main&#39;</span><span class="p">))</span> <span class="o">%&gt;%</span> 
-  melt<span class="p">(</span>id.vars <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;idind&quot;</span><span class="p">,</span> <span class="s">&quot;day&quot;</span><span class="p">))</span> <span class="o">%&gt;%</span> group_by<span class="p">(</span>value<span class="p">)</span> <span class="o">%&gt;%</span> 
+  melt<span class="p">(</span>id.vars <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;idind&quot;</span><span class="p">,</span> <span class="s">&quot;day&quot;</span><span class="p">))</span> <span class="o">%&gt;%</span> group_by<span class="p">(</span>value<span class="p">,</span> day<span class="p">)</span> <span class="o">%&gt;%</span> 
   summarise<span class="p">(</span>n <span class="o">=</span> n<span class="p">())</span> <span class="o">%&gt;%</span> <span class="c1"># back to PP </span>
   mutate<span class="p">(</span>time <span class="o">=</span>  <span class="p">(</span>n<span class="o">*</span> <span class="m">1</span><span class="p">)</span> <span class="o">/</span> <span class="m">4</span> <span class="p">)</span> <span class="o">%&gt;%</span> <span class="c1"># divide by count </span>
-  mutate<span class="p">(</span>TimeClock<span class="p">(</span>time<span class="p">))</span></code></pre></div>
+  mutate<span class="p">(</span>TimeClock<span class="p">(</span>time<span class="p">))</span> 
 
-<div class="highlight"><pre><code class="language-text" data-lang="text">## Source: local data frame [6 x 4]
-## 
-##       value    n  time TimeClock(time)
-## 1        TV  980 245.0           04:05
-## 2  domestic  650 162.5           02:42
-## 3    eating  530 132.5           02:12
-## 4 free time  700 175.0           02:55
-## 5 paid work 1100 275.0           04:35
-## 6     sleep 1800 450.0           07:30</code></pre></div>
+<span class="c1"># if dummy variables </span>
+dtaSeq <span class="o">%&gt;%</span> select<span class="p">(</span>idind<span class="p">,</span> day<span class="p">,</span> matches<span class="p">(</span><span class="s">&#39;main&#39;</span><span class="p">))</span> <span class="o">%&gt;%</span> 
+  melt<span class="p">(</span>id.vars <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;idind&quot;</span><span class="p">,</span> <span class="s">&quot;day&quot;</span><span class="p">))</span> <span class="o">%&gt;%</span> 
+  mutate<span class="p">(</span>value <span class="o">=</span> <span class="kp">ifelse</span><span class="p">(</span>value <span class="o">==</span> <span class="s">&#39;sleep&#39;</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">0</span><span class="p">))</span> <span class="o">%&gt;%</span> 
+  group_by<span class="p">(</span>idind<span class="p">,</span> day<span class="p">)</span> <span class="o">%&gt;%</span> summarise<span class="p">(</span>n<span class="p">())</span>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># by act and days </span>
+
+<span class="o">%&gt;%</span> mutate<span class="p">(</span>nid <span class="o">=</span> n_distinct<span class="p">(</span>idind<span class="p">))</span> <span class="o">%&gt;%</span> 
+  group_by<span class="p">(</span>nid<span class="p">,</span> day<span class="p">)</span> <span class="o">%&gt;%</span> 
+  summarise<span class="p">(</span>n <span class="o">=</span> <span class="kp">sum</span><span class="p">(</span>value<span class="p">)</span> <span class="o">*</span> <span class="m">1</span><span class="p">)</span> <span class="o">%&gt;%</span> 
+  mutate<span class="p">(</span>meanN <span class="o">=</span> n <span class="o">/</span> nid<span class="p">)</span> <span class="o">%&gt;%</span> mutate<span class="p">(</span>meanN <span class="o">=</span> TimeClock<span class="p">(</span>meanN<span class="p">))</span>
+
+
+
+
+<span class="c1"># by act and days </span>
 dtaSeq <span class="o">%&gt;%</span> select<span class="p">(</span>idind<span class="p">,</span> day<span class="p">,</span> matches<span class="p">(</span><span class="s">&#39;main&#39;</span><span class="p">))</span> <span class="o">%&gt;%</span> 
   melt<span class="p">(</span>id.vars <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;idind&quot;</span><span class="p">,</span> <span class="s">&quot;day&quot;</span><span class="p">))</span> <span class="o">%&gt;%</span> group_by<span class="p">(</span>day<span class="p">,</span> value<span class="p">)</span> <span class="o">%&gt;%</span> 
   summarise<span class="p">(</span>n <span class="o">=</span> n<span class="p">())</span> <span class="o">%&gt;%</span> 
   mutate<span class="p">(</span>time <span class="o">=</span>  <span class="p">(</span>n<span class="o">*</span> <span class="m">1</span><span class="p">)</span> <span class="o">/</span> <span class="m">2</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="c1"># divide by count </span>
-  mutate<span class="p">(</span>TimeClock<span class="p">(</span>time<span class="p">))</span></code></pre></div>
+  mutate<span class="p">(</span>TimeClock<span class="p">(</span>time<span class="p">))</span> 
 
-<div class="highlight"><pre><code class="language-text" data-lang="text">## Source: local data frame [9 x 5]
-## Groups: day
-## 
-##        day     value    n time TimeClock(time)
-## 1   Monday        TV  700  350           05:50
-## 2   Monday    eating  380  190           03:10
-## 3   Monday paid work 1100  550           09:10
-## 4   Monday     sleep  700  350           05:50
-## 5 Saturday        TV  280  140           02:20
-## 6 Saturday  domestic  650  325           05:25
-## 7 Saturday    eating  150   75           01:15
-## 8 Saturday free time  700  350           05:50
-## 9 Saturday     sleep 1100  550           09:10</code></pre></div>
-
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># if you haev the full data then group by what you want  </span>
+<span class="c1"># if you haev the full data then group by what you want  </span>
 dtaSeq <span class="o">%&gt;%</span> select<span class="p">(</span>idind<span class="p">,</span> day<span class="p">,</span> matches<span class="p">(</span><span class="s">&#39;main&#39;</span><span class="p">))</span> <span class="o">%&gt;%</span> 
   melt<span class="p">(</span>id.vars <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;idind&quot;</span><span class="p">,</span> <span class="s">&quot;day&quot;</span><span class="p">))</span> <span class="o">%&gt;%</span> group_by<span class="p">(</span>idind<span class="p">,</span> day<span class="p">,</span> value<span class="p">)</span> <span class="o">%&gt;%</span> 
   summarise<span class="p">(</span>n <span class="o">=</span> n<span class="p">())</span> <span class="o">%&gt;%</span> 
-  group_by<span class="p">(</span>value<span class="p">)</span> <span class="o">%&gt;%</span> summarise<span class="p">(</span> <span class="kp">mean</span><span class="p">(</span>n<span class="p">)</span> <span class="p">)</span></code></pre></div>
-
-<div class="highlight"><pre><code class="language-text" data-lang="text">## Source: local data frame [6 x 2]
-## 
-##       value mean(n)
-## 1        TV   245.0
-## 2  domestic   325.0
-## 3    eating   132.5
-## 4 free time   350.0
-## 5 paid work   550.0
-## 6     sleep   450.0</code></pre></div>
-
-<div class="highlight"><pre><code class="language-r" data-lang="r">mutate<span class="p">(</span>TimeClock<span class="p">(</span>time<span class="p">))</span></code></pre></div>
-
-<div class="highlight"><pre><code class="language-text" data-lang="text">## Error in eval(expr, envir, enclos): not compatible with requested type</code></pre></div>
-
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># or simply activities </span>
+  group_by<span class="p">(</span>value<span class="p">)</span> <span class="o">%&gt;%</span> summarise<span class="p">(</span> <span class="kp">mean</span><span class="p">(</span>n<span class="p">)</span> <span class="p">)</span> 
+  mutate<span class="p">(</span>TimeClock<span class="p">(</span>time<span class="p">))</span> 
+  
+<span class="c1"># or simply activities </span>
   dtaSeq <span class="o">%&gt;%</span> select<span class="p">(</span>idind<span class="p">,</span> day<span class="p">,</span> matches<span class="p">(</span><span class="s">&#39;main&#39;</span><span class="p">))</span> <span class="o">%&gt;%</span> 
     melt<span class="p">(</span>id.vars <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;idind&quot;</span><span class="p">,</span> <span class="s">&quot;day&quot;</span><span class="p">))</span> <span class="o">%&gt;%</span> 
     group_by<span class="p">(</span>idind<span class="p">,</span> day<span class="p">,</span> value<span class="p">)</span> <span class="o">%&gt;%</span> 
     summarise<span class="p">(</span>n <span class="o">=</span> n<span class="p">())</span> <span class="o">%&gt;%</span> 
     group_by<span class="p">(</span>value<span class="p">,</span> day<span class="p">)</span> <span class="o">%&gt;%</span> 
-    summarise<span class="p">(</span> <span class="kp">mean</span><span class="p">(</span>n<span class="p">)</span> <span class="p">)</span></code></pre></div>
+    summarise<span class="p">(</span> <span class="kp">mean</span><span class="p">(</span>n<span class="p">)</span> <span class="p">)</span> 
+  mutate<span class="p">(</span>TimeClock<span class="p">(</span>time<span class="p">))</span></code></pre></div>
 
-<div class="highlight"><pre><code class="language-text" data-lang="text">## Source: local data frame [9 x 3]
-## Groups: value
-## 
-##       value      day mean(n)
-## 1        TV   Monday     350
-## 2        TV Saturday     140
-## 3  domestic Saturday     325
-## 4    eating   Monday     190
-## 5    eating Saturday      75
-## 6 free time Saturday     350
-## 7 paid work   Monday     550
-## 8     sleep   Monday     350
-## 9     sleep Saturday     550</code></pre></div>
-
-<div class="highlight"><pre><code class="language-r" data-lang="r">mutate<span class="p">(</span>TimeClock<span class="p">(</span>time<span class="p">))</span></code></pre></div>
-
-<div class="highlight"><pre><code class="language-text" data-lang="text">## Error in eval(expr, envir, enclos): not compatible with requested type</code></pre></div>
+<div class="highlight"><pre><code class="language-text" data-lang="text">## Error: &lt;text&gt;:17:1: unexpected SPECIAL
+## 16: 
+## 17: %&gt;%
+##     ^</code></pre></div>
 
 <p>Alternative when you are unsure of the <code>count</code> results</p>
 
@@ -291,15 +255,9 @@ dtaSeq <span class="o">%&gt;%</span> select<span class="p">(</span>idind<span cl
     mutate<span class="p">(</span>time <span class="o">=</span>  <span class="m">1440</span> <span class="o">*</span> p<span class="p">)</span> <span class="o">%&gt;%</span> <span class="c1"># divide by count </span>
   mutate<span class="p">(</span>TimeClock<span class="p">(</span>time<span class="p">))</span></code></pre></div>
 
-<div class="highlight"><pre><code class="language-text" data-lang="text">## Source: local data frame [6 x 5]
-## 
-##       value    n          p  time TimeClock(time)
-## 1        TV  980 0.17013889 245.0           04:05
-## 2  domestic  650 0.11284722 162.5           02:42
-## 3    eating  530 0.09201389 132.5           02:12
-## 4 free time  700 0.12152778 175.0           02:55
-## 5 paid work 1100 0.19097222 275.0           04:35
-## 6     sleep 1800 0.31250000 450.0           07:30</code></pre></div>
+<div class="highlight"><pre><code class="language-text" data-lang="text">## Adding missing grouping variables: `id`</code></pre></div>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">## Error in eval(expr, envir, enclos): invalid column index : NA for variable: id = id</code></pre></div>
 
 <h4 id="individual">3.2. Individual</h4>
 
@@ -308,15 +266,16 @@ dtaSeq <span class="o">%&gt;%</span> select<span class="p">(</span>idind<span cl
 <div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kp">head</span><span class="p">(</span>dtaPP<span class="p">)</span></code></pre></div>
 
 <div class="highlight"><pre><code class="language-text" data-lang="text">## Source: local data frame [6 x 5]
-## Groups: id, day
+## Groups: id, day [1]
 ## 
-##   id      day activities epnum Time
-## 1  1 Saturday      sleep     1    1
-## 2  1 Saturday      sleep     1    2
-## 3  1 Saturday      sleep     1    3
-## 4  1 Saturday      sleep     1    4
-## 5  1 Saturday      sleep     1    5
-## 6  1 Saturday      sleep     1    6</code></pre></div>
+##      id      day activities epnum  Time
+##   &lt;int&gt;   &lt;fctr&gt;     &lt;fctr&gt; &lt;int&gt; &lt;int&gt;
+## 1     1 Saturday      sleep     1     1
+## 2     1 Saturday      sleep     1     2
+## 3     1 Saturday      sleep     1     3
+## 4     1 Saturday      sleep     1     4
+## 5     1 Saturday      sleep     1     5
+## 6     1 Saturday      sleep     1     6</code></pre></div>
 
 <div class="highlight"><pre><code class="language-r" data-lang="r">dtaPP_sum <span class="o">=</span> dtaPP <span class="o">%&gt;%</span> 
   group_by<span class="p">(</span>id<span class="p">,</span> day<span class="p">,</span> activities<span class="p">)</span> <span class="o">%&gt;%</span> 
@@ -327,21 +286,30 @@ dtaSeq <span class="o">%&gt;%</span> select<span class="p">(</span>idind<span cl
 dtaPP_sum</code></pre></div>
 
 <div class="highlight"><pre><code class="language-text" data-lang="text">## Source: local data frame [4 x 8]
+## Groups: id, day [4]
 ## 
-##   id      day act_TV act_domestic act_eating act_free time
-## 1  1   Monday    400            0        240             0
-## 2  1 Saturday    140          300        100           400
-## 3  2   Monday    300            0        140             0
-## 4  2 Saturday    140          350         50           300
-## Variables not shown: act_paid work (dbl), act_sleep (dbl)</code></pre></div>
+##      id      day act_TV act_domestic act_eating `act_free time`
+## * &lt;int&gt;   &lt;fctr&gt;  &lt;dbl&gt;        &lt;dbl&gt;      &lt;dbl&gt;           &lt;dbl&gt;
+## 1     1   Monday    400            0        240               0
+## 2     1 Saturday    140          300        100             400
+## 3     2   Monday    300            0        140               0
+## 4     2 Saturday    140          350         50             300
+## # ... with 2 more variables: `act_paid work` &lt;dbl&gt;, act_sleep &lt;dbl&gt;</code></pre></div>
 
 <div class="highlight"><pre><code class="language-r" data-lang="r">dtaPP_sum <span class="o">%&gt;%</span> select<span class="p">(</span><span class="o">-</span>id<span class="p">,</span> <span class="o">-</span>day<span class="p">)</span> <span class="o">%&gt;%</span> summarise_each<span class="p">(</span>funs<span class="p">(</span><span class="kp">mean</span><span class="p">))</span></code></pre></div>
 
-<div class="highlight"><pre><code class="language-text" data-lang="text">## Source: local data frame [1 x 6]
+<div class="highlight"><pre><code class="language-text" data-lang="text">## Adding missing grouping variables: `id`, `day`</code></pre></div>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">## Source: local data frame [4 x 8]
+## Groups: id [?]
 ## 
-##   act_TV act_domestic act_eating act_free time act_paid work
-## 1    245        162.5      132.5           175           275
-## Variables not shown: act_sleep (dbl)</code></pre></div>
+##      id      day act_TV act_domestic act_eating `act_free time`
+##   &lt;int&gt;   &lt;fctr&gt;  &lt;dbl&gt;        &lt;dbl&gt;      &lt;dbl&gt;           &lt;dbl&gt;
+## 1     1   Monday    400            0        240               0
+## 2     1 Saturday    140          300        100             400
+## 3     2   Monday    300            0        140               0
+## 4     2 Saturday    140          350         50             300
+## # ... with 2 more variables: `act_paid work` &lt;dbl&gt;, act_sleep &lt;dbl&gt;</code></pre></div>
 
 <h4 id="weighted-sum-and-weighted-mean">3.3. Weighted Sum and Weighted Mean</h4>
 
@@ -360,28 +328,19 @@ dtaSeq <span class="o">%&gt;%</span> select<span class="p">(</span>idind<span cl
   spread<span class="p">(</span>value<span class="p">,</span> n<span class="p">,</span> fill <span class="o">=</span> <span class="m">0</span><span class="p">)</span> <span class="o">%&gt;%</span> 
   summarise<span class="p">(</span>meanTV <span class="o">=</span> <span class="kp">mean</span><span class="p">(</span>act_TV<span class="p">),</span> weightedmean <span class="o">=</span> weighted.mean<span class="p">(</span>act_TV<span class="p">,</span> day_weights<span class="p">))</span></code></pre></div>
 
-<div class="highlight"><pre><code class="language-text" data-lang="text">## Source: local data frame [1 x 2]
-## 
-##   meanTV weightedmean
-## 1    245        262.5</code></pre></div>
+<div class="highlight"><pre><code class="language-text" data-lang="text">## Adding missing grouping variables: `id`</code></pre></div>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">## Error in eval(expr, envir, enclos): invalid column index : NA for variable: id = id</code></pre></div>
 
 <p>The weighted sum</p>
 
 <div class="highlight"><pre><code class="language-r" data-lang="r">dtaSeq <span class="o">%&gt;%</span> count<span class="p">(</span>day<span class="p">)</span> <span class="o">%&gt;%</span> mutate<span class="p">(</span>p <span class="o">=</span> n <span class="o">/</span> <span class="kp">sum</span><span class="p">(</span>n<span class="p">))</span></code></pre></div>
 
-<div class="highlight"><pre><code class="language-text" data-lang="text">## Source: local data frame [2 x 3]
-## 
-##        day n   p
-## 1   Monday 2 0.5
-## 2 Saturday 2 0.5</code></pre></div>
+<div class="highlight"><pre><code class="language-text" data-lang="text">## Error in eval(expr, envir, enclos): unknown column &#39;idind&#39;</code></pre></div>
 
 <div class="highlight"><pre><code class="language-r" data-lang="r">dtaSeq <span class="o">%&gt;%</span> count<span class="p">(</span>day<span class="p">,</span> wt <span class="o">=</span> day_weights<span class="p">)</span> <span class="o">%&gt;%</span> mutate<span class="p">(</span>p <span class="o">=</span> n <span class="o">/</span> <span class="kp">sum</span><span class="p">(</span>n<span class="p">))</span></code></pre></div>
 
-<div class="highlight"><pre><code class="language-text" data-lang="text">## Source: local data frame [2 x 3]
-## 
-##        day        n         p
-## 1   Monday 2.000000 0.5833333
-## 2 Saturday 1.428571 0.4166667</code></pre></div>
+<div class="highlight"><pre><code class="language-text" data-lang="text">## Error in eval(expr, envir, enclos): unknown column &#39;idind&#39;</code></pre></div>
 
 
   </article>
