@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>/jekyll/rstats/2016/12/27/more-test/</loc>
+    <lastmod>2016-12-27T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>/jekyll/rstats/2016/12/26/Spread/</loc>
+    <lastmod>2016-12-26T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>/jekyll/rstats/2014/09/28/jekyll-with-knitr/</loc>
+    <lastmod>2014-09-28T00:00:00+01:00</lastmod>
+  </url>
+  <url>
+    <loc>/404.html</loc>
+  </url>
+  <url>
+    <loc>/about/</loc>
+  </url>
+  <url>
+    <loc>/archive/</loc>
+  </url>
+  <url>
+    <loc>/cinema/</loc>
+  </url>
+  <url>
+    <loc>/contact/</loc>
+  </url>
+  <url>
+    <loc>/</loc>
+  </url>
+  <url>
+    <loc>/poetry/</loc>
+  </url>
+  <url>
+    <loc>/thanks/</loc>
+  </url>
+</urlset>

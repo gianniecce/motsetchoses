@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Reshape 2 &#8211; La-malmesure-des-mots</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Cinema">
+    <meta name="author" content="Giacomo Vagni">
+    <meta name="keywords" content="jekyll, rstats">
+    <link rel="canonical" href="/jekyll/rstats/2016/12/27/more-test/">
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed for La-malmesure-des-mots" href="/feed.xml" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/pixyll.css?201612271106" type="text/css">
+
+    <!-- Fonts -->
+    <link href='//fonts.googleapis.com/css?family=Merriweather:900,900italic,300,300italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Lato:900,300' rel='stylesheet' type='text/css'>
+    
+
+    <!-- Verifications -->
+    
+
+    <!-- Open Graph -->
+    <!-- From: https://github.com/mmistakes/hpstr-jekyll-theme/blob/master/_includes/head.html -->
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Reshape 2">
+    <meta property="og:description" content="Poetry, cinema and marxism">
+    <meta property="og:url" content="/jekyll/rstats/2016/12/27/more-test/">
+    <meta property="og:site_name" content="La-malmesure-des-mots">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    
+        <meta name="twitter:site" content="@giacomo.ecce" />
+    
+    <meta name="twitter:title" content="Reshape 2" />
+    <meta name="twitter:description" content="Cinema" />
+    <meta name="twitter:url" content="/jekyll/rstats/2016/12/27/more-test/" />
+
+    <!-- Icons -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/favicon-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/favicon-160x160.png" sizes="160x160">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+
+    
+</head>
+
+<body class="site">
+  <div class="site-wrap">
+      <header class="site-header px2 px-responsive">
+  <div class="mt2 wrap">
+    <div class="measure">
+      <a href="" class="site-title"></a>
+      
+      <nav class="site-nav">
+       <a href="/archive/">Archive</a>
+<a href="/cinema/">Cinema</a>
+<a href="/poetry/">Poetry</a>
+<a href="/misc/">Misc</a>
+ 
+      </nav> 
+      <div class="clearfix"></div>
+      
+    </div> 
+  </div>
+</header>
+  
+
+    <div class="post p2 p-responsive wrap" role="main">
+      <div class="measure">
+        
+
+
+<div class="post-header mb2">
+  <h1>Reshape 2</h1>
+  <span class="post-meta">Dec 27, 2016</span><br>
+  
+
+  </span>
+</div>
+
+<article class="post-content">
+  <h1 id="test">test</h1>
+
+<p>ffffff</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>dplyr<span class="p">)</span></code></pre></div>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">## Warning: package &#39;dplyr&#39; was built under R version 3.2.5</code></pre></div>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">## 
+## Attaching package: &#39;dplyr&#39;</code></pre></div>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     filter, lag</code></pre></div>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">## The following objects are masked from &#39;package:base&#39;:
+## 
+##     intersect, setdiff, setequal, union</code></pre></div>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>reshape2<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>ggplot2<span class="p">)</span></code></pre></div>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">## Warning: package &#39;ggplot2&#39; was built under R version 3.2.4</code></pre></div>
+
+<p>bladfhasjldhsia</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r">df <span class="o">&lt;-</span> <span class="kt">data.frame</span><span class="p">(</span>gp <span class="o">=</span> <span class="kp">factor</span><span class="p">(</span><span class="kp">rep</span><span class="p">(</span><span class="kc">letters</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">],</span> each <span class="o">=</span> <span class="m">10</span><span class="p">)),</span>
+                 y <span class="o">=</span> rnorm<span class="p">(</span><span class="m">30</span><span class="p">))</span>
+<span class="c1"># Compute sample mean and standard deviation in each group</span>
+ds <span class="o">&lt;-</span> plyr<span class="o">::</span>ddply<span class="p">(</span>df<span class="p">,</span> <span class="s">&quot;gp&quot;</span><span class="p">,</span> plyr<span class="o">::</span>summarise<span class="p">,</span> mean <span class="o">=</span> <span class="kp">mean</span><span class="p">(</span>y<span class="p">),</span> sd <span class="o">=</span> sd<span class="p">(</span>y<span class="p">))</span>
+
+<span class="c1"># Declare the data frame and common aesthetics.</span>
+<span class="c1"># The summary data frame ds is used to plot</span>
+<span class="c1"># larger red points in a second geom_point() layer.</span>
+<span class="c1"># If the data = argument is not specified, it uses the</span>
+<span class="c1"># declared data frame from ggplot(); ditto for the aesthetics.</span>
+ggplot<span class="p">(</span>df<span class="p">,</span> aes<span class="p">(</span>x <span class="o">=</span> gp<span class="p">,</span> y <span class="o">=</span> y<span class="p">))</span> <span class="o">+</span>
+   geom_point<span class="p">()</span> <span class="o">+</span>
+   geom_point<span class="p">(</span>data <span class="o">=</span> ds<span class="p">,</span> aes<span class="p">(</span>y <span class="o">=</span> <span class="kp">mean</span><span class="p">),</span>
+              colour <span class="o">=</span> <span class="s">&#39;red&#39;</span><span class="p">,</span> size <span class="o">=</span> <span class="m">3</span><span class="p">)</span></code></pre></div>
+
+<p><img src="figure/source/2016-12-27-more-test/unnamed-chunk-2-1.png" alt="plot of chunk unnamed-chunk-2" /></p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># Same plot as above, declaring only the data frame in ggplot().</span>
+<span class="c1"># Note how the x and y aesthetics must now be declared in</span>
+<span class="c1"># each geom_point() layer.</span>
+ggplot<span class="p">(</span>df<span class="p">)</span> <span class="o">+</span>
+   geom_point<span class="p">(</span>aes<span class="p">(</span>x <span class="o">=</span> gp<span class="p">,</span> y <span class="o">=</span> y<span class="p">))</span> <span class="o">+</span>
+   geom_point<span class="p">(</span>data <span class="o">=</span> ds<span class="p">,</span> aes<span class="p">(</span>x <span class="o">=</span> gp<span class="p">,</span> y <span class="o">=</span> <span class="kp">mean</span><span class="p">),</span>
+                 colour <span class="o">=</span> <span class="s">&#39;red&#39;</span><span class="p">,</span> size <span class="o">=</span> <span class="m">3</span><span class="p">)</span></code></pre></div>
+
+<p><img src="figure/source/2016-12-27-more-test/unnamed-chunk-2-2.png" alt="plot of chunk unnamed-chunk-2" /></p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># Set up a skeleton ggplot object and add layers:</span>
+ggplot<span class="p">()</span> <span class="o">+</span>
+  geom_point<span class="p">(</span>data <span class="o">=</span> df<span class="p">,</span> aes<span class="p">(</span>x <span class="o">=</span> gp<span class="p">,</span> y <span class="o">=</span> y<span class="p">))</span> <span class="o">+</span>
+  geom_point<span class="p">(</span>data <span class="o">=</span> ds<span class="p">,</span> aes<span class="p">(</span>x <span class="o">=</span> gp<span class="p">,</span> y <span class="o">=</span> <span class="kp">mean</span><span class="p">),</span>
+                        colour <span class="o">=</span> <span class="s">&#39;red&#39;</span><span class="p">,</span> size <span class="o">=</span> <span class="m">3</span><span class="p">)</span> <span class="o">+</span>
+  geom_errorbar<span class="p">(</span>data <span class="o">=</span> ds<span class="p">,</span> aes<span class="p">(</span>x <span class="o">=</span> gp<span class="p">,</span> y <span class="o">=</span> <span class="kp">mean</span><span class="p">,</span>
+                    ymin <span class="o">=</span> mean <span class="o">-</span> sd<span class="p">,</span> ymax <span class="o">=</span> mean <span class="o">+</span> sd<span class="p">),</span>
+                    colour <span class="o">=</span> <span class="s">&#39;red&#39;</span><span class="p">,</span> width <span class="o">=</span> <span class="m">0.4</span><span class="p">)</span></code></pre></div>
+
+<p><img src="figure/source/2016-12-27-more-test/unnamed-chunk-2-3.png" alt="plot of chunk unnamed-chunk-2" /></p>
+
+
+  
+</article>
+
+
+
+
+
+
+
+
+      </div>
+    </div>
+  </div>
+
+  <footer class="center">
+ <div class="measure">
+    <small>
+  <!-- <a href="/archive/">Archive</a> -->
+  
+  <a href="https://twitter.com/share" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+    </small>
+  </div> 
+</footer>
+
+</body>
+</html>

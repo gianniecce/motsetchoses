@@ -1,15 +1,15 @@
-<!--- Header and nav template site-wide -->
-<header>
-  <nav class="group">
-    <a href="{{ site.baseurl }}\"><img class="badge" src="{{ site.baseurl }}/badge.png" alt="CH"></a>
-    {% for page in site.pages %}
-      {% if page.title %}
-        <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
-        
+<header class="site-header px2 px-responsive">
+  <div class="mt2 wrap">
+    <div class="measure">
+      <a href="{{ site.baseurl }}/" class="site-title">{{ site.title }}</a>
+      
+      <nav class="site-nav">
+       {% include navigation.html  %} 
+      </nav> 
+      <div class="clearfix"></div>
+      {% if site.show_social_icons %}
+        {% include social_links.html %}
       {% endif %}
-    {% endfor %}
-  </nav>
-  
+    </div> 
+  </div>
 </header>
-
- 

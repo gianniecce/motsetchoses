@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Melt Unite Spread &#8211; La-malmesure-des-mots</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Poetry, cinema and marxism">
+    <meta name="author" content="Giacomo Vagni">
+    <meta name="keywords" content="jekyll, rstats">
+    <link rel="canonical" href="/jekyll/rstats/2014/09/28/jekyll-with-knitr/">
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed for La-malmesure-des-mots" href="/feed.xml" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/pixyll.css?201612271106" type="text/css">
+
+    <!-- Fonts -->
+    <link href='//fonts.googleapis.com/css?family=Merriweather:900,900italic,300,300italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Lato:900,300' rel='stylesheet' type='text/css'>
+    
+
+    <!-- Verifications -->
+    
+
+    <!-- Open Graph -->
+    <!-- From: https://github.com/mmistakes/hpstr-jekyll-theme/blob/master/_includes/head.html -->
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Melt Unite Spread">
+    <meta property="og:description" content="Poetry, cinema and marxism">
+    <meta property="og:url" content="/jekyll/rstats/2014/09/28/jekyll-with-knitr/">
+    <meta property="og:site_name" content="La-malmesure-des-mots">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    
+        <meta name="twitter:site" content="@giacomo.ecce" />
+    
+    <meta name="twitter:title" content="Melt Unite Spread" />
+    <meta name="twitter:description" content="Poetry, cinema and marxism" />
+    <meta name="twitter:url" content="/jekyll/rstats/2014/09/28/jekyll-with-knitr/" />
+
+    <!-- Icons -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/favicon-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/favicon-160x160.png" sizes="160x160">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+
+    
+</head>
+
+<body class="site">
+  <div class="site-wrap">
+      <header class="site-header px2 px-responsive">
+  <div class="mt2 wrap">
+    <div class="measure">
+      <a href="" class="site-title"></a>
+      
+      <nav class="site-nav">
+       <a href="/archive/">Archive</a>
+<a href="/cinema/">Cinema</a>
+<a href="/poetry/">Poetry</a>
+<a href="/misc/">Misc</a>
+ 
+      </nav> 
+      <div class="clearfix"></div>
+      
+    </div> 
+  </div>
+</header>
+  
+
+    <div class="post p2 p-responsive wrap" role="main">
+      <div class="measure">
+        
+
+
+
+
+<div class="post-header mb2">
+  <h1>Melt Unite Spread</h1>
+  <span class="post-meta">Sep 28, 2014</span><br>
+  
+
+  </span>
+</div>
+
+<article class="post-content">
+  <p>hey</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>plyr<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>dplyr<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>tidyr<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>mtusRlocal<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>knitr<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>reshape2<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>xtable<span class="p">)</span>
+
+<span class="kp">load</span><span class="p">(</span>file <span class="o">=</span> <span class="s">&#39;/Users/giacomovagni/site/motsetchoses/_data/undp.RData&#39;</span><span class="p">)</span></code></pre></div>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">## Error in readChar(con, 5L, useBytes = TRUE): cannot open the connection</code></pre></div>
+
+<p>The code is :</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r">undp2 <span class="o">=</span> undp <span class="o">%&gt;%</span> select<span class="p">(</span>Country<span class="p">,</span> Year<span class="p">,</span> Sex<span class="p">,</span> Marital.status<span class="p">,</span> X15.19<span class="p">,</span> X20.24<span class="p">,</span> X25.29<span class="p">,</span> X30.34<span class="p">,</span> X35.39<span class="p">,</span> X40.44<span class="p">,</span> X45.49<span class="p">,</span> X50.54<span class="p">,</span> X60.64<span class="p">,</span> X65.<span class="p">)</span> <span class="o">%&gt;%</span>
+  melt<span class="p">(</span>id.vars <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="s">&#39;Country&#39;</span><span class="p">,</span> <span class="s">&#39;Year&#39;</span><span class="p">,</span> <span class="s">&#39;Sex&#39;</span><span class="p">,</span> <span class="s">&#39;Marital.status&#39;</span><span class="p">))</span> <span class="o">%&gt;%</span> filter<span class="p">(</span>Country <span class="o">==</span> <span class="s">&#39;United Kingdom&#39;</span> <span class="p">)</span></code></pre></div>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">## Error in eval(expr, envir, enclos): object &#39;undp&#39; not found</code></pre></div>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r">undp2 <span class="o">=</span> undp2 <span class="o">%&gt;%</span> filter<span class="p">(</span>variable <span class="o">%in%</span> <span class="kt">c</span><span class="p">(</span><span class="s">&#39;X20.24&#39;</span><span class="p">,</span> <span class="s">&#39;X25.29&#39;</span><span class="p">,</span> <span class="s">&#39;X30.34&#39;</span><span class="p">,</span> <span class="s">&#39;X35.39&#39;</span><span class="p">,</span> <span class="s">&#39;X40.44&#39;</span><span class="p">,</span> <span class="s">&#39;X45.49&#39;</span><span class="p">))</span></code></pre></div>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">## Error in eval(expr, envir, enclos): object &#39;undp2&#39; not found</code></pre></div>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r">UNUK2050ysummary <span class="o">=</span> undp2 <span class="o">%&gt;%</span> filter<span class="p">(</span>Marital.status <span class="o">%in%</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;Married&quot;</span><span class="p">,</span> <span class="s">&quot;Single&quot;</span><span class="p">))</span> <span class="o">%&gt;%</span> group_by<span class="p">(</span>Country<span class="p">,</span> Year<span class="p">,</span> Sex<span class="p">,</span> Marital.status<span class="p">)</span> <span class="o">%&gt;%</span> 
+  summarise<span class="p">(</span>meanshare <span class="o">=</span> <span class="kp">mean</span><span class="p">(</span>value<span class="p">))</span> <span class="o">%&gt;%</span> unite<span class="p">(</span>SexMSVar<span class="p">,</span> Marital.status<span class="p">,</span> Sex<span class="p">)</span> <span class="o">%&gt;%</span> 
+  select<span class="p">(</span><span class="o">-</span>Country<span class="p">)</span> <span class="o">%&gt;%</span> spread<span class="p">(</span>SexMSVar<span class="p">,</span> meanshare<span class="p">)</span></code></pre></div>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">## Error in eval(expr, envir, enclos): object &#39;undp2&#39; not found</code></pre></div>
+
+
+  
+</article>
+
+
+
+
+
+
+
+
+      </div>
+    </div>
+  </div>
+
+  <footer class="center">
+ <div class="measure">
+    <small>
+  <!-- <a href="/archive/">Archive</a> -->
+  
+  <a href="https://twitter.com/share" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+    </small>
+  </div> 
+</footer>
+
+</body>
+</html>

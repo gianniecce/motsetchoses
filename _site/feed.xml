@@ -1,1301 +1,292 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Mismeasure of things</title>
-    <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
-</description>
-    <link>http://giacomovagni.github.io/motsetchoses/</link>
-    <atom:link href="http://giacomovagni.github.io/motsetchoses/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 25 Dec 2016 20:12:24 +0000</pubDate>
-    <lastBuildDate>Sun, 25 Dec 2016 20:12:24 +0000</lastBuildDate>
-    <generator>Jekyll v2.5.3</generator>
+    <title>La-malmesure-des-mots</title>
+    <description>Poetry, cinema and marxism</description>
+    <link>/</link>
+    <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
-        <title>Create a website in 5min on Github using Jekyll 2</title>
-        <description>&lt;p&gt;&lt;span class=&quot;newthought&quot;&gt;In this post&lt;/span&gt; I will show you how you can easily create a website using Github and Jekyll.&lt;/p&gt;
+        <title>Reshape 2</title>
+        <description>&lt;h1 id=&quot;test&quot;&gt;test&lt;/h1&gt;
 
+&lt;p&gt;ffffff&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;dplyr&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Warning: package &amp;#39;dplyr&amp;#39; was built under R version 3.2.5&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## 
+## Attaching package: &amp;#39;dplyr&amp;#39;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## The following objects are masked from &amp;#39;package:stats&amp;#39;:
+## 
+##     filter, lag&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## The following objects are masked from &amp;#39;package:base&amp;#39;:
+## 
+##     intersect, setdiff, setequal, union&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;reshape2&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;ggplot2&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Warning: package &amp;#39;ggplot2&amp;#39; was built under R version 3.2.4&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;bladfhasjldhsia&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;df &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;data.frame&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;gp &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;factor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;rep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;letters&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; each &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)),&lt;/span&gt;
+                 y &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; rnorm&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;30&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# Compute sample mean and standard deviation in each group&lt;/span&gt;
+ds &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; plyr&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;ddply&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;df&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;gp&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; plyr&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;summarise&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; mean &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;y&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; sd &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; sd&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;y&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# Declare the data frame and common aesthetics.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# The summary data frame ds is used to plot&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# larger red points in a second geom_point() layer.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# If the data = argument is not specified, it uses the&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# declared data frame from ggplot(); ditto for the aesthetics.&lt;/span&gt;
+ggplot&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;df&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; aes&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;x &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; gp&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; y &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; y&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
+   geom_point&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
+   geom_point&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;data &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; ds&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; aes&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;y &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+              colour &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;red&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; size &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;figure/source/2016-12-27-more-test/unnamed-chunk-2-1.png&quot; alt=&quot;plot of chunk unnamed-chunk-2&quot; /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;c1&quot;&gt;# Same plot as above, declaring only the data frame in ggplot().&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# Note how the x and y aesthetics must now be declared in&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# each geom_point() layer.&lt;/span&gt;
+ggplot&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;df&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
+   geom_point&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;aes&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;x &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; gp&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; y &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; y&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
+   geom_point&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;data &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; ds&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; aes&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;x &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; gp&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; y &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+                 colour &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;red&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; size &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;figure/source/2016-12-27-more-test/unnamed-chunk-2-2.png&quot; alt=&quot;plot of chunk unnamed-chunk-2&quot; /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;c1&quot;&gt;# Set up a skeleton ggplot object and add layers:&lt;/span&gt;
+ggplot&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
+  geom_point&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;data &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; df&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; aes&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;x &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; gp&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; y &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; y&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
+  geom_point&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;data &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; ds&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; aes&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;x &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; gp&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; y &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+                        colour &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;red&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; size &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
+  geom_errorbar&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;data &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; ds&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; aes&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;x &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; gp&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; y &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                    ymin &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; mean &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; sd&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; ymax &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; mean &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; sd&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+                    colour &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;red&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; width &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0.4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;figure/source/2016-12-27-more-test/unnamed-chunk-2-3.png&quot; alt=&quot;plot of chunk unnamed-chunk-2&quot; /&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 27 Dec 2016 00:00:00 +0000</pubDate>
+        <link>/jekyll/rstats/2016/12/27/more-test/</link>
+        <guid isPermaLink="true">/jekyll/rstats/2016/12/27/more-test/</guid>
+      </item>
+    
+      <item>
+        <title>Serve Jekyll Websites with servr and knitr</title>
+        <description>&lt;p&gt;The R package &lt;a href=&quot;https://github.com/yihui/servr&quot;&gt;&lt;strong&gt;servr&lt;/strong&gt;&lt;/a&gt; can be used to set up an HTTP server to serve files under a directory. Since &lt;strong&gt;servr&lt;/strong&gt; v0.2, it has added a function &lt;code&gt;servr::jekyll()&lt;/code&gt; specifically designed for websites based on Jekyll and R Markdown. The main features of this function are:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;R Markdown source files are re-compiled through &lt;a href=&quot;http://yihui.name/knitr&quot;&gt;&lt;strong&gt;knitr&lt;/strong&gt;&lt;/a&gt; when their corresponding Markdown output files become older&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; than source files;&lt;/li&gt;
+  &lt;li&gt;The web page will refresh itself automatically in the above case as well;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;As a result, all you need to do is write your blog posts (R Markdown documents), and you do not need to worry about re-building the website or calling &lt;strong&gt;knitr&lt;/strong&gt; commands. Whenever you save a blog post in your text editor, the web page will be updated on the fly. This is particularly handy in the &lt;a href=&quot;http://www.rstudio.com&quot;&gt;RStudio IDE&lt;/a&gt;, because after you run &lt;code&gt;servr::jekyll()&lt;/code&gt; in the console, you can start writing or editing your R Markdown posts, and the HTML output, displayed in the RStudio viewer pane, will be in sync with your source post in the source panel (see the screenshot below).&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://i.imgur.com/gKVGhiP.png&quot;&gt;&lt;img src=&quot;http://i.imgur.com/gKVGhiP.png&quot; alt=&quot;Jekyll with servr and knitr&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;prerequisites&quot;&gt;Prerequisites&lt;/h2&gt;
+
+&lt;p&gt;You must have installed the packages &lt;strong&gt;servr&lt;/strong&gt; (&amp;gt;= 0.2) and &lt;strong&gt;knitr&lt;/strong&gt; (&amp;gt;= 1.8).&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;install.packages&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;servr&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;knitr&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; repos &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;http://cran.rstudio.com&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Of course, you have to install &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll&lt;/a&gt; as well. For Windows users, you have to make sure &lt;code&gt;jekyll&lt;/code&gt; can be found from your environment variable &lt;code&gt;PATH&lt;/code&gt;, i.e., R can call it via &lt;code&gt;system(&#39;jekyll&#39;)&lt;/code&gt;. This is normally not an issue for Linux or Mac OS X users (&lt;code&gt;gem install jekyll&lt;/code&gt; is enough).&lt;/p&gt;
+
+&lt;h2 id=&quot;r-code-chunks&quot;&gt;R code chunks&lt;/h2&gt;
+
+&lt;p&gt;Now we write some R code chunks in this post. For example,&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;kp&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;digits &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;kp&quot;&gt;cat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;hello world!&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## hello world!&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;kp&quot;&gt;set.seed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;123&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;x &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; rnorm&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;40&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;##  [1]  9.44  9.77 11.56 10.07 10.13 11.72 10.46  8.73  9.31  9.55 11.22
+## [12] 10.36 10.40 10.11  9.44 11.79 10.50  8.03 10.70  9.53  8.93  9.78
+## [23]  8.97  9.27  9.37  8.31 10.84 10.15  8.86 11.25 10.43  9.70 10.90
+## [34] 10.88 10.82 10.69 10.55  9.94  9.69  9.62&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;c1&quot;&gt;# generate a table&lt;/span&gt;
+knitr&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;kable&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;mtcars&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt; &lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;mpg&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;cyl&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;disp&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;hp&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;drat&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;wt&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;qsec&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;vs&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;am&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;gear&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;carb&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Mazda RX4&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;21.0&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;6&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;160&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;110&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;3.90&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;2.62&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;16.5&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;0&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;4&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;4&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Mazda RX4 Wag&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;21.0&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;6&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;160&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;110&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;3.90&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;2.88&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;17.0&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;0&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;4&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;4&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Datsun 710&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;22.8&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;4&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;108&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;93&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;3.85&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;2.32&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;18.6&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;4&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Hornet 4 Drive&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;21.4&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;6&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;258&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;110&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;3.08&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;3.21&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;19.4&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;0&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;3&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Hornet Sportabout&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;18.7&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;8&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;360&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;175&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;3.15&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;3.44&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;17.0&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;0&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;0&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;3&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Valiant&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;18.1&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;6&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;225&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;105&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;2.76&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;3.46&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;20.2&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;0&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;3&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kr&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;TRUE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# a boring comment&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;})()&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## [1] 2&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;kp&quot;&gt;names&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;formals&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;servr&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;jekyll&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# arguments of the jekyll() function&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## [1] &amp;quot;dir&amp;quot;     &amp;quot;input&amp;quot;   &amp;quot;output&amp;quot;  &amp;quot;script&amp;quot;  &amp;quot;serve&amp;quot;   &amp;quot;command&amp;quot;
+## [7] &amp;quot;...&amp;quot;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Just to test inline R expressions&lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt; in &lt;strong&gt;knitr&lt;/strong&gt;, we know the first element in &lt;code&gt;x&lt;/code&gt; (created in the code chunk above) is 9.44. You can certainly draw some graphs as well:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;par&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;mar &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;.1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;.1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+plot&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;cars&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; pch &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;19&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; col &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;red&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# a scatterplot&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;figure/source/2016-12-26-Spread/cars-1.png&quot; alt=&quot;A scatterplot of the cars data&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;the-build-script&quot;&gt;The build script&lt;/h2&gt;
+
+&lt;p&gt;Zero-configuration is required for &lt;code&gt;servr::jekyll()&lt;/code&gt; to work on your Jekyll website. However, there is always demand for more control over some options, which can be defined in a custom build script. Here are the arguments of &lt;code&gt;servr::jekyll()&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;jekyll&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;dir &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;.&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; input &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;.&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;_source&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;_posts&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; output &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;.&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+    &lt;span class=&quot;s&quot;&gt;&amp;quot;_posts&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;_posts&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; script &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Makefile&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;build.R&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; serve &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;TRUE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+    command &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;jekyll build&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;By default, &lt;code&gt;jekyll()&lt;/code&gt; looks for &lt;code&gt;.Rmd&lt;/code&gt; files under the root directory, the &lt;code&gt;_source&lt;/code&gt; directory, and the &lt;code&gt;_posts&lt;/code&gt; directory of the Jekyll website. For example, if you put your R Markdown posts under &lt;code&gt;_source&lt;/code&gt;, they will be compiled to the &lt;code&gt;_posts&lt;/code&gt; directory&lt;sup id=&quot;fnref:3&quot;&gt;&lt;a href=&quot;#fn:3&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+
+&lt;p&gt;The &lt;code&gt;script&lt;/code&gt; argument specifies a Makefile or an R script to be used to compile your R Markdown files. If it is a Makefile, &lt;code&gt;jekyll()&lt;/code&gt; will run &lt;code&gt;make -q&lt;/code&gt; to see if the site needs to be recompiled, then &lt;code&gt;make&lt;/code&gt; if it does. If the script is an R script, say, named &lt;code&gt;build.R&lt;/code&gt;, it is called via command line of the form&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Rscript build.R arg1 arg2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;See &lt;code&gt;?servr::jekyll&lt;/code&gt; for more details. You can define all your &lt;strong&gt;knitr&lt;/strong&gt; options and any other options in this R script. See the script &lt;a href=&quot;https://github.com/yihui/knitr-jekyll/blob/gh-pages/build.R&quot;&gt;build.R&lt;/a&gt; in the knitr-jekyll repository for an example: it will automatically set up the output renderers for &lt;strong&gt;knitr&lt;/strong&gt;, e.g., when the Jekyll Markdown engine is &lt;code&gt;kramdown&lt;/code&gt;, this script will call &lt;code&gt;knitr::render_jekyll()&lt;/code&gt; so that the code chunk output will be put inside the Liquid tag &lt;code&gt;{% highlight lang %} {% endhighlight %}&lt;/code&gt;; it also sets up some &lt;strong&gt;knitr&lt;/strong&gt; chunk and package options so that figures can be displayed correctly. For those who do not wish to store images in GIT (because normally they are binary files), you may check out how I host my images in Dropbox for this repository (see the code below &lt;code&gt;Sys.getenv(&#39;USER&#39;) == &#39;yihui&#39;&lt;/code&gt;).&lt;/p&gt;
+
+&lt;h2 id=&quot;on-the-markdown-renderers&quot;&gt;On the Markdown renderers&lt;/h2&gt;
+
+&lt;p&gt;Jekyll supports a number of Markdown renderers, such as kramdown, redcarpet, rdiscount, and so on. At the moment, it is a little annoying that kramdown supports LaTeX math expressions via &lt;code&gt;$$ math $$&lt;/code&gt;&lt;sup id=&quot;fnref:4&quot;&gt;&lt;a href=&quot;#fn:4&quot; class=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;, but does not support syntax highlighting of code blocks using the three backticks syntax (you must write the awkward Liquid tags); on the other hand, redcarpet does not support LaTeX math but does support three backticks. In my opinion, all the different flavors and implementations of Markdown is the biggest problem of Markdown, since there is not an unambiguous spec for Markdown. &lt;a href=&quot;http://commonmark.org&quot;&gt;CommonMark&lt;/a&gt; looks like a promising project to set up a common spec for Markdown, and &lt;a href=&quot;http://johnmacfarlane.net/pandoc/&quot;&gt;Pandoc&lt;/a&gt; is a great implementation that has brought almost all the features that you may ever need in Markdown. You may find some Pandoc plugins for Jekyll by searching online. However, GitHub Pages does not support arbitrary Jekyll plugins, so you cannot just use a Pandoc plugin there, but that does not mean you cannot use Pandoc locally, nor does it mean you cannot push locally compiled HTML pages to GitHub Pages&lt;sup id=&quot;fnref:5&quot;&gt;&lt;a href=&quot;#fn:5&quot; class=&quot;footnote&quot;&gt;5&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+
+&lt;p&gt;I’d love you to &lt;a href=&quot;https://github.com/yihui/knitr-jekyll&quot;&gt;fork&lt;/a&gt; this repository, make some (hopefully minor) changes, and &lt;a href=&quot;https://github.com/yihui/knitr-jekyll/issues&quot;&gt;let me know&lt;/a&gt; your success of using Pandoc with Jekyll. Happy hacking, and good luck!&lt;/p&gt;
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot;&gt;
+      &lt;p&gt;Determined by the modification time of files, i.e., &lt;code&gt;file.info(x)[, &#39;mtime&#39;]&lt;/code&gt;. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:2&quot;&gt;
+      &lt;p&gt;The syntax in R Markdown for inline expressions is &lt;code&gt;`r code`&lt;/code&gt;, where &lt;code&gt;code&lt;/code&gt; is the R expression that you want to evaluate, e.g. &lt;code&gt;x[1]&lt;/code&gt;. &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:3&quot;&gt;
+      &lt;p&gt;The reason that we may need to write R Markdown posts in &lt;code&gt;_source&lt;/code&gt; instead of &lt;code&gt;_posts&lt;/code&gt; is that Jekyll has &lt;a href=&quot;https://github.com/jekyll/jekyll/pull/3147&quot;&gt;a subtle bug&lt;/a&gt; (fixed in v2.5.3): its variable &lt;code&gt;site.posts&lt;/code&gt; will count &lt;code&gt;.Rmd&lt;/code&gt; files under &lt;code&gt;_posts&lt;/code&gt; as well. The consequence is, if you list all the posts of your website, the post &lt;code&gt;_posts/yyyy-mm-dd-foo.md&lt;/code&gt; will show up twice due to the existence of &lt;code&gt;_posts/yyyy-mm-dd-foo.Rmd&lt;/code&gt;, therefore I would recommend you to put your R Markdown posts in a separate directory, such as &lt;code&gt;_source&lt;/code&gt;. &lt;a href=&quot;#fnref:3&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:4&quot;&gt;
+      &lt;p&gt;Unfortunately, kramdown does not support math expressions in single dollars, e.g. &lt;code&gt;$ \alpha $&lt;/code&gt;. &lt;a href=&quot;#fnref:4&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:5&quot;&gt;
+      &lt;p&gt;If you choose to generate your Jekyll website locally, and push the HTML files to GitHub, you will need the file &lt;a href=&quot;https://help.github.com/articles/using-jekyll-with-pages&quot;&gt;&lt;code&gt;.nojekyll&lt;/code&gt;&lt;/a&gt; in the root directory of your website. &lt;a href=&quot;#fnref:5&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
 </description>
         <pubDate>Mon, 26 Dec 2016 00:00:00 +0000</pubDate>
-        <link>http://giacomovagni.github.io/motsetchoses/2016/12/postnew.html</link>
-        <guid isPermaLink="true">http://giacomovagni.github.io/motsetchoses/2016/12/postnew.html</guid>
-        
-        <category>mtus</category>
-        
-        
-        <category>jekyll</category>
-        
-      </item>
-    
-      <item>
-        <title>Create a website in 5min on Github using Jekyll</title>
-        <description>&lt;p&gt;&lt;span class=&quot;newthought&quot;&gt;In this post&lt;/span&gt; I will show you how you can easily create a website using Github and Jekyll.&lt;/p&gt;
-
-&lt;h2 id=&quot;create-gh-pages-repository&quot;&gt;1. Create gh-pages repository&lt;/h2&gt;
-&lt;p&gt;The first step is to create a &lt;code&gt;new repository&lt;/code&gt;. 
-For instance, name you directory &lt;code&gt;website&lt;/code&gt;. Click on the &lt;em&gt;Initialize this repository with a README&lt;/em&gt;. Add also a  License if you want.&lt;/p&gt;
-
-&lt;p&gt;&lt;a data-flickr-embed=&quot;true&quot; href=&quot;https://www.flickr.com/photos/136480412@N05/31724074152/in/album-72157674402348604/&quot; title=&quot;git_1&quot;&gt;&lt;img src=&quot;https://c1.staticflickr.com/1/289/31724074152_943278753c_z.jpg&quot; width=&quot;640&quot; height=&quot;447&quot; alt=&quot;git_1&quot; /&gt;&lt;/a&gt;&lt;script async=&quot;&quot; src=&quot;//embedr.flickr.com/assets/client-code.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;Once the repository created click on &lt;code&gt;Branch: master&lt;/code&gt;. You will need to write &lt;code&gt;gh-pages&lt;/code&gt; and select it.&lt;/p&gt;
-
-&lt;p&gt;&lt;a data-flickr-embed=&quot;true&quot; href=&quot;https://www.flickr.com/photos/136480412@N05/31724070252/in/album-72157674402348604/&quot; title=&quot;git_2&quot;&gt;&lt;img src=&quot;https://c5.staticflickr.com/1/350/31724070252_7a2c60d64d_z.jpg&quot; width=&quot;640&quot; height=&quot;180&quot; alt=&quot;git_2&quot; /&gt;&lt;/a&gt;&lt;script async=&quot;&quot; src=&quot;//embedr.flickr.com/assets/client-code.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a data-flickr-embed=&quot;true&quot; href=&quot;https://www.flickr.com/photos/136480412@N05/31062123953/in/album-72157674402348604/&quot; title=&quot;git_3&quot;&gt;&lt;img src=&quot;https://c2.staticflickr.com/1/421/31062123953_e115b116d6_z.jpg&quot; width=&quot;640&quot; height=&quot;167&quot; alt=&quot;git_3&quot; /&gt;&lt;/a&gt;&lt;script async=&quot;&quot; src=&quot;//embedr.flickr.com/assets/client-code.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;Go then to &lt;strong&gt;Setting&lt;/strong&gt; and again to &lt;code&gt;Branches&lt;/code&gt;. Change &lt;code&gt;master&lt;/code&gt; to &lt;code&gt;gh-pages&lt;/code&gt;. Click on &lt;em&gt;update&lt;/em&gt;. Ignore the warning and update.&lt;/p&gt;
-
-&lt;p&gt;&lt;a data-flickr-embed=&quot;true&quot; href=&quot;https://www.flickr.com/photos/136480412@N05/31871653905/in/album-72157674402348604/&quot; title=&quot;git_4&quot;&gt;&lt;img src=&quot;https://c2.staticflickr.com/1/276/31871653905_b4f3f5fac8_z.jpg&quot; width=&quot;640&quot; height=&quot;206&quot; alt=&quot;git_4&quot; /&gt;&lt;/a&gt;&lt;script async=&quot;&quot; src=&quot;//embedr.flickr.com/assets/client-code.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a data-flickr-embed=&quot;true&quot; href=&quot;https://www.flickr.com/photos/136480412@N05/31724066292/in/album-72157674402348604/&quot; title=&quot;git_5&quot;&gt;&lt;img src=&quot;https://c5.staticflickr.com/1/557/31724066292_8c5bca0c2c_z.jpg&quot; width=&quot;640&quot; height=&quot;208&quot; alt=&quot;git_5&quot; /&gt;&lt;/a&gt;&lt;script async=&quot;&quot; src=&quot;//embedr.flickr.com/assets/client-code.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a data-flickr-embed=&quot;true&quot; href=&quot;https://www.flickr.com/photos/136480412@N05/31724064242/in/album-72157674402348604/&quot; title=&quot;git_6&quot;&gt;&lt;img src=&quot;https://c3.staticflickr.com/1/558/31724064242_0b7985e310_z.jpg&quot; width=&quot;300&quot; height=&quot;150&quot; alt=&quot;git_6&quot; /&gt;&lt;/a&gt;&lt;script async=&quot;&quot; src=&quot;//embedr.flickr.com/assets/client-code.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;clone&quot;&gt;2. Clone&lt;/h2&gt;
-&lt;p&gt;The second step consists of “importing” your webiste on your computer. Because I am not very handy with the &lt;code&gt;Terminal&lt;/code&gt; command line, I am using the excellent github desktop.&lt;/p&gt;
-
-&lt;p&gt;You can download at&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://desktop.github.com/&quot;&gt;https://desktop.github.com/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Once you downloaded the github desktop, go back to your github page and click on &lt;code&gt;Clone or download&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a data-flickr-embed=&quot;true&quot; href=&quot;https://www.flickr.com/photos/136480412@N05/31062118413/in/album-72157674402348604/&quot; title=&quot;git_7&quot;&gt;&lt;img src=&quot;https://c6.staticflickr.com/1/682/31062118413_c4e46d53d2_z.jpg&quot; width=&quot;400&quot; height=&quot;290&quot; alt=&quot;git_7&quot; /&gt;&lt;/a&gt;&lt;script async=&quot;&quot; src=&quot;//embedr.flickr.com/assets/client-code.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;Then click on &lt;code&gt;Open in Desktop&lt;/code&gt;. This will open a repository on your personal computer with the name of the githubt repository (&lt;code&gt;clone as Website&lt;/code&gt; in our case).&lt;/p&gt;
-
-&lt;p&gt;&lt;a data-flickr-embed=&quot;true&quot; href=&quot;https://www.flickr.com/photos/136480412@N05/31833757686/in/album-72157674402348604/&quot; title=&quot;git_8&quot;&gt;&lt;img src=&quot;https://c7.staticflickr.com/1/555/31833757686_6ab6827e1d_z.jpg&quot; width=&quot;400&quot; height=&quot;100&quot; alt=&quot;git_8&quot; /&gt;&lt;/a&gt;&lt;script async=&quot;&quot; src=&quot;//embedr.flickr.com/assets/client-code.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;Your page will then be visible on your github desktop.&lt;/p&gt;
-
-&lt;p&gt;Now open the &lt;code&gt;website&lt;/code&gt; folder that as been &lt;em&gt;cloned&lt;/em&gt; (copied) on your desktop. It only contains the &lt;code&gt;Readme&lt;/code&gt; file and the Licence if you added one.&lt;/p&gt;
-
-&lt;h2 id=&quot;create-your-website-design&quot;&gt;3. Create your website design&lt;/h2&gt;
-
-&lt;p&gt;If you are not familiar with web design, you can start by downloading a &lt;code&gt;theme&lt;/code&gt; (which is a style or design of your webpage).&lt;/p&gt;
-
-&lt;p&gt;Jekyll as a lot of great readymade design you can download on the internet.&lt;/p&gt;
-
-&lt;p&gt;For instance, here&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://themes.jekyllrc.org/&quot;&gt;http://themes.jekyllrc.org/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Choose a template or theme you like and simply download it.&lt;/p&gt;
-
-&lt;p&gt;&lt;a data-flickr-embed=&quot;true&quot; href=&quot;https://www.flickr.com/photos/136480412@N05/31031061374/in/album-72157674402348604/&quot; title=&quot;git_9&quot;&gt;&lt;img src=&quot;https://c7.staticflickr.com/1/298/31031061374_087ddacf43_z.jpg&quot; width=&quot;400&quot; height=&quot;200&quot; alt=&quot;git_9&quot; /&gt;&lt;/a&gt;&lt;script async=&quot;&quot; src=&quot;//embedr.flickr.com/assets/client-code.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;Unzip the file and copy the file in the github folder on your computer. In doing so, you simply copy the codes of the website. This will enable you to generate the same website on your github page.&lt;/p&gt;
-
-&lt;p&gt;&lt;a data-flickr-embed=&quot;true&quot; href=&quot;https://www.flickr.com/photos/136480412@N05/31724076582/in/album-72157674402348604/&quot; title=&quot;git_10&quot;&gt;&lt;img src=&quot;https://c7.staticflickr.com/1/777/31724076582_8cdb7b9cb9_z.jpg&quot; width=&quot;400&quot; height=&quot;210&quot; alt=&quot;git_10&quot; /&gt;&lt;/a&gt;&lt;script async=&quot;&quot; src=&quot;//embedr.flickr.com/assets/client-code.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;Now go back to the github desktop and you will notice that you can see the files you just copied. When using github you need to &lt;code&gt;commit&lt;/code&gt; (send) file to your github page. Write down a note and click on &lt;code&gt;Commit to gh-pages&lt;/code&gt;. This will send the codes on your page.&lt;/p&gt;
-
-&lt;p&gt;&lt;a data-flickr-embed=&quot;true&quot; href=&quot;https://www.flickr.com/photos/136480412@N05/31724077862/in/album-72157674402348604/&quot; title=&quot;git_11&quot;&gt;&lt;img src=&quot;https://c7.staticflickr.com/1/398/31724077862_7bc92fd0c5_z.jpg&quot; width=&quot;537&quot; height=&quot;640&quot; alt=&quot;git_11&quot; /&gt;&lt;/a&gt;&lt;script async=&quot;&quot; src=&quot;//embedr.flickr.com/assets/client-code.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;the-website-is-ready&quot;&gt;4. The website is ready&lt;/h2&gt;
-
-&lt;p&gt;Go back on your github page. Go to &lt;code&gt;Settings&lt;/code&gt; and scroll down. You will see that it says: &lt;code&gt;Your site is published at: https://YOURNAME.github.io/website/&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Click on the website will appear!&lt;/p&gt;
-
-&lt;p&gt;&lt;a data-flickr-embed=&quot;true&quot; href=&quot;https://www.flickr.com/photos/136480412@N05/31724071312/in/album-72157674402348604/&quot; title=&quot;git_12&quot;&gt;&lt;img src=&quot;https://c1.staticflickr.com/1/426/31724071312_61ba38cc3a_z.jpg&quot; width=&quot;640&quot; height=&quot;169&quot; alt=&quot;git_12&quot; /&gt;&lt;/a&gt;&lt;script async=&quot;&quot; src=&quot;//embedr.flickr.com/assets/client-code.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;write-posts&quot;&gt;5. Write posts&lt;/h2&gt;
-
-&lt;p&gt;There are many ways to write posts on github. One simple way is to create posts manually in the website folder on your desktop.&lt;/p&gt;
-
-&lt;p&gt;Posts are stored in the folder &lt;code&gt;_posts&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;a data-flickr-embed=&quot;true&quot; href=&quot;https://www.flickr.com/photos/136480412@N05/31062907453/in/album-72157674402348604/&quot; title=&quot;git_13&quot;&gt;&lt;img src=&quot;https://c6.staticflickr.com/1/276/31062907453_fa7bbc1e6a_m.jpg&quot; width=&quot;340&quot; height=&quot;120&quot; alt=&quot;git_13&quot; /&gt;&lt;/a&gt;&lt;script async=&quot;&quot; src=&quot;//embedr.flickr.com/assets/client-code.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;What you need to do is created a Markdown file and simply store it in the &lt;code&gt;_posts&lt;/code&gt; folder. Posts are generally stored by dates. Make your life easy in copying an existing post (provided by the website imported from the internet) and start tweaking it with a new date and a new name.&lt;/p&gt;
-
-</description>
-        <pubDate>Sun, 25 Dec 2016 00:00:00 +0000</pubDate>
-        <link>http://giacomovagni.github.io/motsetchoses/2016/12/github-website.html</link>
-        <guid isPermaLink="true">http://giacomovagni.github.io/motsetchoses/2016/12/github-website.html</guid>
-        
-        <category>mtus</category>
-        
-        
-        <category>jekyll</category>
-        
-      </item>
-    
-      <item>
-        <title>Github + RStudio - an Intro</title>
-        <description>&lt;p&gt;&lt;span class=&quot;newthought&quot;&gt;This post&lt;/span&gt; will discuss how to change the interval time when transforming time use data&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;c1&quot;&gt;# servr::jekyll(command = &amp;#39;/Users/giacomovagni/.rvm/gems/ruby-2.2.1/wrappers/jekyll build&amp;#39;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;ffff&lt;/p&gt;
-</description>
-        <pubDate>Sun, 25 Dec 2016 00:00:00 +0000</pubDate>
-        <link>http://giacomovagni.github.io/motsetchoses/2016/12/git-RStudio.html</link>
-        <guid isPermaLink="true">http://giacomovagni.github.io/motsetchoses/2016/12/git-RStudio.html</guid>
-        
-        <category>mtus</category>
-        
-        
-        <category>jekyll</category>
-        
-      </item>
-    
-      <item>
-        <title>Change the interval time </title>
-        <description>&lt;p&gt;&lt;span class=&quot;newthought&quot;&gt;This post&lt;/span&gt; will discuss how to change the interval time when transforming time use data&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;schoolmath&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;dplyr&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-dta &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; read.csv&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;/Users/giacomovagni/site/motsetchoses/_data/dtaSpells.csv&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;find-the-greatest-common-divisor&quot;&gt;Find the greatest common divisor&lt;/h3&gt;
-&lt;p&gt;We need first&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;l &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;dta&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;duration&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
-v &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; l&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;kr&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;i &lt;span class=&quot;kr&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;l&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
-  v&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;i&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; gcd&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;dta&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;duration&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;i&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; dta&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;duration&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;i&lt;span class=&quot;m&quot;&gt;-1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; 
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-minV &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;v&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;-1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; 
-minV&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## [1] 20&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;dta&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;duration &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; dta&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;duration &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; minV&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;dtaPP &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; dta&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;rep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;nrow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;dta&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; dta&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;duration&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
-  select&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;duration&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
-  group_by&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;id&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; day&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
-  mutate&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; Time &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;n&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;The new Long Person Period file has now &lt;code&gt;72&lt;/code&gt; episodes, which is equals to &lt;code&gt;1440&lt;/code&gt; when multiplied by &lt;code&gt;20&lt;/code&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;dtaPP &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; group_by&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;id&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; day&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; summarise&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;Time&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Source: local data frame [4 x 3]
-## Groups: id
-## 
-##   id      day max(Time)
-## 1  1   Monday        72
-## 2  1 Saturday        72
-## 3  2   Monday        72
-## 4  2 Saturday        71&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;m&quot;&gt;72&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;20&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## [1] 1440&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-</description>
-        <pubDate>Sat, 26 Mar 2016 00:00:00 +0000</pubDate>
-        <link>http://giacomovagni.github.io/motsetchoses/2016/03/change-interval-time.html</link>
-        <guid isPermaLink="true">http://giacomovagni.github.io/motsetchoses/2016/03/change-interval-time.html</guid>
-        
-        <category>mtus</category>
-        
-        
-        <category>jekyll</category>
-        
-      </item>
-    
-      <item>
-        <title>Compute mean for activities - all format</title>
-        <description>&lt;p&gt;&lt;span class=&quot;newthought&quot;&gt;This post&lt;/span&gt; will demonstrate how to simply calcualte mean time of different activities for different format.&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;c1&quot;&gt;# Load the libraries and data&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;plyr&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;dplyr&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;tidyr&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;mtusRlocal&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;knitr&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;reshape2&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;xtable&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-dta &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; read.csv&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;/Users/giacomovagni/site/motsetchoses/_data/dtaSpells.csv&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;mean-of-short-pp-file&quot;&gt;1. Mean of Short PP file&lt;/h3&gt;
-
-&lt;p&gt;The &lt;code&gt;sum&lt;/code&gt; of all activites duration for each individuals for a day must be &lt;strong&gt;1440&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;dta &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; group_by&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;id&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; day&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; summarise&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;duration&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Source: local data frame [4 x 3]
-## Groups: id [?]
-## 
-##      id      day `sum(duration)`
-##   &amp;lt;int&amp;gt;   &amp;lt;fctr&amp;gt;           &amp;lt;int&amp;gt;
-## 1     1   Monday            1440
-## 2     1 Saturday            1440
-## 3     2   Monday            1440
-## 4     2 Saturday            1440&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;The individual mean can be computed such as :&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;dta &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; group_by&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;id&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; activities&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; summarise&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;duration&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Source: local data frame [12 x 3]
-## Groups: id [?]
-## 
-##       id activities `mean(duration)`
-##    &amp;lt;int&amp;gt;     &amp;lt;fctr&amp;gt;            &amp;lt;dbl&amp;gt;
-## 1      1         TV        270.00000
-## 2      1   domestic        300.00000
-## 3      1     eating        113.33333
-## 4      1  free time        400.00000
-## 5      1  paid work        500.00000
-## 6      1      sleep        400.00000
-## 7      2         TV        220.00000
-## 8      2   domestic        350.00000
-## 9      2     eating         63.33333
-## 10     2  free time        300.00000
-## 11     2  paid work        600.00000
-## 12     2      sleep        500.00000&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;The aggregate mean by day :&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;dta &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; group_by&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;day&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; activities&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; summarise&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;duration&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Source: local data frame [9 x 3]
-## Groups: day [?]
-## 
-##        day activities `mean(duration)`
-##     &amp;lt;fctr&amp;gt;     &amp;lt;fctr&amp;gt;            &amp;lt;dbl&amp;gt;
-## 1   Monday         TV              350
-## 2   Monday     eating               95
-## 3   Monday  paid work              550
-## 4   Monday      sleep              350
-## 5 Saturday         TV              140
-## 6 Saturday   domestic              325
-## 7 Saturday     eating               75
-## 8 Saturday  free time              350
-## 9 Saturday      sleep              550&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;The aggregate mean by activities, regardless of the day :&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;dta &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; group_by&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;activities&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; summarise&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;duration&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## # A tibble: 6 &amp;lt;U+00D7&amp;gt; 2
-##   activities `mean(duration)`
-##       &amp;lt;fctr&amp;gt;            &amp;lt;dbl&amp;gt;
-## 1         TV        245.00000
-## 2   domestic        325.00000
-## 3     eating         88.33333
-## 4  free time        350.00000
-## 5  paid work        550.00000
-## 6      sleep        450.00000&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;mean-of-long-pp-file&quot;&gt;2. Mean of Long PP file&lt;/h3&gt;
-
-&lt;p&gt;For Long PP file&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;c1&quot;&gt;# transform &lt;/span&gt;
-dtaPP&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; dta&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;rep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;nrow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;dta&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; dta&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;duration&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
-  select&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;duration&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
-  group_by&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;id&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; day&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
-  mutate&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;Time &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;n&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; 
-
-dtaPP &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; group_by&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;id&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; day&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; activities&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; summarise&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;time &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; n&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# transform back to short PP &lt;/span&gt;
-  group_by&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;activities&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; day&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
-  summarise&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;time&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Source: local data frame [9 x 3]
-## Groups: activities [?]
-## 
-##   activities      day `mean(time)`
-##       &amp;lt;fctr&amp;gt;   &amp;lt;fctr&amp;gt;        &amp;lt;dbl&amp;gt;
-## 1         TV   Monday          350
-## 2         TV Saturday          140
-## 3   domestic Saturday          325
-## 4     eating   Monday          190
-## 5     eating Saturday           75
-## 6  free time Saturday          350
-## 7  paid work   Monday          550
-## 8      sleep   Monday          350
-## 9      sleep Saturday          550&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;mean-of-sequence-file&quot;&gt;3. Mean of Sequence File&lt;/h3&gt;
-
-&lt;h4 id=&quot;aggregate&quot;&gt;3.1. Aggregate&lt;/h4&gt;
-
-&lt;p&gt;The mean time of activities for long PP can be computed by the following codes :&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;c1&quot;&gt;# transform PP to Wide &lt;/span&gt;
-dtaSeq &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; dta&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;rep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;nrow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;dta&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; dta&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;duration&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
-  select&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;duration&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
-  group_by&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;id&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; day&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
-  mutate&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;Time &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;n&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# PP &lt;/span&gt;
-  arrange&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;id&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; day&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; Time&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; select&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;epnum&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; spread&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;Time&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; activities&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# Wide &lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;# colnames renames  &lt;/span&gt;
-&lt;span class=&quot;kp&quot;&gt;colnames&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;dtaSeq&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;idind&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;day&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;paste&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;main&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1440&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; sep &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;N &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; count&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;dtaSeq&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
-N 
-&lt;span class=&quot;c1&quot;&gt;# by act only&lt;/span&gt;
-dtaSeq &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; select&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;idind&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; day&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; matches&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;main&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
-  melt&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;id.vars &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;idind&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;day&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; group_by&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;value&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; day&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
-  summarise&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;n &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; n&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# back to PP &lt;/span&gt;
-  mutate&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;time &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;n&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;4&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# divide by count &lt;/span&gt;
-  mutate&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;TimeClock&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;time&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; 
-
-&lt;span class=&quot;c1&quot;&gt;# if dummy variables &lt;/span&gt;
-dtaSeq &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; select&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;idind&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; day&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; matches&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;main&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
-  melt&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;id.vars &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;idind&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;day&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
-  mutate&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;value &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;ifelse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;value &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;sleep&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
-  group_by&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;idind&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; day&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; summarise&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;n&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
-
-
-&lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; mutate&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;nid &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; n_distinct&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;idind&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
-  group_by&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;nid&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; day&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
-  summarise&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;n &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;value&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
-  mutate&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;meanN &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; n &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; nid&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; mutate&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;meanN &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; TimeClock&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;meanN&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-
-
-
-
-&lt;span class=&quot;c1&quot;&gt;# by act and days &lt;/span&gt;
-dtaSeq &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; select&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;idind&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; day&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; matches&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;main&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
-  melt&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;id.vars &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;idind&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;day&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; group_by&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;day&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; value&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
-  summarise&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;n &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; n&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
-  mutate&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;time &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;n&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# divide by count &lt;/span&gt;
-  mutate&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;TimeClock&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;time&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; 
-
-&lt;span class=&quot;c1&quot;&gt;# if you haev the full data then group by what you want  &lt;/span&gt;
-dtaSeq &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; select&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;idind&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; day&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; matches&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;main&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
-  melt&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;id.vars &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;idind&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;day&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; group_by&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;idind&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; day&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; value&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
-  summarise&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;n &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; n&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
-  group_by&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;value&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; summarise&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;n&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
-  mutate&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;TimeClock&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;time&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; 
-  
-&lt;span class=&quot;c1&quot;&gt;# or simply activities &lt;/span&gt;
-  dtaSeq &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; select&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;idind&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; day&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; matches&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;main&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
-    melt&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;id.vars &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;idind&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;day&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
-    group_by&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;idind&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; day&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; value&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
-    summarise&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;n &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; n&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
-    group_by&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;value&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; day&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
-    summarise&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;n&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
-  mutate&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;TimeClock&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;time&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Error: &amp;lt;text&amp;gt;:17:1: unexpected SPECIAL
-## 16: 
-## 17: %&amp;gt;%
-##     ^&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Alternative when you are unsure of the &lt;code&gt;count&lt;/code&gt; results&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;dtaSeq &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; select&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;idind&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; day&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; matches&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;main&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
-  melt&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;id.vars &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;idind&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;day&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; group_by&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;value&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
-    summarise&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;n &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; n&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# back to PP &lt;/span&gt;
-    mutate&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;p &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; n &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;n&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
-    mutate&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;time &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;  &lt;span class=&quot;m&quot;&gt;1440&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; p&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# divide by count &lt;/span&gt;
-  mutate&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;TimeClock&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;time&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Adding missing grouping variables: `id`&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Error in eval(expr, envir, enclos): invalid column index : NA for variable: id = id&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h4 id=&quot;individual&quot;&gt;3.2. Individual&lt;/h4&gt;
-
-&lt;p&gt;From a PP file&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;kp&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;dtaPP&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Source: local data frame [6 x 5]
-## Groups: id, day [1]
-## 
-##      id      day activities epnum  Time
-##   &amp;lt;int&amp;gt;   &amp;lt;fctr&amp;gt;     &amp;lt;fctr&amp;gt; &amp;lt;int&amp;gt; &amp;lt;int&amp;gt;
-## 1     1 Saturday      sleep     1     1
-## 2     1 Saturday      sleep     1     2
-## 3     1 Saturday      sleep     1     3
-## 4     1 Saturday      sleep     1     4
-## 5     1 Saturday      sleep     1     5
-## 6     1 Saturday      sleep     1     6&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;dtaPP_sum &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; dtaPP &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
-  group_by&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;id&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; day&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; activities&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
-  summarise&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;n &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; n&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# multiply by the interval - here is 1 minutes &lt;/span&gt;
-  mutate&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;activities &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;paste&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;act_&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; activities&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; sep &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
-  spread&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;activities&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; n&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; fill &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
-
-dtaPP_sum&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Source: local data frame [4 x 8]
-## Groups: id, day [4]
-## 
-##      id      day act_TV act_domestic act_eating `act_free time`
-## * &amp;lt;int&amp;gt;   &amp;lt;fctr&amp;gt;  &amp;lt;dbl&amp;gt;        &amp;lt;dbl&amp;gt;      &amp;lt;dbl&amp;gt;           &amp;lt;dbl&amp;gt;
-## 1     1   Monday    400            0        240               0
-## 2     1 Saturday    140          300        100             400
-## 3     2   Monday    300            0        140               0
-## 4     2 Saturday    140          350         50             300
-## # ... with 2 more variables: `act_paid work` &amp;lt;dbl&amp;gt;, act_sleep &amp;lt;dbl&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;dtaPP_sum &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; select&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;id&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;day&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; summarise_each&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;funs&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Adding missing grouping variables: `id`, `day`&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Source: local data frame [4 x 8]
-## Groups: id [?]
-## 
-##      id      day act_TV act_domestic act_eating `act_free time`
-##   &amp;lt;int&amp;gt;   &amp;lt;fctr&amp;gt;  &amp;lt;dbl&amp;gt;        &amp;lt;dbl&amp;gt;      &amp;lt;dbl&amp;gt;           &amp;lt;dbl&amp;gt;
-## 1     1   Monday    400            0        240               0
-## 2     1 Saturday    140          300        100             400
-## 3     2   Monday    300            0        140               0
-## 4     2 Saturday    140          350         50             300
-## # ... with 2 more variables: `act_paid work` &amp;lt;dbl&amp;gt;, act_sleep &amp;lt;dbl&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h4 id=&quot;weighted-sum-and-weighted-mean&quot;&gt;3.3. Weighted Sum and Weighted Mean&lt;/h4&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;c1&quot;&gt;# weights of weekdays &lt;/span&gt;
-weekendproba &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;# weights - 1 is weekdays &lt;/span&gt;
-dtaSeq&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;day_weights &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;ifelse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;dtaSeq&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;day &lt;span class=&quot;o&quot;&gt;%in%&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Monday&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; weekendproba&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;# Weighted mean &lt;/span&gt;
-dtaSeq &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; select&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;idind&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; day&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; day_weights&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; matches&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;main&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
-  melt&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;id.vars &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;idind&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;day&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;day_weights&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
-  group_by&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;idind&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; day&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; day_weights&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; value&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
-  summarise&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;n &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; n&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
-  mutate&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;value &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;paste&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;act_&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; value&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; sep &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
-  spread&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;value&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; n&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; fill &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
-  summarise&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;meanTV &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;act_TV&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; weightedmean &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; weighted.mean&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;act_TV&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; day_weights&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Adding missing grouping variables: `id`&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Error in eval(expr, envir, enclos): invalid column index : NA for variable: id = id&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;The weighted sum&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;dtaSeq &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; count&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;day&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; mutate&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;p &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; n &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;n&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Error in eval(expr, envir, enclos): unknown column &amp;#39;idind&amp;#39;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;dtaSeq &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; count&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;day&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; wt &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; day_weights&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; mutate&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;p &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; n &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;n&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Error in eval(expr, envir, enclos): unknown column &amp;#39;idind&amp;#39;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-</description>
-        <pubDate>Fri, 25 Mar 2016 00:00:00 +0000</pubDate>
-        <link>http://giacomovagni.github.io/motsetchoses/2016/03/compute-mean-PP-Short.html</link>
-        <guid isPermaLink="true">http://giacomovagni.github.io/motsetchoses/2016/03/compute-mean-PP-Short.html</guid>
-        
-        <category>mtus</category>
-        
-        
-        <category>jekyll</category>
-        
-      </item>
-    
-      <item>
-        <title>Data Format</title>
-        <description>&lt;p&gt;&lt;span class=&quot;newthought&quot;&gt;This post&lt;/span&gt; will discuss how to transform the 3 most common data format in Time Use using &lt;code&gt;R&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;The data formats will be referred to as :&lt;/p&gt;
-
-&lt;p&gt;a) Person Period Short format &lt;br /&gt;
-b) Person Period Long format &lt;br /&gt;
-c) State sequences (&lt;em&gt;Wide&lt;/em&gt;) format&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;c1&quot;&gt;# Load the libraries and data&lt;/span&gt;
-
-&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;plyr&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;dplyr&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;tidyr&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;mtusRlocal&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;knitr&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;reshape2&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;xtable&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-dta &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; read.csv&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;/Users/giacomovagni/site/motsetchoses/_data/dtaSpells.csv&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;person-period-short-format&quot;&gt;Person Period Short format&lt;/h3&gt;
-
-&lt;p&gt;Time use data generally come into a shortened &lt;em&gt;Person-Period&lt;/em&gt; format. 
-Take a look at this sample :&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;id&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;day&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;activities&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;duration&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;epnum&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Saturday&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;sleep&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;500&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Saturday&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;free time&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;400&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;2&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Saturday&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;eating&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;100&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;3&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Saturday&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;domestic&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;300&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;4&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Saturday&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;TV&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;140&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;5&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Monday&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;sleep&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;300&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Monday&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;paid work&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;500&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;2&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Monday&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;eating&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;200&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;3&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Monday&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;TV&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;400&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;4&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Monday&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;eating&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;40&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;5&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;2&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Saturday&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;sleep&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;600&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;2&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Saturday&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;free time&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;300&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;2&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;2&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Saturday&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;eating&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;50&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;3&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;2&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Saturday&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;domestic&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;350&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;4&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;2&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Saturday&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;TV&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;140&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;5&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;2&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Monday&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;sleep&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;400&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;2&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Monday&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;paid work&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;600&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;2&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;2&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Monday&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;eating&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;100&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;3&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;2&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Monday&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;TV&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;300&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;4&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;2&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Monday&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;eating&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;40&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;5&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;dtaPP &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; dta&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;rep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;nrow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;dta&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; dta&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;duration&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
-  select&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;duration&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
-  group_by&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;id&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; day&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
-  mutate&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; Time &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;n&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;person-period-long-format&quot;&gt;Person Period Long format&lt;/h3&gt;
-
-&lt;p&gt;Let’s look at the first 10 entries&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;id&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;day&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;activities&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;epnum&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;Time&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Saturday&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;sleep&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Saturday&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;sleep&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;2&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Saturday&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;sleep&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;3&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Saturday&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;sleep&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;4&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Saturday&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;sleep&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;5&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Saturday&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;sleep&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;6&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Saturday&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;sleep&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;7&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Saturday&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;sleep&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;8&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Saturday&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;sleep&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;9&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Saturday&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;sleep&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;10&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;The maximum time per day is&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;dtaPP &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; group_by&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;id&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; day&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; summarise&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;Time&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Source: local data frame [4 x 3]
-## Groups: id
-## 
-##   id      day max(Time)
-## 1  1   Monday      1440
-## 2  1 Saturday      1440
-## 3  2   Monday      1440
-## 4  2 Saturday      1440&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;which means that we have created a one minute interval dataset, known as &lt;strong&gt;Long Person-Period&lt;/strong&gt;:&lt;/p&gt;
-
-&lt;h3 id=&quot;sequence-wide-format&quot;&gt;Sequence (Wide) format&lt;/h3&gt;
-
-&lt;p&gt;This code enables to transform the long file into a &lt;strong&gt;Wide Sequence&lt;/strong&gt; file.&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;dtaWide &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; dtaPP &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; select&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;epnum&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; spread&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;Time&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; activities&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;The 10 first sequence episodes look like this :&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;id&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;day&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;1&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;2&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;3&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;4&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;5&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;6&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;7&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;8&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;9&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;10&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Monday&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;sleep&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;sleep&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;sleep&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;sleep&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;sleep&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;sleep&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;sleep&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;sleep&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;sleep&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;sleep&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Saturday&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;sleep&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;sleep&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;sleep&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;sleep&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;sleep&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;sleep&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;sleep&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;sleep&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;sleep&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;sleep&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;2&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Monday&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;sleep&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;sleep&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;sleep&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;sleep&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;sleep&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;sleep&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;sleep&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;sleep&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;sleep&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;sleep&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;2&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Saturday&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;sleep&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;sleep&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;sleep&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;sleep&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;sleep&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;sleep&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;sleep&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;sleep&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;sleep&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;sleep&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h3 id=&quot;return-to-short-pp-format&quot;&gt;Return to short PP format&lt;/h3&gt;
-
-&lt;p&gt;A simple and convenient way to return to the original short PP way&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;dtaMeltPP &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; dtaWide &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; melt&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;id.vars &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;id&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;day&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; arrange&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;id&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; day&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; variable&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-dtaMeltPP &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;##   id    day variable value
-## 1  1 Monday        1 sleep
-## 2  1 Monday        2 sleep
-## 3  1 Monday        3 sleep
-## 4  1 Monday        4 sleep
-## 5  1 Monday        5 sleep
-## 6  1 Monday        6 sleep&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;dtaMeltPP &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
-  group_by&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;id&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; day&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; value&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
-  mutate&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;time &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; n&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
-  select&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;variable&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; distinct&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# keeps the order &lt;/span&gt;
-  group_by&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;id&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; day&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
-  mutate&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;epnum &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;n&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Source: local data frame [18 x 5]
-## Groups: id, day
-## 
-##    id      day     value time epnum
-## 1   1   Monday     sleep  300     1
-## 2   1   Monday paid work  500     2
-## 3   1   Monday    eating  240     3
-## 4   1   Monday        TV  400     4
-## 5   1 Saturday     sleep  500     1
-## 6   1 Saturday free time  400     2
-## 7   1 Saturday    eating  100     3
-## 8   1 Saturday  domestic  300     4
-## 9   1 Saturday        TV  140     5
-## 10  2   Monday     sleep  400     1
-## 11  2   Monday paid work  600     2
-## 12  2   Monday    eating  140     3
-## 13  2   Monday        TV  300     4
-## 14  2 Saturday     sleep  600     1
-## 15  2 Saturday free time  300     2
-## 16  2 Saturday    eating   50     3
-## 17  2 Saturday  domestic  350     4
-## 18  2 Saturday        TV  140     5&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-</description>
-        <pubDate>Wed, 23 Mar 2016 00:00:00 +0000</pubDate>
-        <link>http://giacomovagni.github.io/motsetchoses/2016/03/format.html</link>
-        <guid isPermaLink="true">http://giacomovagni.github.io/motsetchoses/2016/03/format.html</guid>
-        
-        <category>mtus</category>
-        
-        
-        <category>jekyll</category>
-        
-      </item>
-    
-      <item>
-        <title>Compute mean for activities</title>
-        <description>&lt;p&gt;&lt;span class=&quot;newthought&quot;&gt;This post&lt;/span&gt; will demonstrate how to simply calcualte mean time of different activities from a &lt;em&gt;wide format&lt;/em&gt; dataset.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Load the libraries and data&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;plyr&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;dplyr&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;tidyr&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;mtusRlocal&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;knitr&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;reshape2&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;xtable&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;kp&quot;&gt;load&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;/Users/giacomovagni/site/motsetchoses/_data/ukAllsub.RData&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Let us take a look at the data using &lt;code&gt;head&lt;/code&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;ukAllsub &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;##         idind  hldid survey   sex      day hhldsize
-## 1 10121511974 101215   1974 Woman  Tuesday        3
-## 2 10121511974 101215   1974 Woman Thursday        3
-## 3 10121511974 101215   1974 Woman   Friday        3
-## 4 10121511974 101215   1974 Woman Saturday        3
-##                                         civstat                cohab
-## 1 In couple (married/cohabit/civil partnership) could not be created
-## 2 In couple (married/cohabit/civil partnership) could not be created
-## 3 In couple (married/cohabit/civil partnership) could not be created
-## 4 In couple (married/cohabit/civil partnership) could not be created
-##   empsp                                  famstat season main1 main2
-## 1  &amp;lt;NA&amp;gt; Aged 40+ with no coresident children &amp;lt;18 Summer    NA    NA
-## 2  &amp;lt;NA&amp;gt; Aged 40+ with no coresident children &amp;lt;18 Summer    NA    NA
-## 3  &amp;lt;NA&amp;gt; Aged 40+ with no coresident children &amp;lt;18 Summer    NA    NA
-## 4  &amp;lt;NA&amp;gt; Aged 40+ with no coresident children &amp;lt;18 Summer    NA    NA
-##   main3 main4 main5 main6 main7 main8 main9 main10 main11 main12
-## 1    NA    NA    NA    NA    NA    NA    NA     NA     NA     NA
-## 2    NA    NA    NA    NA    NA    NA    NA     NA     NA     NA
-## 3    NA    NA    NA    NA    NA    NA    NA     NA     NA     NA
-## 4    NA    NA    NA    NA    NA    NA    NA     NA     NA     NA
-##   main13 main14 main15 main16 main17 main18 main19
-## 1      2      2      2      2      2      2      2
-## 2      6      6      6      6      6      6      2
-## 3      2      2      2      2      2      2      2
-## 4      2      2      2      2      2      2      2&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Individual-level mean&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;span class=&quot;marginnote&quot;&gt; 
-&lt;script type=&quot;math/tex&quot;&gt;x = {-b \pm \sqrt{b^2-4ac} \over 2a}.&lt;/script&gt;
-&lt;/span&gt;&lt;/p&gt;
-
-&lt;p&gt;We first need to compute the &lt;em&gt;mean&lt;/em&gt; at the individual level for each activities.&lt;/p&gt;
-
-&lt;p&gt;Using &lt;code&gt;matches&lt;/code&gt;, we select the relevant variables of the dataset.&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;ukAllsub &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; ukAllsub &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; group_by&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;idind&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; day&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; mutate&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;ndiaries &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; n&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
-ukAllsub_act &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; ukAllsub &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; select&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; idind&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; day&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; ndiaries&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; matches&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;main&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;The database looks like this&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;ukAllsub_act &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;as.data.frame&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;##         idind      day ndiaries main1 main2 main3 main4 main5 main6
-## 1 10121511974  Tuesday        1    NA    NA    NA    NA    NA    NA
-## 2 10121511974 Thursday        1    NA    NA    NA    NA    NA    NA
-## 3 10121511974   Friday        1    NA    NA    NA    NA    NA    NA
-## 4 10121511974 Saturday        1    NA    NA    NA    NA    NA    NA
-##   main7 main8 main9 main10 main11 main12 main13 main14 main15 main16
-## 1    NA    NA    NA     NA     NA     NA      2      2      2      2
-## 2    NA    NA    NA     NA     NA     NA      6      6      6      6
-## 3    NA    NA    NA     NA     NA     NA      2      2      2      2
-## 4    NA    NA    NA     NA     NA     NA      2      2      2      2
-##   main17 main18 main19
-## 1      2      2      2
-## 2      6      6      2
-## 3      2      2      2
-## 4      2      2      2&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;We set up the &lt;code&gt;missing&lt;/code&gt; values to &lt;code&gt;character&lt;/code&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;ukAllsub_act&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;is.na&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;ukAllsub_act&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;NA&amp;#39;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;The number of episode is&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;c1&quot;&gt;# nbr of episodes &lt;/span&gt;
-&lt;span class=&quot;m&quot;&gt;19&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;5&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## [1] 95&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;ukAllsub_act_summary &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; ukAllsub_act &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; melt&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;id.vars &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;idind&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;day&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;ndiaries&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
-  &lt;span class=&quot;c1&quot;&gt;# in order to retreive the time (nbr episodes) # &lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;# mutate(variable = substr(variable, 5, 6)) %&amp;gt;% &lt;/span&gt;
-  group_by&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;idind&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; day&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; ndiaries&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; value&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
-  summarise&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;n &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; n&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt;
-  mutate&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;value &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;paste&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;act_&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; value&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; sep &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
-  spread&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;value&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; n&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; fill &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;We get&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;ukAllsub_act_summary&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Source: local data frame [4 x 6]
-## 
-##         idind      day ndiaries act_2 act_6 act_NA
-## 1 10121511974  Tuesday        1    35     0     60
-## 2 10121511974 Thursday        1     5    30     60
-## 3 10121511974   Friday        1    35     0     60
-## 4 10121511974 Saturday        1    35     0     60&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;ukAllsub_act_summary &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; select&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;matches&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;act&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; summarise_each&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;funs&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Source: local data frame [1 x 3]
-## 
-##   act_2 act_6 act_NA
-## 1  27.5   7.5     60&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;ukAllsub_act_summary &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; group_by&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;day&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt;  select&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;day&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; matches&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;act&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; summarise_each&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;funs&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Source: local data frame [4 x 4]
-## 
-##        day act_2 act_6 act_NA
-## 1  Tuesday    35     0     60
-## 2 Thursday     5    30     60
-## 3   Friday    35     0     60
-## 4 Saturday    35     0     60&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-</description>
-        <pubDate>Wed, 16 Mar 2016 00:00:00 +0000</pubDate>
-        <link>http://giacomovagni.github.io/motsetchoses/2016/03/compute-mean2.html</link>
-        <guid isPermaLink="true">http://giacomovagni.github.io/motsetchoses/2016/03/compute-mean2.html</guid>
-        
-        <category>mtus</category>
-        
-        
-        <category>jekyll</category>
-        
-      </item>
-    
-      <item>
-        <title>Compute mean for activities</title>
-        <description>&lt;p&gt;&lt;span class=&quot;newthought&quot;&gt;This post&lt;/span&gt; will demonstrate how to simply calcualte mean time of different activities from a &lt;em&gt;wide format&lt;/em&gt; dataset.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Load the libraries and data&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;plyr&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;dplyr&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;tidyr&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;mtusRlocal&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;knitr&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;reshape2&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;xtable&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;kp&quot;&gt;load&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;/Users/giacomovagni/site/motsetchoses/_data/ukAllsub.RData&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Let us take a look at the data using &lt;code&gt;head&lt;/code&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;ukAllsub &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;##         idind  hldid survey   sex      day hhldsize
-## 1 10121511974 101215   1974 Woman  Tuesday        3
-## 2 10121511974 101215   1974 Woman Thursday        3
-## 3 10121511974 101215   1974 Woman   Friday        3
-## 4 10121511974 101215   1974 Woman Saturday        3
-##                                         civstat                cohab
-## 1 In couple (married/cohabit/civil partnership) could not be created
-## 2 In couple (married/cohabit/civil partnership) could not be created
-## 3 In couple (married/cohabit/civil partnership) could not be created
-## 4 In couple (married/cohabit/civil partnership) could not be created
-##   empsp                                  famstat season main1 main2
-## 1  &amp;lt;NA&amp;gt; Aged 40+ with no coresident children &amp;lt;18 Summer    NA    NA
-## 2  &amp;lt;NA&amp;gt; Aged 40+ with no coresident children &amp;lt;18 Summer    NA    NA
-## 3  &amp;lt;NA&amp;gt; Aged 40+ with no coresident children &amp;lt;18 Summer    NA    NA
-## 4  &amp;lt;NA&amp;gt; Aged 40+ with no coresident children &amp;lt;18 Summer    NA    NA
-##   main3 main4 main5 main6 main7 main8 main9 main10 main11 main12
-## 1    NA    NA    NA    NA    NA    NA    NA     NA     NA     NA
-## 2    NA    NA    NA    NA    NA    NA    NA     NA     NA     NA
-## 3    NA    NA    NA    NA    NA    NA    NA     NA     NA     NA
-## 4    NA    NA    NA    NA    NA    NA    NA     NA     NA     NA
-##   main13 main14 main15 main16 main17 main18 main19
-## 1      2      2      2      2      2      2      2
-## 2      6      6      6      6      6      6      2
-## 3      2      2      2      2      2      2      2
-## 4      2      2      2      2      2      2      2&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Individual-level mean&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;span class=&quot;marginnote&quot;&gt; 
-&lt;script type=&quot;math/tex&quot;&gt;x = {-b \pm \sqrt{b^2-4ac} \over 2a}.&lt;/script&gt;
-&lt;/span&gt;&lt;/p&gt;
-
-&lt;p&gt;We first need to compute the &lt;em&gt;mean&lt;/em&gt; at the individual level for each activities.&lt;/p&gt;
-
-&lt;p&gt;Using &lt;code&gt;matches&lt;/code&gt;, we select the relevant variables of the dataset.&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;ukAllsub &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; ukAllsub &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; group_by&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;idind&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; day&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; mutate&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;ndiaries &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; n&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
-ukAllsub_act &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; ukAllsub &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; select&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; idind&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; day&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; ndiaries&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; matches&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;main&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;The database looks like this&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;ukAllsub_act &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;as.data.frame&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;##         idind      day ndiaries main1 main2 main3 main4 main5 main6
-## 1 10121511974  Tuesday        1    NA    NA    NA    NA    NA    NA
-## 2 10121511974 Thursday        1    NA    NA    NA    NA    NA    NA
-## 3 10121511974   Friday        1    NA    NA    NA    NA    NA    NA
-## 4 10121511974 Saturday        1    NA    NA    NA    NA    NA    NA
-##   main7 main8 main9 main10 main11 main12 main13 main14 main15 main16
-## 1    NA    NA    NA     NA     NA     NA      2      2      2      2
-## 2    NA    NA    NA     NA     NA     NA      6      6      6      6
-## 3    NA    NA    NA     NA     NA     NA      2      2      2      2
-## 4    NA    NA    NA     NA     NA     NA      2      2      2      2
-##   main17 main18 main19
-## 1      2      2      2
-## 2      6      6      2
-## 3      2      2      2
-## 4      2      2      2&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;We set up the &lt;code&gt;missing&lt;/code&gt; values to &lt;code&gt;character&lt;/code&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;ukAllsub_act&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;is.na&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;ukAllsub_act&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;NA&amp;#39;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;The number of episode is&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;c1&quot;&gt;# nbr of episodes &lt;/span&gt;
-&lt;span class=&quot;m&quot;&gt;19&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;5&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## [1] 95&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;ukAllsub_act_summary &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; ukAllsub_act &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; melt&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;id.vars &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;idind&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;day&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;ndiaries&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
-  &lt;span class=&quot;c1&quot;&gt;# in order to retreive the time (nbr episodes) # &lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;# mutate(variable = substr(variable, 5, 6)) %&amp;gt;% &lt;/span&gt;
-  group_by&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;idind&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; day&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; ndiaries&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; value&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
-  summarise&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;n &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; n&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt;
-  mutate&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;value &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;paste&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;act_&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; value&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; sep &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
-  spread&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;value&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; n&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; fill &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;We get&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;ukAllsub_act_summary&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Source: local data frame [4 x 6]
-## 
-##         idind      day ndiaries act_2 act_6 act_NA
-## 1 10121511974  Tuesday        1    35     0     60
-## 2 10121511974 Thursday        1     5    30     60
-## 3 10121511974   Friday        1    35     0     60
-## 4 10121511974 Saturday        1    35     0     60&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;ukAllsub_act_summary &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; select&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;matches&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;act&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; summarise_each&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;funs&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Source: local data frame [1 x 3]
-## 
-##   act_2 act_6 act_NA
-## 1  27.5   7.5     60&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;ukAllsub_act_summary &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; group_by&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;day&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt;  select&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;day&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; matches&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;act&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; summarise_each&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;funs&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Source: local data frame [4 x 4]
-## 
-##        day act_2 act_6 act_NA
-## 1  Tuesday    35     0     60
-## 2 Thursday     5    30     60
-## 3   Friday    35     0     60
-## 4 Saturday    35     0     60&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-</description>
-        <pubDate>Wed, 16 Mar 2016 00:00:00 +0000</pubDate>
-        <link>http://giacomovagni.github.io/motsetchoses/2016/03/compute-mean-Wide.html</link>
-        <guid isPermaLink="true">http://giacomovagni.github.io/motsetchoses/2016/03/compute-mean-Wide.html</guid>
-        
-        <category>mtus</category>
-        
-        
-        <category>jekyll</category>
-        
-      </item>
-    
-      <item>
-        <title>Add Sum to Dataset</title>
-        <description>&lt;p&gt;hey&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;plyr&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;dplyr&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;tidyr&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;mtusRlocal&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;knitr&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;reshape2&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;xtable&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;kp&quot;&gt;load&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;/Users/giacomovagni/site/motsetchoses/_data/dtaSimple.RData&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;The code is :&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;dt &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; dtaSimple &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; group_by&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;sex&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
-  select&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;matches&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;av&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; summarise_each&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;funs&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
-  melt&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;id.vars &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;sex&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; spread&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;sex&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; value&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
-
-&lt;span class=&quot;kp&quot;&gt;colnames&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;dt&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;variable&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;men&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;women&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
-
-dt &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; summarise&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;variable &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Sum&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; men &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1444&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; women &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1440&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
-  &lt;span class=&quot;kp&quot;&gt;merge&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;dt&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; all &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;##    variable          men        women
-## 1     swave    0.0000000    0.0000000
-## 2       av1  238.7662338  198.3116883
-## 3       av2   16.4285714    3.0519481
-## 4       av3    0.0000000    0.1948052
-## 5       av4    0.0000000    2.0129870
-## 6       av5   36.0389610   25.1948052
-## 7       av6   25.5844156   58.8961039
-## 8       av7   26.4935065   65.9740260
-## 9       av8   33.4415584   11.2337662
-## 10      av9   18.5714286    7.8571429
-## 11     av10   28.9610390   38.3766234
-## 12     av11   33.4415584   67.5974026
-## 13     av12   26.4285714   34.2857143
-## 14     av13   35.7792208   45.1948052
-## 15     av14    0.8441558    2.2727273
-## 16     av15   54.4805195   53.8961039
-## 17     av16  494.3506494  514.3506494
-## 18     av17   35.1298701   32.7922078
-## 19     av18    4.2207792    4.8051948
-## 20     av19   18.4415584    6.1038961
-## 21     av20    3.2467532    2.4025974
-## 22     av21    7.9220779    9.4805195
-## 23     av22    4.4155844    3.5714286
-## 24     av23    1.0389610    4.6753247
-## 25     av24    1.8831169    2.4025974
-## 26     av25   18.0519481   15.5194805
-## 27     av26   -9.0000000   -9.0000000
-## 28     av27   -9.0000000   -9.0000000
-## 29     av28   23.6363636   24.1558442
-## 30     av29   18.1168831   26.8831169
-## 31     av30    4.7402597    0.4545455
-## 32     av31  131.8831169   97.9870130
-## 33     av32    2.3376623    0.9740260
-## 34     av33   14.0259740    5.0000000
-## 35     av34    6.0389610    7.8571429
-## 36     av35   10.9740260    8.4415584
-## 37     av36   14.3506494   16.6233766
-## 38     av37   12.7272727   15.1298701
-## 39     av38    6.6883117    6.8181818
-## 40     av39    0.0000000    3.6363636
-## 41     av40   10.0649351    5.7792208
-## 42     av41   20.4545455    9.8051948
-## 43      Sum 1444.0000000 1440.0000000&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-</description>
-        <pubDate>Tue, 16 Feb 2016 00:00:00 +0000</pubDate>
-        <link>http://giacomovagni.github.io/motsetchoses/2016/02/sumline.html</link>
-        <guid isPermaLink="true">http://giacomovagni.github.io/motsetchoses/2016/02/sumline.html</guid>
-        
-        <category>knitr</category>
-        
-        <category>servr</category>
-        
-        <category>httpuv</category>
-        
-        <category>websocket</category>
-        
-        
-        <category>jekyll</category>
-        
-        <category>rstats</category>
-        
+        <link>/jekyll/rstats/2016/12/26/Spread/</link>
+        <guid isPermaLink="true">/jekyll/rstats/2016/12/26/Spread/</guid>
       </item>
     
       <item>
@@ -1312,35 +303,29 @@ dt &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; summarise&lt;span cla
 
 &lt;span class=&quot;kp&quot;&gt;load&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;file &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;/Users/giacomovagni/site/motsetchoses/_data/undp.RData&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Error in readChar(con, 5L, useBytes = TRUE): cannot open the connection&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
 &lt;p&gt;The code is :&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;undp2 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; undp &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; select&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;Country&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; Year&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; Sex&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; Marital.status&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; X15.19&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; X20.24&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; X25.29&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; X30.34&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; X35.39&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; X40.44&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; X45.49&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; X50.54&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; X60.64&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; X65.&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt;
-  melt&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;id.vars &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;Country&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;Year&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;Sex&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;Marital.status&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; filter&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;Country &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;United Kingdom&amp;#39;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
+  melt&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;id.vars &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;Country&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;Year&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;Sex&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;Marital.status&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; filter&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;Country &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;United Kingdom&amp;#39;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-undp2 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; undp2 &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; filter&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;variable &lt;span class=&quot;o&quot;&gt;%in%&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;X20.24&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;X25.29&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;X30.34&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;X35.39&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;X40.44&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;X45.49&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Error in eval(expr, envir, enclos): object &amp;#39;undp&amp;#39; not found&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-UNUK2050ysummary &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; undp2 &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; filter&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;Marital.status &lt;span class=&quot;o&quot;&gt;%in%&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Married&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Single&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; group_by&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;Country&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; Year&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; Sex&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; Marital.status&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;undp2 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; undp2 &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; filter&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;variable &lt;span class=&quot;o&quot;&gt;%in%&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;X20.24&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;X25.29&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;X30.34&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;X35.39&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;X40.44&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;X45.49&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Error in eval(expr, envir, enclos): object &amp;#39;undp2&amp;#39; not found&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;UNUK2050ysummary &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; undp2 &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; filter&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;Marital.status &lt;span class=&quot;o&quot;&gt;%in%&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Married&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Single&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; group_by&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;Country&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; Year&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; Sex&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; Marital.status&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
   summarise&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;meanshare &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;value&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; unite&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;SexMSVar&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; Marital.status&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; Sex&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; 
   select&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;Country&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt; spread&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;SexMSVar&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; meanshare&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Error in eval(expr, envir, enclos): object &amp;#39;undp2&amp;#39; not found&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
 </description>
-        <pubDate>Tue, 16 Feb 2016 00:00:00 +0000</pubDate>
-        <link>http://giacomovagni.github.io/motsetchoses/2016/02/melt-unite-spread.html</link>
-        <guid isPermaLink="true">http://giacomovagni.github.io/motsetchoses/2016/02/melt-unite-spread.html</guid>
-        
-        <category>knitr</category>
-        
-        <category>servr</category>
-        
-        <category>httpuv</category>
-        
-        <category>websocket</category>
-        
-        
-        <category>jekyll</category>
-        
-        <category>rstats</category>
-        
+        <pubDate>Sun, 28 Sep 2014 00:00:00 +0100</pubDate>
+        <link>/jekyll/rstats/2014/09/28/jekyll-with-knitr/</link>
+        <guid isPermaLink="true">/jekyll/rstats/2014/09/28/jekyll-with-knitr/</guid>
       </item>
     
   </channel>
